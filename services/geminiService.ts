@@ -1,7 +1,9 @@
 import { GoogleGenAI } from "@google/genai";
 
 // Initialize the Gemini client
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+// Safely check if process is defined to avoid crashes in browser environments
+const apiKey = typeof process !== 'undefined' ? process.env.API_KEY : '';
+const ai = new GoogleGenAI({ apiKey });
 
 export const generateReviewResponse = async (
   customerReview: string,
