@@ -144,36 +144,33 @@ export const ProblemSection: React.FC = () => {
         </div>
       </section>
 
-      {/* --- PARTE 3: EL TIMING (Estilo Sección 1 - Fondo Negro, Detalles Dorados) --- */}
-      <section className="bg-neutral-950 py-24 px-6 relative overflow-hidden">
-        {/* Background decoration igual que Parte 1 */}
-        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
-        
-        <div className="max-w-7xl mx-auto relative z-10">
+      {/* --- PARTE 3: LA TECNOLOGÍA --- */}
+      <section className="bg-black py-24 px-6 relative overflow-hidden border-t border-white/5">
+        <div className="max-w-5xl mx-auto">
             
-            {/* Header Centrado */}
-            <div className="text-center max-w-4xl mx-auto mb-16">
-              <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-6 leading-tight">
-                  La tecnología no genera reseñas por sí sola <br />
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-premium-gold to-premium-gold-light">
-                      Solo facilita la acción en el momento justo
-                  </span>
+            {/* Headers estilizados igual que Sección 2 */}
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-4 leading-tight">
+                  La tecnología no genera reseñas por sí sola
               </h2>
+              <h3 className="text-2xl md:text-3xl font-bold text-premium-gold">
+                  Solo facilita la acción en el momento justo
+              </h3>
             </div>
 
-            {/* Contenedor tipo Tarjeta (SIN BORDE DORADO) */}
-            <div className="bg-white/[0.03] p-10 md:p-14 rounded-2xl hover:bg-white/[0.05] hover:-translate-y-2 hover:shadow-2xl hover:shadow-premium-gold/10 transition-all duration-300 group max-w-5xl mx-auto">
+            {/* Contenedor tipo Tarjeta (Estilo oscuro y limpio) */}
+            <div className="bg-[#080808] border border-white/10 p-10 md:p-14 rounded-3xl relative shadow-2xl max-w-4xl mx-auto hover:border-premium-gold/30 transition-colors duration-500">
                 
-                <div className="flex flex-col gap-8">
-                  <p className="text-lg md:text-xl text-neutral-300 leading-relaxed font-light text-center md:text-left">
+                <div className="flex flex-col gap-8 text-center">
+                  <p className="text-lg md:text-xl text-neutral-300 leading-relaxed font-light">
                       Sin un método, el NFC y el QR se ignoran. Son herramientas para eliminar la fricción, no para crear satisfacción. 
                       <br /><br />
-                      <span className="text-white font-bold drop-shadow-[0_0_12px_rgba(255,255,255,0.8)]">Solo funcionan cuando el equipo ya ha hecho el trabajo previo: cerrar la experiencia y activar el deseo de valorar.</span>
+                      <span className="text-white font-bold drop-shadow-md">Solo funcionan cuando el equipo ya ha hecho el trabajo previo: cerrar la experiencia y activar el deseo de valorar.</span>
                   </p>
 
-                  {/* Cierre Destacado con barra vertical dorada */}
-                  <div className="flex items-stretch border-l-4 border-premium-gold pl-6 py-2 group-hover:border-premium-gold-light transition-colors">
-                      <p className="text-xl md:text-3xl text-white font-serif italic leading-snug">
+                  {/* Cierre Destacado */}
+                  <div className="mt-6 pt-8 border-t border-white/5">
+                      <p className="text-2xl md:text-3xl font-serif italic text-white leading-normal">
                           "Los dispositivos son la consecuencia del sistema, no el origen."
                       </p>
                   </div>
@@ -182,7 +179,7 @@ export const ProblemSection: React.FC = () => {
         </div>
       </section>
 
-      {/* --- PARTE 4: EL MÉTODO 5★ (BULLET STYLE COMPACT & GOLD BORDERS) --- */}
+      {/* --- PARTE 4: EL MÉTODO 5★ (BULLET STYLE) --- */}
       <section className="bg-[#1A1A1A] py-20 px-4 relative border-t border-white/5 overflow-hidden">
         {/* Glow Effects */}
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-premium-gold/5 rounded-full blur-[120px] pointer-events-none -translate-y-1/2 translate-x-1/2"></div>
@@ -264,6 +261,182 @@ export const ProblemSection: React.FC = () => {
             </div>
 
         </div>
+      </section>
+
+      {/* --- SEPARADOR DORADO --- */}
+      <div className="w-full h-1.5 bg-gradient-to-r from-premium-gold-dark via-premium-gold to-premium-gold-dark shadow-[0_0_25px_rgba(212,175,55,0.8)] relative z-20"></div>
+
+      {/* --- PARTE 5: EL TIMING / CONTEXTO --- */}
+      <section className="bg-neutral-950 py-24 px-6 relative border-t border-white/10">
+        <div className="max-w-5xl mx-auto">
+            
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-4 leading-tight">
+                  No se trata de pedir reseñas
+              </h2>
+              <h3 className="text-2xl md:text-3xl font-bold text-premium-gold">
+                  Se trata de saber cuándo hacerlo
+              </h3>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+                
+                <div className="md:col-span-7 space-y-8">
+                     <p className="text-lg md:text-xl text-neutral-300 leading-relaxed font-light">
+                        <span className="text-white font-bold">Un código QR en el ticket o un mensaje por WhatsApp o email, horas después no funciona.</span> El cliente ya ha desconectado y el mensaje se ignora.
+                     </p>
+                     <div className="flex items-start gap-4">
+                        <div className="w-12 h-12 rounded-full bg-premium-gold/10 flex items-center justify-center shrink-0 border border-premium-gold/30">
+                           <i className="fa-solid fa-check text-premium-gold text-xl"></i>
+                        </div>
+                        <p className="text-lg md:text-xl text-neutral-200 leading-relaxed">
+                            La clave es hacerlo fácil y natural <span className="text-premium-gold font-bold">mientras siguen en la mesa</span>, cuando la satisfacción es máxima.
+                        </p>
+                     </div>
+                </div>
+
+                <div className="md:col-span-5">
+                    <div className="bg-black/40 border border-premium-gold/30 p-10 rounded-3xl relative shadow-2xl shadow-black/50 hover:border-premium-gold/60 transition-colors group">
+                        <i className="fa-solid fa-quote-right text-premium-gold/10 text-8xl absolute -bottom-4 -right-4 rotate-12 group-hover:text-premium-gold/20 transition-colors"></i>
+                        <p className="text-2xl md:text-3xl font-serif italic text-white leading-tight relative z-10">
+                            "La reseña es la consecuencia de un servicio bien hecho."
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+      </section>
+
+      {/* --- PARTE 6: CÓMO FUNCIONA (FONDO NEGRO PARA ALTERNANCIA) --- */}
+      <section className="bg-black py-24 px-6 relative border-t border-white/5">
+        <div className="max-w-6xl mx-auto">
+           
+           <div className="text-center mb-20">
+              <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-4 leading-tight">
+                 Cómo funciona en el día a día
+              </h2>
+              <h3 className="text-2xl md:text-3xl font-bold text-premium-gold">
+                 Se integra sin frenar el ritmo del servicio
+              </h3>
+           </div>
+
+           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative z-10 mb-16">
+              {[
+                {
+                  step: 1,
+                  icon: "fa-comment-dots",
+                  title: "Petición Natural",
+                  text: "Cliente feliz → El equipo pide la valoración al cerrar la mesa."
+                },
+                {
+                  step: 2,
+                  icon: "fa-wand-magic-sparkles",
+                  title: "Guía del Mensaje",
+                  text: "Sugerimos sutilmente qué escribir (palabras clave) para que el cliente no tenga que pensar y Google te premie."
+                },
+                {
+                  step: 3,
+                  icon: "fa-mobile-screen-button",
+                  title: "Acción Inmediata",
+                  text: "Se acerca el dispositivo (NFC/QR) y la reseña se publica en segundos."
+                }
+              ].map((item, idx) => (
+                <div key={idx} className="bg-[#080808] border border-white/10 p-8 rounded-2xl relative group hover:border-premium-gold/50 transition-colors duration-300">
+                   <div className="absolute top-4 right-6 text-6xl font-extrabold text-white/[0.03] select-none group-hover:text-premium-gold/[0.05] transition-colors">
+                     {item.step}
+                   </div>
+                   <div className="w-16 h-16 rounded-full bg-premium-gold/5 border border-premium-gold/20 flex items-center justify-center mb-6 group-hover:bg-premium-gold/10 group-hover:scale-110 transition-transform duration-300">
+                     <i className={`fa-solid ${item.icon} text-2xl text-premium-gold`}></i>
+                   </div>
+                   <h4 className="text-xl font-bold text-white mb-4 relative z-10">{item.title}</h4>
+                   <p className="text-neutral-400 leading-relaxed relative z-10">
+                     {item.text}
+                   </p>
+                </div>
+              ))}
+           </div>
+
+           <div className="bg-[#111] border-l-4 border-premium-gold rounded-r-xl p-8 md:p-10 flex flex-col md:flex-row items-center gap-8 shadow-2xl relative overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-r from-premium-gold/5 to-transparent pointer-events-none"></div>
+              <div className="w-20 h-20 bg-black rounded-full border border-white/10 flex items-center justify-center shrink-0 shadow-lg relative z-10">
+                 <i className="fa-solid fa-user-shield text-3xl text-premium-gold"></i>
+              </div>
+              <div className="text-center md:text-left relative z-10">
+                 <h4 className="text-xl font-bold text-white mb-2 uppercase tracking-wide flex items-center justify-center md:justify-start gap-3">
+                   <span className="bg-premium-gold/20 text-premium-gold px-2 py-0.5 rounded text-xs">SEGURIDAD</span>
+                   ¿Y si hay quejas?
+                 </h4>
+                 <p className="text-lg text-neutral-300">
+                   El método permite detectarlas y corregirlas en la mesa, <span className="text-white font-bold border-b border-premium-gold/50">evitando que lleguen a internet.</span>
+                 </p>
+              </div>
+           </div>
+
+        </div>
+      </section>
+
+      {/* --- PARTE 7: TODO LO NECESARIO (REDISEÑO COMPACTO & FLOTANTE) --- */}
+      <section className="bg-[#1A1A1A] py-24 px-6 relative border-t border-white/5">
+         <div className="max-w-7xl mx-auto">
+           
+           <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-4 leading-tight">
+                 Todo lo necesario desde el primer día
+              </h2>
+              <h3 className="text-2xl md:text-3xl font-bold text-premium-gold mb-6">
+                 No son piezas sueltas. Es una solución llave en mano.
+              </h3>
+              <p className="text-lg md:text-xl text-neutral-300 max-w-3xl mx-auto font-light leading-relaxed">
+                 No te entregamos un simple dispositivo y desaparecemos. Dejamos instalado un sistema de trabajo para que funcione, se entienda y se mantenga.
+              </p>
+           </div>
+
+           {/* Grid: 2 columnas en móvil para reducir altura */}
+           <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-5 relative z-10">
+              {[
+                {
+                  icon: "fa-chart-line",
+                  title: "Auditoría Previa",
+                  desc: "Análisis de tu reputación actual, competencia y potencial."
+                },
+                {
+                  icon: "fa-book-open-reader",
+                  title: "El Método",
+                  desc: "Para pedir en el momento correcto, y prevenir reseña negativa."
+                },
+                {
+                  icon: "fa-user-graduate",
+                  title: "Formación Guiada",
+                  desc: "Capacitación práctica para el dueño y el equipo."
+                },
+                {
+                  icon: "fa-gears",
+                  title: "Implementación a Medida",
+                  desc: "Adaptación del sistema a tu operativa (Barra o Mesa)."
+                },
+                {
+                  icon: "fa-mobile-screen-button",
+                  title: "Kit Tecnológico",
+                  desc: "Soportes físicos activadores (Expositor + Tarjetas NFC/QR)."
+                },
+                {
+                  icon: "fa-headset",
+                  title: "Soporte Directo",
+                  desc: "Acompañamiento en la puesta en marcha."
+                }
+              ].map((item, idx) => (
+                <div key={idx} className="bg-neutral-900/50 backdrop-blur-sm border border-premium-gold/30 p-4 rounded-xl relative hover:-translate-y-1 hover:shadow-[0_10px_20px_rgba(212,175,55,0.1)] transition-all duration-300 group flex flex-col items-center text-center h-full">
+                   <div className="w-10 h-10 rounded-lg bg-premium-gold/10 flex items-center justify-center mb-3 group-hover:bg-premium-gold/20 transition-colors">
+                      <i className={`fa-solid ${item.icon} text-base text-premium-gold`}></i>
+                   </div>
+                   <h4 className="text-sm font-bold text-white mb-2 leading-tight">{item.title}</h4>
+                   <p className="text-[11px] text-neutral-400 leading-snug">{item.desc}</p>
+                </div>
+              ))}
+           </div>
+
+         </div>
       </section>
     </>
   );
