@@ -161,8 +161,8 @@ export const ProblemSection: React.FC = () => {
               </h2>
             </div>
 
-            {/* Contenedor tipo Tarjeta (Estilo Parte 1 pero layout adaptado a texto único) */}
-            <div className="bg-white/[0.03] border border-premium-gold/70 p-10 md:p-14 rounded-2xl hover:bg-white/[0.05] hover:border-premium-gold hover:-translate-y-2 hover:shadow-2xl hover:shadow-premium-gold/10 transition-all duration-300 group max-w-5xl mx-auto">
+            {/* Contenedor tipo Tarjeta (SIN BORDE DORADO) */}
+            <div className="bg-white/[0.03] p-10 md:p-14 rounded-2xl hover:bg-white/[0.05] hover:-translate-y-2 hover:shadow-2xl hover:shadow-premium-gold/10 transition-all duration-300 group max-w-5xl mx-auto">
                 
                 <div className="flex flex-col gap-8">
                   <p className="text-lg md:text-xl text-neutral-300 leading-relaxed font-light text-center md:text-left">
