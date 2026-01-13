@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Hero } from './components/Hero';
 import { ProblemSection } from './components/ProblemSection';
-import { ReviewAssistantDemo } from './components/ReviewAssistantDemo';
 
 const Navbar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -20,46 +19,13 @@ const Navbar: React.FC = () => {
           FUSIÓN<span className="text-premium-gold">.</span>
         </div>
         <div className="hidden md:flex gap-8 text-sm font-bold uppercase tracking-widest text-premium-gray">
-          <a href="#sistema" className="hover:text-white transition-colors">Sistema</a>
-          <a href="#demo" className="hover:text-white transition-colors">Demo AI</a>
           <a href="#testimonios" className="hover:text-white transition-colors">Resultados</a>
         </div>
-        {/* Actualizado a rounded-full y añadido padding/sombra sutil */}
         <button className="text-premium-gold font-bold uppercase text-xs border border-premium-gold px-6 py-2.5 rounded-full hover:bg-premium-gold hover:text-premium-dark transition-all shadow-[0_0_15px_rgba(212,175,55,0.1)] hover:shadow-[0_0_25px_rgba(212,175,55,0.4)]">
           Acceso Clientes
         </button>
       </div>
     </nav>
-  );
-};
-
-const FeaturesGrid: React.FC = () => {
-  const features = [
-    { title: "Códigos QR Inteligentes", desc: "Redirecciona a tus clientes directamente al formulario de 5 estrellas.", icon: "fa-qrcode" },
-    { title: "Filtrado de Malas Reseñas", desc: "Intercepta comentarios negativos antes de que lleguen a Google.", icon: "fa-filter" },
-    { title: "Dashboard en Tiempo Real", desc: "Monitoriza tu reputación desde cualquier dispositivo al instante.", icon: "fa-chart-line" }
-  ];
-
-  return (
-    <section id="sistema" className="py-24 bg-neutral-950 px-6">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Un ecosistema de reputación</h2>
-          <p className="text-premium-gray">Todo lo que necesitas para dominar tu zona y atraer más comensales.</p>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {features.map((f, i) => (
-            <div key={i} className="bg-neutral-900/50 p-8 rounded border border-white/5 hover:border-premium-gold/30 transition-colors group">
-              <div className="w-12 h-12 rounded bg-neutral-800 flex items-center justify-center mb-6 group-hover:bg-premium-gold group-hover:text-premium-dark transition-colors duration-300">
-                <i className={`fa-solid ${f.icon} text-xl text-premium-gold group-hover:text-premium-dark`}></i>
-              </div>
-              <h3 className="text-xl font-bold text-white mb-3">{f.title}</h3>
-              <p className="text-sm text-neutral-400 leading-relaxed">{f.desc}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
   );
 };
 
@@ -87,8 +53,6 @@ const App: React.FC = () => {
       <Navbar />
       <Hero />
       <ProblemSection />
-      <FeaturesGrid />
-      <ReviewAssistantDemo />
       <Footer />
     </div>
   );
