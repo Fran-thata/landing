@@ -3,7 +3,7 @@ import { Button } from './Button';
 
 export const Hero: React.FC = () => {
   return (
-    <section className="relative min-h-screen w-full flex items-start justify-start px-6 md:px-12 lg:px-24 overflow-hidden pt-32 md:pt-44 pb-20">
+    <section className="relative w-full flex items-start justify-start px-6 md:px-12 lg:px-24 overflow-hidden pt-20 md:pt-32 pb-8">
       {/* Background Image - Static, no animation */}
       <div 
         className="absolute inset-0 z-0 bg-cover bg-center"
