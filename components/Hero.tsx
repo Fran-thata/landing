@@ -3,7 +3,7 @@ import { Button } from './Button';
 
 export const Hero: React.FC = () => {
   return (
-    <section className="relative w-full flex items-start justify-start px-6 md:px-12 lg:px-24 overflow-hidden pt-20 md:pt-32 pb-8">
+    <section className="relative w-full flex items-start justify-start px-6 md:px-12 lg:px-24 overflow-hidden pt-6 md:pt-12 pb-24">
       {/* Background Image - Static, no animation */}
       <div 
         className="absolute inset-0 z-0 bg-cover bg-center"
@@ -88,7 +88,7 @@ export const Hero: React.FC = () => {
         </div>
 
         {/* CTA */}
-        <div className="flex flex-col items-start w-fit gap-3">
+        <div className="flex flex-col items-start w-fit gap-3 mb-8">
           <Button onClick={() => document.getElementById('demo')?.scrollIntoView({ behavior: 'smooth' })}>
             QUIERO REVISAR MI CASO
           </Button>
