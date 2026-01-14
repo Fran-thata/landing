@@ -94,11 +94,11 @@ export const Hero: React.FC = () => {
         </div>
 
         {/* CTA */}
-        <div className="flex flex-col items-start gap-4 pb-12 w-full">
+        <div className="flex flex-col items-center md:items-start gap-4 pb-12 w-full">
           <Button onClick={() => document.getElementById('demo')?.scrollIntoView({ behavior: 'smooth' })} className="w-full md:w-auto px-12 py-5 text-base md:text-lg shadow-[0_0_30px_rgba(212,175,55,0.4)]">
             QUIERO MÁS RESEÑAS
           </Button>
-          <span className="text-white/50 text-xs md:text-sm font-medium tracking-widest uppercase pl-1">
+          <span className="text-white/50 text-xs md:text-sm font-medium tracking-widest uppercase text-center md:text-left">
             Conversación breve. Sin presión.
           </span>
         </div>
