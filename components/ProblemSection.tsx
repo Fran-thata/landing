@@ -1,16 +1,49 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 export const ProblemSection: React.FC = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  // Datos de las tarjetas para iterar y aplicar lógica
+  const problems = [
+    {
+      icon: "fa-arrow-trend-down",
+      title: "Perfil estancado",
+      desc: "Sin reseñas recientes, pareces un negocio abandonado."
+    },
+    {
+      icon: "fa-eye-slash",
+      title: "Invisible en Google",
+      desc: "Si no entran reseñas nuevas, Google deja de mostrarte."
+    },
+    {
+      icon: "fa-users-slash",
+      title: "Pérdida de clientes",
+      desc: "Antes de entrar a un local valoran irse con quien tiene más estrellas."
+    }
+  ];
+
+  useEffect(() => {
+    // Respetar preferencia de movimiento reducido del usuario
+    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    if (mediaQuery.matches) return;
+
+    const interval = setInterval(() => {
+      setActiveIndex((current) => (current + 1) % problems.length);
+    }, 5000); // 5 segundos por tarjeta (Más lento)
+
+    return () => clearInterval(interval);
+  }, [problems.length]);
+
   return (
     <>
-      {/* --- PARTE 1: PROBLEMAS DEL NEGOCIO (Actualizado) --- */}
+      {/* --- PARTE 1: PROBLEMAS DEL NEGOCIO (Con Auto-Rotating Highlight) --- */}
       <section className="bg-neutral-950 py-20 md:py-28 px-5 md:px-6 relative overflow-hidden">
         {/* Background decoration */}
         <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
         
         <div className="max-w-3xl mx-auto relative z-10">
           
-          {/* Texto Principal Centrado (Título restaurado + Subtítulo) */}
+          {/* Texto Principal Centrado */}
           <div className="text-center mb-14 md:mb-16">
             <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-6 leading-tight">
               Clientes satisfechos sin reseñas: <br className="hidden md:block" />
@@ -22,42 +55,49 @@ export const ProblemSection: React.FC = () => {
             </p>
           </div>
 
-          {/* Stack de 3 Tarjetas Horizontales (Bloque Sólido Central) */}
+          {/* Stack de 3 Tarjetas con Animación Cíclica */}
           <div className="flex flex-col gap-4">
-            
-            {/* Card 1 */}
-            <div className="bg-white/[0.03] border border-white/10 p-5 md:p-6 rounded-2xl flex items-center gap-5 md:gap-6 hover:bg-white/[0.05] hover:border-premium-gold/30 transition-all duration-300 group cursor-default">
-              <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-neutral-900 flex items-center justify-center shrink-0 border border-white/10 group-hover:border-premium-gold/50 transition-colors">
-                <i className="fa-solid fa-arrow-trend-down text-xl md:text-2xl text-neutral-500 group-hover:text-premium-gold transition-colors"></i>
-              </div>
-              <div className="flex flex-col text-left">
-                <h3 className="text-lg md:text-xl font-bold text-white mb-1">Perfil estancado</h3>
-                <p className="text-base md:text-lg text-neutral-400 leading-snug">Sin reseñas recientes, pareces un negocio abandonado.</p>
-              </div>
-            </div>
-
-            {/* Card 2 */}
-            <div className="bg-white/[0.03] border border-white/10 p-5 md:p-6 rounded-2xl flex items-center gap-5 md:gap-6 hover:bg-white/[0.05] hover:border-premium-gold/30 transition-all duration-300 group cursor-default">
-              <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-neutral-900 flex items-center justify-center shrink-0 border border-white/10 group-hover:border-premium-gold/50 transition-colors">
-                <i className="fa-solid fa-eye-slash text-xl md:text-2xl text-neutral-500 group-hover:text-premium-gold transition-colors"></i>
-              </div>
-              <div className="flex flex-col text-left">
-                <h3 className="text-lg md:text-xl font-bold text-white mb-1">Invisible en Google</h3>
-                <p className="text-base md:text-lg text-neutral-400 leading-snug">Si no entran reseñas nuevas, Google deja de mostrarte.</p>
-              </div>
-            </div>
-
-            {/* Card 3 */}
-            <div className="bg-white/[0.03] border border-white/10 p-5 md:p-6 rounded-2xl flex items-center gap-5 md:gap-6 hover:bg-white/[0.05] hover:border-premium-gold/30 transition-all duration-300 group cursor-default">
-              <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-neutral-900 flex items-center justify-center shrink-0 border border-white/10 group-hover:border-premium-gold/50 transition-colors">
-                <i className="fa-solid fa-users-slash text-xl md:text-2xl text-neutral-500 group-hover:text-premium-gold transition-colors"></i>
-              </div>
-              <div className="flex flex-col text-left">
-                <h3 className="text-lg md:text-xl font-bold text-white mb-1">Pérdida de clientes</h3>
-                <p className="text-base md:text-lg text-neutral-400 leading-snug">Antes de entrar a un local valoran irse con quien tiene más estrellas.</p>
-              </div>
-            </div>
-
+            {problems.map((item, index) => {
+              const isActive = index === activeIndex;
+              
+              return (
+                <div 
+                  key={index}
+                  className={`
+                    relative p-5 md:p-6 rounded-2xl flex items-center gap-5 md:gap-6 border 
+                    transition-all duration-700 ease-in-out cursor-default
+                    ${isActive 
+                      ? "bg-white/[0.08] border-premium-gold shadow-[0_0_20px_rgba(212,175,55,0.15)] z-10 scale-[1.02]" 
+                      : "bg-white/[0.02] border-white/10 hover:bg-white/[0.04]" // Eliminada opacidad reducida para mantener importancia
+                    }
+                  `}
+                >
+                  {/* Icon Container */}
+                  <div className={`
+                    w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center shrink-0 border transition-colors duration-700
+                    ${isActive 
+                      ? "bg-neutral-900 border-premium-gold shadow-[0_0_10px_rgba(212,175,55,0.2)]" 
+                      : "bg-neutral-900 border-white/10"
+                    }
+                  `}>
+                    <i className={`
+                      fa-solid ${item.icon} text-xl md:text-2xl transition-colors duration-700
+                      ${isActive ? "text-premium-gold" : "text-neutral-400"} 
+                    `}></i>
+                  </div>
+                  
+                  {/* Text Content */}
+                  <div className="flex flex-col text-left">
+                    <h3 className={`text-lg md:text-xl font-bold mb-1 transition-colors duration-700 ${isActive ? "text-white" : "text-neutral-200"}`}>
+                      {item.title}
+                    </h3>
+                    <p className={`text-base md:text-lg leading-snug transition-colors duration-700 ${isActive ? "text-neutral-200" : "text-neutral-400"}`}>
+                      {item.desc}
+                    </p>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>

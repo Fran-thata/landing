@@ -96,7 +96,7 @@ export const Hero: React.FC = () => {
         {/* CTA */}
         <div className="flex flex-col items-start gap-4 pb-12 w-full">
           <Button onClick={() => document.getElementById('demo')?.scrollIntoView({ behavior: 'smooth' })} className="w-full md:w-auto px-12 py-5 text-base md:text-lg shadow-[0_0_30px_rgba(212,175,55,0.4)]">
-            QUIERO REVISAR MI CASO
+            QUIERO MÁS RESEÑAS
           </Button>
           <span className="text-white/50 text-xs md:text-sm font-medium tracking-widest uppercase pl-1">
             Conversación breve. Sin presión.
