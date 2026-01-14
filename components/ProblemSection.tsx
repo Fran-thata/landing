@@ -10,7 +10,7 @@ export const ProblemSection: React.FC = () => {
         
         <div className="max-w-7xl mx-auto">
           
-          <div className="text-center max-w-4xl mx-auto mb-12 md:mb-20">
+          <div className="text-center max-w-4xl mx-auto mb-12 md:mb-16">
             <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-4 md:mb-6 leading-tight">
               Clientes satisfechos sin reseñas: <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-premium-gold to-premium-gold-light">
@@ -22,13 +22,13 @@ export const ProblemSection: React.FC = () => {
             </p>
           </div>
 
-          {/* Grid de 3 Consecuencias */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6 relative z-10">
+          {/* Grid de 3 Consecuencias - TARJETAS HORIZONTALES COMPACTAS */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 relative z-10">
             {[
               {
                 icon: "fa-arrow-trend-down",
                 title: "Perfil estancado",
-                desc: "Pocas reseñas nuevas dan imagen de negocio abandonado.",
+                desc: "Pocas reseñas nuevas dan imagen de abandono.",
                 color: "text-neutral-500"
               },
               {
@@ -40,16 +40,21 @@ export const ProblemSection: React.FC = () => {
               {
                 icon: "fa-users-slash",
                 title: "Pérdida de clientes",
-                desc: "Los indecisos eligen a la competencia con más estrellas.",
+                desc: "Los indecisos eligen a la competencia con más ★.",
                 color: "text-neutral-500"
               }
             ].map((item, idx) => (
-              <div key={idx} className="bg-white/[0.03] border border-premium-gold/70 p-6 md:p-8 rounded-2xl hover:bg-white/[0.05] hover:border-premium-gold hover:-translate-y-2 hover:shadow-2xl hover:shadow-premium-gold/10 transition-all duration-300 group text-center md:text-left cursor-default">
-                <div className={`w-14 h-14 rounded-full bg-neutral-900 flex items-center justify-center mb-5 md:mb-6 mx-auto md:mx-0 group-hover:scale-110 transition-transform border border-white/10 group-hover:border-premium-gold/30`}>
-                  <i className={`fa-solid ${item.icon} text-2xl ${item.color} group-hover:text-premium-gold transition-colors`}></i>
+              <div key={idx} className="bg-white/[0.03] border border-premium-gold/30 p-4 md:p-5 rounded-xl hover:bg-white/[0.05] hover:border-premium-gold hover:shadow-[0_5px_15px_rgba(0,0,0,0.3)] hover:-translate-y-1 transition-all duration-300 group flex items-center gap-4 cursor-default">
+                {/* Icon Container */}
+                <div className={`w-12 h-12 rounded-full bg-neutral-900 flex items-center justify-center shrink-0 border border-white/10 group-hover:border-premium-gold/40 group-hover:scale-105 transition-all`}>
+                  <i className={`fa-solid ${item.icon} text-xl ${item.color} group-hover:text-premium-gold transition-colors`}></i>
                 </div>
-                <h3 className="text-lg md:text-xl font-bold text-white mb-3">{item.title}</h3>
-                <p className="text-sm text-neutral-400 leading-relaxed">{item.desc}</p>
+                
+                {/* Text Content */}
+                <div className="flex flex-col text-left flex-1 min-w-0">
+                  <h3 className="text-base md:text-lg font-bold text-white mb-1 truncate">{item.title}</h3>
+                  <p className="text-xs md:text-sm text-neutral-400 leading-snug">{item.desc}</p>
+                </div>
               </div>
             ))}
           </div>
