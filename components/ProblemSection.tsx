@@ -10,13 +10,16 @@ export const ProblemSection: React.FC = () => {
         
         <div className="max-w-3xl mx-auto relative z-10">
           
-          {/* Texto Principal Centrado */}
+          {/* Texto Principal Centrado (Título restaurado + Subtítulo) */}
           <div className="text-center mb-14 md:mb-16">
-            <h2 className="text-xl md:text-2xl lg:text-3xl font-semibold text-white leading-[1.6] md:leading-[1.6]">
-              "Si no pides la valoración en el momento justo, el cliente se olvida.
-              <br className="hidden md:block" />
-              Sin un sistema, tu perfil se estanca y la competencia te gana terreno."
+            <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-6 leading-tight">
+              Clientes satisfechos sin reseñas: <br className="hidden md:block" />
+              <span className="text-premium-gold">Tu negocio no crece.</span>
             </h2>
+            <p className="text-lg md:text-xl text-neutral-400 max-w-2xl mx-auto leading-relaxed">
+              Si no pides la valoración en el momento justo, el cliente se olvida. <br className="hidden md:block" />
+              Sin un sistema, tu perfil se estanca y la competencia te gana terreno.
+            </p>
           </div>
 
           {/* Stack de 3 Tarjetas Horizontales (Bloque Sólido Central) */}
