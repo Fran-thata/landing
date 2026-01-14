@@ -193,14 +193,16 @@ export const ProblemSection: React.FC = () => {
       <section className="relative py-20 px-5 md:px-6 overflow-hidden bg-black border-t border-white/5">
         {/* Background Image & Overlay */}
         <div 
-            className="absolute inset-0 z-0 bg-cover bg-center opacity-50 blur-[2px]"
+            className="absolute inset-0 z-0 bg-cover bg-center opacity-60 blur-[1px]"
             style={{ backgroundImage: "url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=2070&auto=format&fit=crop')" }}
         ></div>
-        <div className="absolute inset-0 z-10 bg-black/75"></div>
+        
+        {/* Gradient Overlay: Negro sólido arriba (título), desvaneciéndose hacia abajo */}
+        <div className="absolute inset-0 z-10 bg-gradient-to-b from-black via-black/70 to-black/30"></div>
 
         <div className="relative z-20 max-w-lg mx-auto flex flex-col items-center text-center">
             
-            {/* Title - Ahora con fuente Extrabold (Sans) para coincidir con otras secciones */}
+            {/* Title - Fuente Extrabold (Sans) para coincidir con otras secciones, sobre fondo negro gracias al gradiente */}
             <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-4 leading-tight">
                 Los accesorios NFC y QR <br />
                 <span className="text-premium-gold">no generan reseñas por sí solos</span>
@@ -215,7 +217,7 @@ export const ProblemSection: React.FC = () => {
             <div className="flex flex-col gap-4 w-full mb-12">
                 
                 {/* Card 1 */}
-                <div className="bg-[#111]/90 backdrop-blur border border-[#D4AF37]/60 rounded-xl p-5 flex items-center gap-4 text-left shadow-lg">
+                <div className="bg-[#111]/80 backdrop-blur border border-[#D4AF37]/60 rounded-xl p-5 flex items-center gap-4 text-left shadow-lg">
                     <div className="shrink-0 relative w-12 h-12 flex items-center justify-center">
                          <i className="fa-solid fa-coins text-3xl text-[#D4AF37]"></i>
                          <div className="absolute -bottom-1 -right-1 bg-black rounded-full border border-[#D4AF37] w-5 h-5 flex items-center justify-center">
@@ -228,7 +230,7 @@ export const ProblemSection: React.FC = () => {
                 </div>
 
                 {/* Card 2 */}
-                <div className="bg-[#111]/90 backdrop-blur border border-[#D4AF37]/60 rounded-xl p-5 flex items-center gap-4 text-left shadow-lg">
+                <div className="bg-[#111]/80 backdrop-blur border border-[#D4AF37]/60 rounded-xl p-5 flex items-center gap-4 text-left shadow-lg">
                      <div className="shrink-0 w-12 h-12 flex items-center justify-center">
                          <i className="fa-solid fa-wand-magic-sparkles text-3xl text-[#D4AF37]"></i>
                     </div>
@@ -238,7 +240,7 @@ export const ProblemSection: React.FC = () => {
                 </div>
 
                 {/* Card 3 */}
-                <div className="bg-[#111]/90 backdrop-blur border border-[#D4AF37]/60 rounded-xl p-5 flex items-center gap-4 text-left shadow-lg">
+                <div className="bg-[#111]/80 backdrop-blur border border-[#D4AF37]/60 rounded-xl p-5 flex items-center gap-4 text-left shadow-lg">
                      <div className="shrink-0 w-12 h-12 flex items-center justify-center">
                          <i className="fa-solid fa-trophy text-3xl text-[#D4AF37]"></i>
                     </div>
