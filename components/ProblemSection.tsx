@@ -3,60 +3,58 @@ import React from 'react';
 export const ProblemSection: React.FC = () => {
   return (
     <>
-      {/* --- PARTE 1: FONDO OSCURO (CONSECUENCIAS) --- */}
-      <section className="bg-neutral-950 py-16 md:py-24 px-5 md:px-6 relative overflow-hidden">
+      {/* --- PARTE 1: PROBLEMAS DEL NEGOCIO (Actualizado) --- */}
+      <section className="bg-neutral-950 py-20 md:py-28 px-5 md:px-6 relative overflow-hidden">
         {/* Background decoration */}
         <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
         
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-3xl mx-auto relative z-10">
           
-          <div className="text-center max-w-4xl mx-auto mb-12 md:mb-16">
-            <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-4 md:mb-6 leading-tight">
-              Clientes satisfechos sin reseñas: <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-premium-gold to-premium-gold-light">
-                Tu negocio no crece.
-              </span>
+          {/* Texto Principal Centrado */}
+          <div className="text-center mb-14 md:mb-16">
+            <h2 className="text-xl md:text-2xl lg:text-3xl font-semibold text-white leading-[1.6] md:leading-[1.6]">
+              "Si no pides la valoración en el momento justo, el cliente se olvida.
+              <br className="hidden md:block" />
+              Sin un sistema, tu perfil se estanca y la competencia te gana terreno."
             </h2>
-            <p className="text-base md:text-xl text-neutral-400 leading-relaxed">
-              El día a día te come. Si no pides la valoración en el momento justo, el cliente cruza la puerta y se olvida para siempre. Sin un sistema, tu ficha se estanca.
-            </p>
           </div>
 
-          {/* Grid de 3 Consecuencias - TARJETAS HORIZONTALES COMPACTAS */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 relative z-10">
-            {[
-              {
-                icon: "fa-arrow-trend-down",
-                title: "Perfil estancado",
-                desc: "Pocas reseñas nuevas dan imagen de abandono.",
-                color: "text-neutral-500"
-              },
-              {
-                icon: "fa-eye-slash",
-                title: "Invisible en Google",
-                desc: "Sin actividad constante, el algoritmo te esconde.",
-                color: "text-neutral-500"
-              },
-              {
-                icon: "fa-users-slash",
-                title: "Pérdida de clientes",
-                desc: "Los indecisos eligen a la competencia con más ★.",
-                color: "text-neutral-500"
-              }
-            ].map((item, idx) => (
-              <div key={idx} className="bg-white/[0.03] border border-premium-gold/30 p-4 md:p-5 rounded-xl hover:bg-white/[0.05] hover:border-premium-gold hover:shadow-[0_5px_15px_rgba(0,0,0,0.3)] hover:-translate-y-1 transition-all duration-300 group flex items-center gap-4 cursor-default">
-                {/* Icon Container */}
-                <div className={`w-12 h-12 rounded-full bg-neutral-900 flex items-center justify-center shrink-0 border border-white/10 group-hover:border-premium-gold/40 group-hover:scale-105 transition-all`}>
-                  <i className={`fa-solid ${item.icon} text-xl ${item.color} group-hover:text-premium-gold transition-colors`}></i>
-                </div>
-                
-                {/* Text Content */}
-                <div className="flex flex-col text-left flex-1 min-w-0">
-                  <h3 className="text-base md:text-lg font-bold text-white mb-1 truncate">{item.title}</h3>
-                  <p className="text-xs md:text-sm text-neutral-400 leading-snug">{item.desc}</p>
-                </div>
+          {/* Stack de 3 Tarjetas Horizontales (Bloque Sólido Central) */}
+          <div className="flex flex-col gap-4">
+            
+            {/* Card 1 */}
+            <div className="bg-white/[0.03] border border-white/10 p-5 md:p-6 rounded-2xl flex items-center gap-5 md:gap-6 hover:bg-white/[0.05] hover:border-premium-gold/30 transition-all duration-300 group cursor-default">
+              <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-neutral-900 flex items-center justify-center shrink-0 border border-white/10 group-hover:border-premium-gold/50 transition-colors">
+                <i className="fa-solid fa-arrow-trend-down text-xl md:text-2xl text-neutral-500 group-hover:text-premium-gold transition-colors"></i>
               </div>
-            ))}
+              <div className="flex flex-col text-left">
+                <h3 className="text-lg md:text-xl font-bold text-white mb-1">Perfil estancado</h3>
+                <p className="text-base md:text-lg text-neutral-400 leading-snug">Sin reseñas recientes, pareces un negocio abandonado.</p>
+              </div>
+            </div>
+
+            {/* Card 2 */}
+            <div className="bg-white/[0.03] border border-white/10 p-5 md:p-6 rounded-2xl flex items-center gap-5 md:gap-6 hover:bg-white/[0.05] hover:border-premium-gold/30 transition-all duration-300 group cursor-default">
+              <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-neutral-900 flex items-center justify-center shrink-0 border border-white/10 group-hover:border-premium-gold/50 transition-colors">
+                <i className="fa-solid fa-eye-slash text-xl md:text-2xl text-neutral-500 group-hover:text-premium-gold transition-colors"></i>
+              </div>
+              <div className="flex flex-col text-left">
+                <h3 className="text-lg md:text-xl font-bold text-white mb-1">Invisible en Google</h3>
+                <p className="text-base md:text-lg text-neutral-400 leading-snug">Si no entran reseñas nuevas, Google deja de mostrarte.</p>
+              </div>
+            </div>
+
+            {/* Card 3 */}
+            <div className="bg-white/[0.03] border border-white/10 p-5 md:p-6 rounded-2xl flex items-center gap-5 md:gap-6 hover:bg-white/[0.05] hover:border-premium-gold/30 transition-all duration-300 group cursor-default">
+              <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-neutral-900 flex items-center justify-center shrink-0 border border-white/10 group-hover:border-premium-gold/50 transition-colors">
+                <i className="fa-solid fa-users-slash text-xl md:text-2xl text-neutral-500 group-hover:text-premium-gold transition-colors"></i>
+              </div>
+              <div className="flex flex-col text-left">
+                <h3 className="text-lg md:text-xl font-bold text-white mb-1">Pérdida de clientes</h3>
+                <p className="text-base md:text-lg text-neutral-400 leading-snug">Antes de entrar a un local valoran irse con quien tiene más estrellas.</p>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
