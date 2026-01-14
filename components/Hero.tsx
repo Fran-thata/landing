@@ -3,7 +3,7 @@ import { Button } from './Button';
 
 export const Hero: React.FC = () => {
   return (
-    <section className="relative min-h-[90svh] w-full flex items-center justify-start px-5 md:px-12 lg:px-24 overflow-hidden">
+    <section className="relative min-h-[90svh] w-full flex items-center justify-center px-5 md:px-12 lg:px-24 overflow-hidden">
       {/* Background Image - Static, no animation */}
       <div 
         className="absolute inset-0 z-0 bg-cover bg-center"
@@ -12,30 +12,34 @@ export const Hero: React.FC = () => {
       
       {/* Dark Gradient Overlay */}
       <div className="absolute inset-0 z-10 bg-gradient-to-r from-premium-dark/95 via-premium-dark/80 to-premium-dark/40" />
+      {/* Radial overlay for center focus */}
+      <div className="absolute inset-0 z-10 bg-gradient-to-t from-premium-dark via-transparent to-transparent opacity-80" />
 
-      {/* Content */}
-      <div className="relative z-20 max-w-3xl text-left pt-16 md:pt-20 w-full">
+      {/* Content - CENTERED LAYOUT */}
+      <div className="relative z-20 max-w-5xl mx-auto text-center pt-16 md:pt-24 w-full flex flex-col items-center">
         
-        {/* Badge / Línea restaurada */}
-        <div className="inline-flex items-center gap-2 text-premium-gold text-[10px] md:text-sm font-bold uppercase tracking-[0.15em] mb-6 bg-premium-gold/10 px-3 py-1.5 md:px-4 md:py-2 rounded border-l-4 border-premium-gold backdrop-blur-sm whitespace-normal">
-          <i className="fa-solid fa-star shrink-0"></i>
-          <span>Método probado para hostelería</span>
+        {/* Badge */}
+        <div className="flex justify-center w-full mb-8">
+          <div className="inline-flex items-center gap-2 text-premium-gold text-[10px] md:text-sm font-bold uppercase tracking-[0.15em] bg-premium-gold/10 px-4 py-2 rounded border border-premium-gold/30 backdrop-blur-sm whitespace-normal shadow-[0_0_15px_rgba(212,175,55,0.1)]">
+            <i className="fa-solid fa-star shrink-0"></i>
+            <span>Método probado para hostelería</span>
+          </div>
         </div>
         
-        {/* H1 Headline - CONTROL MANUAL DE SALTOS Y SIN CORTE DE PALABRAS */}
-        <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-extrabold leading-tight md:leading-[1.1] text-white mb-6 hyphens-none break-normal">
+        {/* H1 Headline */}
+        <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-extrabold leading-tight md:leading-[1.1] text-white mb-8 hyphens-none break-normal mx-auto">
           Convierte clientes <br className="block md:hidden" />
           satisfechos en <br className="block md:hidden" />
-          <span className="text-premium-gold">Reseñas de 5★</span>
+          <span className="text-premium-gold drop-shadow-lg">Reseñas de 5★</span>
         </h1>
 
         {/* Subtext */}
-        <p className="text-base md:text-xl leading-relaxed text-premium-gray mb-10 max-w-2xl font-light">
+        <p className="text-base md:text-xl leading-relaxed text-premium-gray mb-12 max-w-2xl mx-auto font-light">
           Sistema completo para conseguir reseñas constantes y más visibilidad en Google Maps.
         </p>
 
-        {/* Features List */}
-        <div className="flex flex-col gap-4 md:gap-5 mb-8">
+        {/* Features List - CENTERED & ENLARGED */}
+        <div className="flex flex-col items-center gap-5 md:gap-6 mb-12 w-full">
           {[
             { 
               icon: "fa-square-check", 
@@ -50,9 +54,9 @@ export const Hero: React.FC = () => {
               text: "Ficha fuerte en Google Maps." 
             },
           ].map((item, idx) => (
-            <div key={idx} className="flex items-start md:items-center gap-3 md:gap-4">
-              <i className={`fa-solid ${item.icon} text-premium-gold text-lg md:text-xl mt-1 md:mt-0 shrink-0`}></i>
-              <span className="text-white text-base md:text-xl font-bold tracking-tight leading-tight">
+            <div key={idx} className="flex items-center gap-4 bg-black/20 px-6 py-2 rounded-full border border-white/5 backdrop-blur-sm hover:bg-white/5 transition-colors duration-300">
+              <i className={`fa-solid ${item.icon} text-premium-gold text-xl md:text-2xl shrink-0 drop-shadow-md`}></i>
+              <span className="text-white text-lg md:text-2xl font-semibold leading-relaxed tracking-tight">
                 {item.text}
               </span>
             </div>
@@ -60,20 +64,20 @@ export const Hero: React.FC = () => {
         </div>
 
         {/* --- CINTA GOOGLE (MARQUEE) --- */}
-        <div className="w-full max-w-md mb-10">
-            <div className="relative w-full overflow-hidden bg-white/5 border border-white/10 rounded-lg py-3 backdrop-blur-sm">
+        <div className="w-full max-w-2xl mb-12 mx-auto">
+            <div className="relative w-full overflow-hidden bg-white/5 border border-white/10 rounded-xl py-4 backdrop-blur-md shadow-2xl">
               <div className="flex animate-marquee-hero whitespace-nowrap items-center">
                 {/* Items duplicados para loop infinito */}
                 {[1, 2, 3, 4, 5, 6].map((i) => (
-                  <div key={i} className="flex items-center gap-4 mx-4 md:gap-6 md:mx-6">
+                  <div key={i} className="flex items-center gap-4 mx-6 md:gap-8 md:mx-8">
                     <div className="flex items-center gap-2">
-                       <div className="w-5 h-5 bg-white rounded-full flex items-center justify-center shadow-sm shrink-0">
-                         <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="G" className="w-3 h-3" />
+                       <div className="w-6 h-6 bg-white rounded-full flex items-center justify-center shadow-sm shrink-0">
+                         <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="G" className="w-3.5 h-3.5" />
                        </div>
-                       <span className="font-bold text-white text-sm">Google</span>
+                       <span className="font-bold text-white text-base">Google</span>
                     </div>
                     <div className="flex items-center gap-1">
-                       <div className="text-[#F4B400] text-xs flex gap-0.5 shrink-0">
+                       <div className="text-[#F4B400] text-sm flex gap-0.5 shrink-0 filter drop-shadow-sm">
                          <i className="fa-solid fa-star"></i>
                          <i className="fa-solid fa-star"></i>
                          <i className="fa-solid fa-star"></i>
@@ -84,17 +88,17 @@ export const Hero: React.FC = () => {
                   </div>
                 ))}
               </div>
-              <div className="absolute inset-y-0 left-0 w-6 md:w-8 bg-gradient-to-r from-black/20 to-transparent z-10"></div>
-              <div className="absolute inset-y-0 right-0 w-6 md:w-8 bg-gradient-to-l from-black/20 to-transparent z-10"></div>
+              <div className="absolute inset-y-0 left-0 w-8 md:w-16 bg-gradient-to-r from-premium-dark/50 to-transparent z-10"></div>
+              <div className="absolute inset-y-0 right-0 w-8 md:w-16 bg-gradient-to-l from-premium-dark/50 to-transparent z-10"></div>
             </div>
         </div>
 
-        {/* CTA - Centrado en móvil, izquierda en escritorio */}
-        <div className="flex flex-col items-center w-full md:items-start md:w-fit gap-3 pb-10 md:pb-0">
-          <Button onClick={() => document.getElementById('demo')?.scrollIntoView({ behavior: 'smooth' })} className="w-full md:w-auto">
+        {/* CTA */}
+        <div className="flex flex-col items-center gap-4 pb-12 w-full">
+          <Button onClick={() => document.getElementById('demo')?.scrollIntoView({ behavior: 'smooth' })} className="w-full md:w-auto px-12 py-5 text-base md:text-lg shadow-[0_0_30px_rgba(212,175,55,0.4)]">
             QUIERO REVISAR MI CASO
           </Button>
-          <span className="text-white/60 text-xs md:text-sm font-medium tracking-wide text-center md:text-left">
+          <span className="text-white/50 text-xs md:text-sm font-medium tracking-widest uppercase">
             Conversación breve. Sin presión.
           </span>
         </div>
@@ -106,7 +110,7 @@ export const Hero: React.FC = () => {
           100% { transform: translateX(-50%); }
         }
         .animate-marquee-hero {
-          animation: marquee-hero 25s linear infinite;
+          animation: marquee-hero 30s linear infinite;
         }
       `}</style>
     </section>
