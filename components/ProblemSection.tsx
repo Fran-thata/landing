@@ -27,7 +27,7 @@ export const ProblemSection: React.FC = () => {
     // Esto corrige el problema en móviles con modo de ahorro de energía activado.
     const interval = setInterval(() => {
       setActiveIndex((current) => (current + 1) % problems.length);
-    }, 5000); // 5 segundos por tarjeta
+    }, 2500); // 2.5 segundos por tarjeta (Más rápido)
 
     return () => clearInterval(interval);
   }, [problems.length]);
@@ -35,7 +35,8 @@ export const ProblemSection: React.FC = () => {
   return (
     <>
       {/* --- PARTE 1: PROBLEMAS DEL NEGOCIO (Con Auto-Rotating Highlight) --- */}
-      <section className="bg-neutral-950 py-20 md:py-28 px-5 md:px-6 relative overflow-hidden">
+      {/* Se ha reducido el padding superior (pt-10 md:pt-16) para cortar el espacio negro vacío */}
+      <section className="bg-neutral-950 pt-10 pb-20 md:pt-16 md:pb-28 px-5 md:px-6 relative overflow-hidden">
         {/* Background decoration */}
         <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
         
