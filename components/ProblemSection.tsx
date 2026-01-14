@@ -130,6 +130,13 @@ export const ProblemSection: React.FC = () => {
                </ul>
             </div>
           </div>
+          
+          {/* Texto de cierre añadido */}
+          <div className="text-center">
+            <p className="text-xl md:text-2xl text-neutral-200 font-medium italic">
+              Cuando el momento está definido, la reseña sale de forma natural.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -278,11 +285,58 @@ export const ProblemSection: React.FC = () => {
       {/* --- SEPARADOR DORADO --- */}
       <div className="w-full h-1.5 bg-gradient-to-r from-premium-gold-dark via-premium-gold to-premium-gold-dark shadow-[0_0_25px_rgba(212,175,55,0.8)] relative z-20"></div>
 
-      {/* --- Rest of the sections (Timing, How it Works, etc.) kept minimal/existing structure --- */}
-      <section className="bg-neutral-950 py-16 px-5 border-t border-white/10">
-        <div className="max-w-5xl mx-auto text-center">
-            <h2 className="text-3xl font-extrabold text-white mb-4">No se trata de pedir reseñas</h2>
-            <h3 className="text-xl font-bold text-premium-gold">Se trata de saber cuándo hacerlo</h3>
+      {/* --- ÚLTIMA SECCIÓN: ACTUALIZADA SEGÚN IMAGEN --- */}
+      <section className="bg-neutral-950 py-20 px-6 relative border-t border-white/5 overflow-hidden">
+        
+        {/* Decorative subtle background */}
+        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,_rgba(212,175,55,0.03),_transparent_70%)] pointer-events-none"></div>
+
+        <div className="max-w-3xl mx-auto relative z-10">
+            {/* Headlines */}
+            <div className="text-center mb-12">
+                <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-3 leading-tight">
+                    No se trata de <br />
+                    pedir reseñas.
+                </h2>
+                <h3 className="text-xl md:text-2xl font-bold text-[#D4AF37] uppercase tracking-widest text-[#B48F26]">
+                    SE TRATA DE SABER <br />
+                    CUÁNDO HACERLO.
+                </h3>
+            </div>
+
+            {/* Body Paragraphs */}
+            <div className="space-y-6 text-lg text-neutral-300 leading-relaxed font-medium text-left md:text-justify max-w-2xl mx-auto">
+                <p>
+                    Muchos locales lo hacen mal. Ponen un QR en el ticket o envían un email horas después. El resultado suele ser el mismo: Acaba en la basura. Cuando el cliente cruza la puerta, ya ha desconectado.
+                </p>
+                <p>
+                    La clave es capturarlo en caliente, mientras siguen en la mesa. Sin fricción. De forma natural. Justo cuando la satisfacción es máxima.
+                </p>
+            </div>
+        </div>
+
+        {/* Gold Separator Bar */}
+        <div className="max-w-4xl mx-auto mt-16 mb-12 relative z-10">
+             <div className="h-[2px] w-full bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent opacity-80 shadow-[0_0_15px_#D4AF37]"></div>
+        </div>
+
+        {/* Quote Section */}
+        <div className="max-w-3xl mx-auto relative px-4 md:px-0 z-10 text-center">
+             <div className="inline-block relative">
+                 <p className="text-4xl text-[#D4AF37] font-bold absolute -top-6 -left-8 leading-none opacity-80">
+                    “
+                 </p>
+                 <p className="text-xl md:text-2xl text-[#C0C0C0] leading-relaxed font-medium italic">
+                    La reseña es la consecuencia de un servicio bien hecho... cuando se pide en el momento correcto.
+                 </p>
+                 <p className="text-4xl text-[#D4AF37] font-bold absolute -bottom-8 -right-4 leading-none opacity-80">
+                    ”
+                 </p>
+             </div>
+             {/* Diamond Icon */}
+             <div className="flex justify-end mt-8 mr-[-20px]">
+                <i className="fa-solid fa-diamond text-neutral-500 text-sm"></i>
+             </div>
         </div>
       </section>
     </>
