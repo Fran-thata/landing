@@ -193,12 +193,12 @@ export const ProblemSection: React.FC = () => {
       <section className="relative py-20 px-5 md:px-6 overflow-hidden bg-black border-t border-white/5">
         {/* Background Image & Overlay */}
         <div 
-            className="absolute inset-0 z-0 bg-cover bg-center opacity-80"
+            className="absolute inset-0 z-0 bg-cover bg-center opacity-100"
             style={{ backgroundImage: "url('https://res.cloudinary.com/ddpujsrsg/image/upload/v1768388082/WhatsApp_Image_2026-01-14_at_11.53.24_pnkqzj.jpg')" }}
         ></div>
         
         {/* Gradient Overlay: Negro sólido arriba (título), desvaneciéndose hacia abajo */}
-        <div className="absolute inset-0 z-10 bg-gradient-to-b from-black via-black/60 to-black/10"></div>
+        <div className="absolute inset-0 z-10 bg-gradient-to-b from-black via-black/40 to-transparent"></div>
 
         <div className="relative z-20 max-w-lg mx-auto flex flex-col items-center text-center">
             
@@ -209,7 +209,7 @@ export const ProblemSection: React.FC = () => {
             </h2>
 
             {/* Subtitle */}
-            <p className="text-neutral-300 text-lg mb-10 font-light">
+            <p className="text-neutral-300 text-lg mb-10 font-light drop-shadow-md">
                 Solo conectan el móvil con el perfil.
             </p>
 
