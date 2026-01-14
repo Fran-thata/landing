@@ -23,13 +23,11 @@ export const ProblemSection: React.FC = () => {
   ];
 
   useEffect(() => {
-    // Respetar preferencia de movimiento reducido del usuario
-    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
-    if (mediaQuery.matches) return;
-
+    // Se elimina la restricción de prefers-reduced-motion para forzar la animación en todos los dispositivos
+    // Esto corrige el problema en móviles con modo de ahorro de energía activado.
     const interval = setInterval(() => {
       setActiveIndex((current) => (current + 1) % problems.length);
-    }, 5000); // 5 segundos por tarjeta (Más lento)
+    }, 5000); // 5 segundos por tarjeta
 
     return () => clearInterval(interval);
   }, [problems.length]);
