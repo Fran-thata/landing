@@ -4,26 +4,26 @@ export const ProblemSection: React.FC = () => {
   return (
     <>
       {/* --- PARTE 1: FONDO OSCURO (CONSECUENCIAS) --- */}
-      <section className="bg-neutral-950 py-24 px-6 relative overflow-hidden">
+      <section className="bg-neutral-950 py-16 md:py-24 px-5 md:px-6 relative overflow-hidden">
         {/* Background decoration */}
         <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
         
         <div className="max-w-7xl mx-auto">
           
-          <div className="text-center max-w-4xl mx-auto mb-20">
-            <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-6 leading-tight">
+          <div className="text-center max-w-4xl mx-auto mb-12 md:mb-20">
+            <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-4 md:mb-6 leading-tight">
               Clientes satisfechos sin reseñas: <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-premium-gold to-premium-gold-light">
                 Tu negocio no crece.
               </span>
             </h2>
-            <p className="text-lg md:text-xl text-neutral-400 leading-relaxed">
-              El día a día te come. Si no pides la valoración en el momento justo, el cliente cruza la puerta y se olvida para siempre. Sin un sistema, tu ficha se estanca mientras tu competencia (que sí lo pide) te adelanta por la derecha.
+            <p className="text-base md:text-xl text-neutral-400 leading-relaxed">
+              El día a día te come. Si no pides la valoración en el momento justo, el cliente cruza la puerta y se olvida para siempre. Sin un sistema, tu ficha se estanca.
             </p>
           </div>
 
           {/* Grid de 3 Consecuencias */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 relative z-10">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6 relative z-10">
             {[
               {
                 icon: "fa-arrow-trend-down",
@@ -44,11 +44,11 @@ export const ProblemSection: React.FC = () => {
                 color: "text-neutral-500"
               }
             ].map((item, idx) => (
-              <div key={idx} className="bg-white/[0.03] border border-premium-gold/70 p-8 rounded-2xl hover:bg-white/[0.05] hover:border-premium-gold hover:-translate-y-2 hover:shadow-2xl hover:shadow-premium-gold/10 transition-all duration-300 group text-center md:text-left cursor-default">
-                <div className={`w-14 h-14 rounded-full bg-neutral-900 flex items-center justify-center mb-6 mx-auto md:mx-0 group-hover:scale-110 transition-transform border border-white/10 group-hover:border-premium-gold/30`}>
+              <div key={idx} className="bg-white/[0.03] border border-premium-gold/70 p-6 md:p-8 rounded-2xl hover:bg-white/[0.05] hover:border-premium-gold hover:-translate-y-2 hover:shadow-2xl hover:shadow-premium-gold/10 transition-all duration-300 group text-center md:text-left cursor-default">
+                <div className={`w-14 h-14 rounded-full bg-neutral-900 flex items-center justify-center mb-5 md:mb-6 mx-auto md:mx-0 group-hover:scale-110 transition-transform border border-white/10 group-hover:border-premium-gold/30`}>
                   <i className={`fa-solid ${item.icon} text-2xl ${item.color} group-hover:text-premium-gold transition-colors`}></i>
                 </div>
-                <h3 className="text-xl font-bold text-white mb-3">{item.title}</h3>
+                <h3 className="text-lg md:text-xl font-bold text-white mb-3">{item.title}</h3>
                 <p className="text-sm text-neutral-400 leading-relaxed">{item.desc}</p>
               </div>
             ))}
@@ -60,15 +60,15 @@ export const ProblemSection: React.FC = () => {
       <div className="w-full h-1.5 bg-gradient-to-r from-premium-gold-dark via-premium-gold to-premium-gold-dark shadow-[0_0_25px_rgba(212,175,55,0.8)] relative z-20"></div>
 
       {/* --- PARTE 2: FONDO GRIS CARBÓN (MÉTODO VS SUERTE) --- */}
-      <section className="bg-[#1A1A1A] py-24 px-6 relative">
+      <section className="bg-[#1A1A1A] py-16 md:py-24 px-5 md:px-6 relative">
         <div className="max-w-5xl mx-auto">
           
           {/* Títulos */}
-          <div className="text-center mb-20">
-            <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-4 leading-tight">
+          <div className="text-center mb-12 md:mb-20">
+            <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-3 md:mb-4 leading-tight">
               Sin un método, las reseñas dependen de la suerte
             </h2>
-            <h3 className="text-2xl md:text-3xl font-bold text-premium-gold">
+            <h3 className="text-xl md:text-3xl font-bold text-premium-gold">
               Con un sistema, son constantes y predecibles
             </h3>
           </div>
@@ -76,58 +76,58 @@ export const ProblemSection: React.FC = () => {
           {/* Comparativa Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-16 items-start mb-16">
             
-            {/* CAJA 1: EL CAOS (Fondo Negro Intenso / Borde Sangre Brillante / Icono X) */}
-            <div className="bg-[#080808] border-2 border-[#7f1d1d] p-10 rounded-3xl relative min-h-[360px] flex flex-col justify-center shadow-2xl shadow-red-900/20 hover:bg-[#0a0a0a] hover:border-red-600 transition-colors">
-               <div className="absolute -top-5 left-1/2 -translate-x-1/2 bg-[#1a0505] text-red-600 font-bold px-6 py-2 rounded-full text-sm border border-[#7f1d1d] shadow-lg uppercase tracking-wide whitespace-nowrap flex items-center gap-2">
-                 <i className="fa-solid fa-xmark text-lg"></i>
+            {/* CAJA 1: EL CAOS (Padding ajustado para móvil p-6) */}
+            <div className="bg-[#080808] border-2 border-[#7f1d1d] p-6 md:p-10 rounded-3xl relative min-h-[auto] md:min-h-[360px] flex flex-col justify-center shadow-2xl shadow-red-900/20 hover:bg-[#0a0a0a] hover:border-red-600 transition-colors">
+               <div className="absolute -top-4 md:-top-5 left-1/2 -translate-x-1/2 bg-[#1a0505] text-red-600 font-bold px-4 md:px-6 py-2 rounded-full text-xs md:text-sm border border-[#7f1d1d] shadow-lg uppercase tracking-wide whitespace-nowrap flex items-center gap-2">
+                 <i className="fa-solid fa-xmark text-base md:text-lg"></i>
                  <span>Sin Método</span>
                </div>
-               <ul className="space-y-8">
-                  <li className="flex items-start gap-5">
+               <ul className="space-y-6 md:space-y-8 mt-6 md:mt-0">
+                  <li className="flex items-start gap-4 md:gap-5">
                      <div className="mt-1 w-8 h-8 rounded-full bg-red-900/10 flex items-center justify-center shrink-0 border border-red-600/50 shadow-[0_0_15px_rgba(220,38,38,0.25)]">
                         <i className="fa-regular fa-calendar-xmark text-red-500 text-sm drop-shadow-[0_0_5px_rgba(220,38,38,0.8)]"></i>
                      </div>
-                     <span className="text-neutral-200 font-medium text-lg leading-tight">Se pide "cuando se puede" o te acuerdas.</span>
+                     <span className="text-neutral-200 font-medium text-base md:text-lg leading-tight">Se pide "cuando se puede" o te acuerdas.</span>
                   </li>
-                  <li className="flex items-start gap-5">
+                  <li className="flex items-start gap-4 md:gap-5">
                      <div className="mt-1 w-8 h-8 rounded-full bg-red-900/10 flex items-center justify-center shrink-0 border border-red-600/50 shadow-[0_0_15px_rgba(220,38,38,0.25)]">
                         <i className="fa-solid fa-wave-square text-red-500 text-sm drop-shadow-[0_0_5px_rgba(220,38,38,0.8)]"></i>
                      </div>
-                     <span className="text-neutral-200 font-medium text-lg leading-tight">Resultados a rachas, sin continuidad.</span>
+                     <span className="text-neutral-200 font-medium text-base md:text-lg leading-tight">Resultados a rachas, sin continuidad.</span>
                   </li>
-                  <li className="flex items-start gap-5">
+                  <li className="flex items-start gap-4 md:gap-5">
                      <div className="mt-1 w-8 h-8 rounded-full bg-red-900/10 flex items-center justify-center shrink-0 border border-red-600/50 shadow-[0_0_15px_rgba(220,38,38,0.25)]">
                         <i className="fa-solid fa-circle-question text-red-500 text-sm drop-shadow-[0_0_5px_rgba(220,38,38,0.8)]"></i>
                      </div>
-                     <span className="text-neutral-200 font-medium text-lg leading-tight">No sabes qué esperar cada semana.</span>
+                     <span className="text-neutral-200 font-medium text-base md:text-lg leading-tight">No sabes qué esperar cada semana.</span>
                   </li>
                </ul>
             </div>
 
-            {/* CAJA 2: LA SOLUCIÓN (Alineada y con efecto flotante al Hover) */}
-            <div className="bg-black border-2 border-premium-gold p-10 rounded-3xl relative shadow-2xl shadow-premium-gold/20 min-h-[360px] flex flex-col justify-center transition-all duration-500 ease-out hover:-translate-y-4 hover:shadow-[0_30px_60px_rgba(212,175,55,0.3)]">
-               <div className="absolute -top-5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-premium-gold to-premium-gold-dark text-neutral-950 font-extrabold px-6 py-2 rounded-full text-sm shadow-[0_0_15px_rgba(212,175,55,0.5)] uppercase tracking-wide whitespace-nowrap flex items-center gap-2">
-                 <i className="fa-solid fa-check text-neutral-950 text-lg"></i>
+            {/* CAJA 2: LA SOLUCIÓN (Padding ajustado p-6) */}
+            <div className="bg-black border-2 border-premium-gold p-6 md:p-10 rounded-3xl relative shadow-2xl shadow-premium-gold/20 min-h-[auto] md:min-h-[360px] flex flex-col justify-center transition-all duration-500 ease-out hover:-translate-y-4 hover:shadow-[0_30px_60px_rgba(212,175,55,0.3)]">
+               <div className="absolute -top-4 md:-top-5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-premium-gold to-premium-gold-dark text-neutral-950 font-extrabold px-4 md:px-6 py-2 rounded-full text-xs md:text-sm shadow-[0_0_15px_rgba(212,175,55,0.5)] uppercase tracking-wide whitespace-nowrap flex items-center gap-2">
+                 <i className="fa-solid fa-check text-neutral-950 text-base md:text-lg"></i>
                  <span>Con Método</span>
                </div>
-               <ul className="space-y-8">
-                  <li className="flex items-start gap-5">
+               <ul className="space-y-6 md:space-y-8 mt-6 md:mt-0">
+                  <li className="flex items-start gap-4 md:gap-5">
                      <div className="mt-1 w-8 h-8 rounded-full bg-premium-gold/10 flex items-center justify-center shrink-0 border border-premium-gold/50">
                         <i className="fa-solid fa-bullseye text-premium-gold text-sm"></i>
                      </div>
-                     <span className="text-white font-bold text-lg leading-tight">Sabes exactamente cuándo pedirla.</span>
+                     <span className="text-white font-bold text-base md:text-lg leading-tight">Sabes exactamente cuándo pedirla.</span>
                   </li>
-                  <li className="flex items-start gap-5">
+                  <li className="flex items-start gap-4 md:gap-5">
                      <div className="mt-1 w-8 h-8 rounded-full bg-premium-gold/10 flex items-center justify-center shrink-0 border border-premium-gold/50">
                         <i className="fa-solid fa-users-gear text-premium-gold text-sm"></i>
                      </div>
-                     <span className="text-white font-bold text-lg leading-tight">El equipo lo aplica como un reloj.</span>
+                     <span className="text-white font-bold text-base md:text-lg leading-tight">El equipo lo aplica como un reloj.</span>
                   </li>
-                  <li className="flex items-start gap-5">
+                  <li className="flex items-start gap-4 md:gap-5">
                      <div className="mt-1 w-8 h-8 rounded-full bg-premium-gold/10 flex items-center justify-center shrink-0 border border-premium-gold/50">
                         <i className="fa-solid fa-arrow-trend-up text-premium-gold text-sm"></i>
                      </div>
-                     <span className="text-white font-bold text-lg leading-tight">Reseñas constantes, semana tras semana.</span>
+                     <span className="text-white font-bold text-base md:text-lg leading-tight">Reseñas constantes, semana tras semana.</span>
                   </li>
                </ul>
             </div>
@@ -136,7 +136,7 @@ export const ProblemSection: React.FC = () => {
 
           {/* Texto de Cierre */}
           <div className="text-center max-w-3xl mx-auto">
-             <p className="text-2xl md:text-3xl font-serif italic text-white leading-normal">
+             <p className="text-xl md:text-3xl font-serif italic text-white leading-normal px-4">
                "Cuando el momento está definido, la reseña sale de forma natural."
              </p>
           </div>
@@ -145,32 +145,32 @@ export const ProblemSection: React.FC = () => {
       </section>
 
       {/* --- PARTE 3: LA TECNOLOGÍA --- */}
-      <section className="bg-black py-24 px-6 relative overflow-hidden border-t border-white/5">
+      <section className="bg-black py-16 md:py-24 px-5 md:px-6 relative overflow-hidden border-t border-white/5">
         <div className="max-w-5xl mx-auto">
             
             {/* Headers estilizados igual que Sección 2 */}
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-4 leading-tight">
+            <div className="text-center mb-12 md:mb-16">
+              <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-4 leading-tight">
                   La tecnología no genera reseñas por sí sola
               </h2>
-              <h3 className="text-2xl md:text-3xl font-bold text-premium-gold">
+              <h3 className="text-xl md:text-3xl font-bold text-premium-gold">
                   Solo facilita la acción en el momento justo
               </h3>
             </div>
 
             {/* Contenedor tipo Tarjeta (Estilo oscuro y limpio) */}
-            <div className="bg-[#080808] border border-white/10 p-10 md:p-14 rounded-3xl relative shadow-2xl max-w-4xl mx-auto hover:border-premium-gold/30 transition-colors duration-500">
+            <div className="bg-[#080808] border border-white/10 p-6 md:p-14 rounded-3xl relative shadow-2xl max-w-4xl mx-auto hover:border-premium-gold/30 transition-colors duration-500">
                 
-                <div className="flex flex-col gap-8 text-center">
-                  <p className="text-lg md:text-xl text-neutral-300 leading-relaxed font-light">
+                <div className="flex flex-col gap-6 md:gap-8 text-center">
+                  <p className="text-base md:text-xl text-neutral-300 leading-relaxed font-light">
                       Sin un método, el NFC y el QR se ignoran. Son herramientas para eliminar la fricción, no para crear satisfacción. 
                       <br /><br />
                       <span className="text-white font-bold drop-shadow-md">Solo funcionan cuando el equipo ya ha hecho el trabajo previo: cerrar la experiencia y activar el deseo de valorar.</span>
                   </p>
 
                   {/* Cierre Destacado */}
-                  <div className="mt-6 pt-8 border-t border-white/5">
-                      <p className="text-2xl md:text-3xl font-serif italic text-white leading-normal">
+                  <div className="mt-4 md:mt-6 pt-6 md:pt-8 border-t border-white/5">
+                      <p className="text-xl md:text-3xl font-serif italic text-white leading-normal">
                           "Los dispositivos son la consecuencia del sistema, no el origen."
                       </p>
                   </div>
@@ -180,7 +180,7 @@ export const ProblemSection: React.FC = () => {
       </section>
 
       {/* --- PARTE 4: EL MÉTODO 5★ (BULLET STYLE) --- */}
-      <section className="bg-[#1A1A1A] py-20 px-4 relative border-t border-white/5 overflow-hidden">
+      <section className="bg-[#1A1A1A] py-16 md:py-20 px-4 relative border-t border-white/5 overflow-hidden">
         {/* Glow Effects */}
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-premium-gold/5 rounded-full blur-[120px] pointer-events-none -translate-y-1/2 translate-x-1/2"></div>
         <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-white/5 rounded-full blur-[100px] pointer-events-none translate-y-1/3 -translate-x-1/3"></div>
@@ -188,7 +188,7 @@ export const ProblemSection: React.FC = () => {
         <div className="max-w-7xl mx-auto relative z-10">
             
             {/* Header Centrado */}
-            <div className="text-center max-w-4xl mx-auto mb-16">
+            <div className="text-center max-w-4xl mx-auto mb-12 md:mb-16">
                 <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-4 leading-tight">
                     El método para convertir <br className="hidden md:block"/> 
                     <span className="text-premium-gold">experiencias en 5★</span>
@@ -196,13 +196,10 @@ export const ProblemSection: React.FC = () => {
                 <h3 className="text-lg md:text-xl font-bold text-neutral-300 mb-6 uppercase tracking-wide">
                     No es pedir por pedir. Es saber leer la mesa.
                 </h3>
-                <p className="text-base text-neutral-400 leading-relaxed max-w-2xl mx-auto">
-                    Las reseñas no llegan por suerte. Llegan cuando tu equipo sabe cerrar la experiencia usando la frase exacta en el segundo perfecto.
-                </p>
             </div>
 
             {/* Grid Compacto Bullet Style */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 mb-16 max-w-full">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 mb-12 md:mb-16 max-w-full">
                 {[
                     {
                         icon: "fa-magnifying-glass-plus",
@@ -248,13 +245,13 @@ export const ProblemSection: React.FC = () => {
             </div>
 
             {/* Cierre Destacado: Diseño réplica de la imagen */}
-            <div className="max-w-3xl mx-auto flex items-stretch">
+            <div className="max-w-3xl mx-auto flex items-stretch px-2 md:px-0">
                 {/* Gold Gradient Vertical Bar */}
-                <div className="w-1.5 md:w-2 bg-gradient-to-b from-[#F2D06B] via-[#D4AF37] to-[#B48F26] shadow-[0_0_15px_rgba(212,175,55,0.5)] shrink-0"></div>
+                <div className="w-1 md:w-2 bg-gradient-to-b from-[#F2D06B] via-[#D4AF37] to-[#B48F26] shadow-[0_0_15px_rgba(212,175,55,0.5)] shrink-0"></div>
                 
                 {/* Text Content */}
-                <div className="pl-6 md:pl-8 py-2 flex items-center">
-                    <p className="text-xl md:text-3xl text-white font-serif italic leading-snug">
+                <div className="pl-4 md:pl-8 py-2 flex items-center">
+                    <p className="text-lg md:text-3xl text-white font-serif italic leading-snug">
                         "La diferencia entre pedir y conseguir no está en la herramienta, está en el método."
                     </p>
                 </div>
@@ -267,38 +264,38 @@ export const ProblemSection: React.FC = () => {
       <div className="w-full h-1.5 bg-gradient-to-r from-premium-gold-dark via-premium-gold to-premium-gold-dark shadow-[0_0_25px_rgba(212,175,55,0.8)] relative z-20"></div>
 
       {/* --- PARTE 5: EL TIMING / CONTEXTO --- */}
-      <section className="bg-neutral-950 py-24 px-6 relative border-t border-white/10">
+      <section className="bg-neutral-950 py-16 md:py-24 px-5 md:px-6 relative border-t border-white/10">
         <div className="max-w-5xl mx-auto">
             
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-4 leading-tight">
+            <div className="text-center mb-12 md:mb-16">
+              <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-4 leading-tight">
                   No se trata de pedir reseñas
               </h2>
-              <h3 className="text-2xl md:text-3xl font-bold text-premium-gold">
+              <h3 className="text-xl md:text-3xl font-bold text-premium-gold">
                   Se trata de saber cuándo hacerlo
               </h3>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center">
                 
-                <div className="md:col-span-7 space-y-8">
-                     <p className="text-lg md:text-xl text-neutral-300 leading-relaxed font-light">
-                        <span className="text-white font-bold">Un código QR en el ticket o un mensaje por WhatsApp o email, horas después no funciona.</span> El cliente ya ha desconectado y el mensaje se ignora.
+                <div className="md:col-span-7 space-y-6 md:space-y-8">
+                     <p className="text-base md:text-xl text-neutral-300 leading-relaxed font-light">
+                        <span className="text-white font-bold">Un código QR en el ticket o un mensaje por WhatsApp o email, horas después no funciona.</span> El cliente ya ha desconectado.
                      </p>
                      <div className="flex items-start gap-4">
-                        <div className="w-12 h-12 rounded-full bg-premium-gold/10 flex items-center justify-center shrink-0 border border-premium-gold/30">
-                           <i className="fa-solid fa-check text-premium-gold text-xl"></i>
+                        <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-premium-gold/10 flex items-center justify-center shrink-0 border border-premium-gold/30">
+                           <i className="fa-solid fa-check text-premium-gold text-lg md:text-xl"></i>
                         </div>
-                        <p className="text-lg md:text-xl text-neutral-200 leading-relaxed">
+                        <p className="text-base md:text-xl text-neutral-200 leading-relaxed">
                             La clave es hacerlo fácil y natural <span className="text-premium-gold font-bold">mientras siguen en la mesa</span>, cuando la satisfacción es máxima.
                         </p>
                      </div>
                 </div>
 
                 <div className="md:col-span-5">
-                    <div className="bg-black/40 border border-premium-gold/30 p-10 rounded-3xl relative shadow-2xl shadow-black/50 hover:border-premium-gold/60 transition-colors group">
-                        <i className="fa-solid fa-quote-right text-premium-gold/10 text-8xl absolute -bottom-4 -right-4 rotate-12 group-hover:text-premium-gold/20 transition-colors"></i>
-                        <p className="text-2xl md:text-3xl font-serif italic text-white leading-tight relative z-10">
+                    <div className="bg-black/40 border border-premium-gold/30 p-8 md:p-10 rounded-3xl relative shadow-2xl shadow-black/50 hover:border-premium-gold/60 transition-colors group">
+                        <i className="fa-solid fa-quote-right text-premium-gold/10 text-6xl md:text-8xl absolute -bottom-4 -right-4 rotate-12 group-hover:text-premium-gold/20 transition-colors"></i>
+                        <p className="text-xl md:text-3xl font-serif italic text-white leading-tight relative z-10">
                             "La reseña es la consecuencia de un servicio bien hecho."
                         </p>
                     </div>
@@ -308,20 +305,20 @@ export const ProblemSection: React.FC = () => {
         </div>
       </section>
 
-      {/* --- PARTE 6: CÓMO FUNCIONA (FONDO NEGRO PARA ALTERNANCIA) --- */}
-      <section className="bg-black py-24 px-6 relative border-t border-white/5">
+      {/* --- PARTE 6: CÓMO FUNCIONA --- */}
+      <section className="bg-black py-16 md:py-24 px-5 md:px-6 relative border-t border-white/5">
         <div className="max-w-6xl mx-auto">
            
-           <div className="text-center mb-20">
-              <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-4 leading-tight">
+           <div className="text-center mb-16 md:mb-20">
+              <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-4 leading-tight">
                  Cómo funciona en el día a día
               </h2>
-              <h3 className="text-2xl md:text-3xl font-bold text-premium-gold">
+              <h3 className="text-xl md:text-3xl font-bold text-premium-gold">
                  Se integra sin frenar el ritmo del servicio
               </h3>
            </div>
 
-           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative z-10 mb-16">
+           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 relative z-10 mb-12 md:mb-16">
               {[
                 {
                   step: 1,
@@ -333,7 +330,7 @@ export const ProblemSection: React.FC = () => {
                   step: 2,
                   icon: "fa-wand-magic-sparkles",
                   title: "Guía del Mensaje",
-                  text: "Sugerimos sutilmente qué escribir (palabras clave) para que el cliente no tenga que pensar y Google te premie."
+                  text: "Sugerimos sutilmente qué escribir para que Google te premie."
                 },
                 {
                   step: 3,
@@ -342,33 +339,33 @@ export const ProblemSection: React.FC = () => {
                   text: "Se acerca el dispositivo (NFC/QR) y la reseña se publica en segundos."
                 }
               ].map((item, idx) => (
-                <div key={idx} className="bg-[#080808] border border-white/10 p-8 rounded-2xl relative group hover:border-premium-gold/50 transition-colors duration-300">
+                <div key={idx} className="bg-[#080808] border border-white/10 p-6 md:p-8 rounded-2xl relative group hover:border-premium-gold/50 transition-colors duration-300">
                    <div className="absolute top-4 right-6 text-6xl font-extrabold text-white/[0.03] select-none group-hover:text-premium-gold/[0.05] transition-colors">
                      {item.step}
                    </div>
-                   <div className="w-16 h-16 rounded-full bg-premium-gold/5 border border-premium-gold/20 flex items-center justify-center mb-6 group-hover:bg-premium-gold/10 group-hover:scale-110 transition-transform duration-300">
-                     <i className={`fa-solid ${item.icon} text-2xl text-premium-gold`}></i>
+                   <div className="w-14 h-14 md:w-16 md:h-16 rounded-full bg-premium-gold/5 border border-premium-gold/20 flex items-center justify-center mb-6 group-hover:bg-premium-gold/10 group-hover:scale-110 transition-transform duration-300">
+                     <i className={`fa-solid ${item.icon} text-xl md:text-2xl text-premium-gold`}></i>
                    </div>
-                   <h4 className="text-xl font-bold text-white mb-4 relative z-10">{item.title}</h4>
-                   <p className="text-neutral-400 leading-relaxed relative z-10">
+                   <h4 className="text-lg md:text-xl font-bold text-white mb-4 relative z-10">{item.title}</h4>
+                   <p className="text-sm md:text-base text-neutral-400 leading-relaxed relative z-10">
                      {item.text}
                    </p>
                 </div>
               ))}
            </div>
 
-           <div className="bg-[#111] border-l-4 border-premium-gold rounded-r-xl p-8 md:p-10 flex flex-col md:flex-row items-center gap-8 shadow-2xl relative overflow-hidden">
+           <div className="bg-[#111] border-l-4 border-premium-gold rounded-r-xl p-6 md:p-10 flex flex-col md:flex-row items-center gap-6 md:gap-8 shadow-2xl relative overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-r from-premium-gold/5 to-transparent pointer-events-none"></div>
-              <div className="w-20 h-20 bg-black rounded-full border border-white/10 flex items-center justify-center shrink-0 shadow-lg relative z-10">
-                 <i className="fa-solid fa-user-shield text-3xl text-premium-gold"></i>
+              <div className="w-16 h-16 md:w-20 md:h-20 bg-black rounded-full border border-white/10 flex items-center justify-center shrink-0 shadow-lg relative z-10">
+                 <i className="fa-solid fa-user-shield text-2xl md:text-3xl text-premium-gold"></i>
               </div>
               <div className="text-center md:text-left relative z-10">
-                 <h4 className="text-xl font-bold text-white mb-2 uppercase tracking-wide flex items-center justify-center md:justify-start gap-3">
+                 <h4 className="text-lg md:text-xl font-bold text-white mb-2 uppercase tracking-wide flex items-center justify-center md:justify-start gap-3">
                    <span className="bg-premium-gold/20 text-premium-gold px-2 py-0.5 rounded text-xs">SEGURIDAD</span>
                    ¿Y si hay quejas?
                  </h4>
-                 <p className="text-lg text-neutral-300">
-                   El método permite detectarlas y corregirlas en la mesa, <span className="text-white font-bold border-b border-premium-gold/50">evitando que lleguen a internet.</span>
+                 <p className="text-base md:text-lg text-neutral-300">
+                   El método permite detectarlas en la mesa, <span className="text-white font-bold border-b border-premium-gold/50">evitando que lleguen a internet.</span>
                  </p>
               </div>
            </div>
@@ -376,20 +373,17 @@ export const ProblemSection: React.FC = () => {
         </div>
       </section>
 
-      {/* --- PARTE 7: TODO LO NECESARIO (REDISEÑO COMPACTO & FLOTANTE) --- */}
-      <section className="bg-[#1A1A1A] py-24 px-6 relative border-t border-white/5">
+      {/* --- PARTE 7: TODO LO NECESARIO --- */}
+      <section className="bg-[#1A1A1A] py-16 md:py-24 px-5 md:px-6 relative border-t border-white/5">
          <div className="max-w-7xl mx-auto">
            
-           <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-4 leading-tight">
+           <div className="text-center mb-12 md:mb-16">
+              <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-4 leading-tight">
                  Todo lo necesario desde el primer día
               </h2>
-              <h3 className="text-2xl md:text-3xl font-bold text-premium-gold mb-6">
+              <h3 className="text-xl md:text-3xl font-bold text-premium-gold mb-6">
                  No son piezas sueltas. Es una solución llave en mano.
               </h3>
-              <p className="text-lg md:text-xl text-neutral-300 max-w-3xl mx-auto font-light leading-relaxed">
-                 No te entregamos un simple dispositivo y desaparecemos. Dejamos instalado un sistema de trabajo para que funcione, se entienda y se mantenga.
-              </p>
            </div>
 
            {/* Grid: 2 columnas en móvil para reducir altura */}
@@ -412,7 +406,7 @@ export const ProblemSection: React.FC = () => {
                 },
                 {
                   icon: "fa-gears",
-                  title: "Implementación a Medida",
+                  title: "Implementación",
                   desc: "Adaptación del sistema a tu operativa (Barra o Mesa)."
                 },
                 {
