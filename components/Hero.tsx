@@ -38,8 +38,8 @@ export const Hero: React.FC = () => {
           Sistema completo para conseguir reseñas constantes y más visibilidad en Google Maps.
         </p>
 
-        {/* Features List - CENTERED ITEMS (No block effect) */}
-        <div className="flex flex-col items-center gap-4 md:gap-5 mb-10">
+        {/* Features List - LEFT ALIGNED */}
+        <div className="flex flex-col items-start gap-4 md:gap-5 mb-10 w-full">
           {[
             { 
               icon: "fa-square-check", 
@@ -56,7 +56,7 @@ export const Hero: React.FC = () => {
           ].map((item, idx) => (
             <div key={idx} className="flex items-center gap-3 md:gap-4">
               <i className={`fa-solid ${item.icon} text-premium-gold text-lg md:text-xl shrink-0`}></i>
-              <span className="text-white text-base md:text-xl font-bold tracking-tight leading-tight text-center">
+              <span className="text-white text-base md:text-xl font-bold tracking-tight leading-tight text-left">
                 {item.text}
               </span>
             </div>
