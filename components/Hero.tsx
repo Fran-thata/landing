@@ -110,7 +110,7 @@ export const Hero: React.FC = () => {
           100% { transform: translateX(-50%); }
         }
         .animate-marquee-hero {
-          animation: marquee-hero 30s linear infinite;
+          animation: marquee-hero 20s linear infinite;
         }
       `}</style>
     </section>
