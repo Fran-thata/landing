@@ -22,9 +22,11 @@ export const Hero: React.FC = () => {
           <span>Método probado para hostelería</span>
         </div>
         
-        {/* H1 Headline - Ajustado para móvil (text-3xl) */}
-        <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-extrabold leading-tight md:leading-[1.1] text-white mb-6 break-words hyphens-auto">
-          Convierte clientes satisfechos en <span className="text-premium-gold inline-block">Reseñas de 5★</span>
+        {/* H1 Headline - CONTROL MANUAL DE SALTOS Y SIN CORTE DE PALABRAS */}
+        <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-extrabold leading-tight md:leading-[1.1] text-white mb-6 hyphens-none break-normal">
+          Convierte clientes <br className="block md:hidden" />
+          satisfechos en <br className="block md:hidden" />
+          <span className="text-premium-gold">Reseñas de 5★</span>
         </h1>
 
         {/* Subtext */}
