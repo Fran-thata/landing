@@ -133,19 +133,64 @@ export const ProblemSection: React.FC = () => {
         </div>
       </section>
 
-      {/* --- PARTE 3: LA TECNOLOGÍA --- */}
-      <section className="relative py-20 px-5 md:px-6 overflow-hidden bg-black border-t border-white/5">
+      {/* --- PARTE 3: LA TECNOLOGÍA (Diseño Actualizado con Tarjetas Específicas) --- */}
+      <section className="relative py-24 px-5 md:px-6 overflow-hidden bg-black border-t border-white/5">
         <div className="absolute inset-0 z-0 bg-cover bg-center opacity-100" style={{ backgroundImage: "url('https://res.cloudinary.com/ddpujsrsg/image/upload/v1768388082/WhatsApp_Image_2026-01-14_at_11.53.24_pnkqzj.jpg')" }}></div>
-        <div className="absolute inset-0 z-10 bg-gradient-to-b from-black via-black/40 to-transparent"></div>
-        <div className="relative z-20 max-w-lg mx-auto flex flex-col items-center text-center">
-            <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-4 leading-tight">
-                Los accesorios NFC y QR <br />
-                <span className="text-premium-gold">no generan reseñas por sí solos</span>
+        {/* Overlay más oscuro para que resalte el texto y las cajas */}
+        <div className="absolute inset-0 z-10 bg-black/75"></div>
+        
+        <div className="relative z-20 max-w-2xl mx-auto flex flex-col items-center text-center">
+            {/* Título Principal - Modificado: Quitada font-serif */}
+            <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-2 leading-tight drop-shadow-xl tracking-tight">
+                Los accesorios NFC y <br />
+                <span className="text-premium-gold">QR no generan reseñas</span> <br />
+                <span className="text-premium-gold">por sí solos</span>
             </h2>
-            <p className="text-neutral-300 text-lg mb-10 font-light drop-shadow-md">Solo conectan el móvil con el perfil.</p>
-            {/* Cards simplificadas para mantener el foco en la sección principal solicitada */}
-            <div className="w-full bg-gradient-to-r from-[#F2D06B] via-[#D4AF37] to-[#B48F26] rounded-xl p-6 md:p-8 shadow-[0_0_30px_rgba(212,175,55,0.3)] mt-8">
-                <p className="text-black font-extrabold text-xl md:text-2xl leading-tight">
+            <p className="text-neutral-300 text-lg md:text-xl mb-12 font-medium drop-shadow-md tracking-wide">
+                Solo conectan el móvil con el perfil.
+            </p>
+            
+            {/* Stack de 3 Tarjetas con Iconos 3D-Like */}
+            <div className="w-full flex flex-col gap-5 mb-10">
+                
+                {/* Card 1: Monedas + X */}
+                <div className="group relative bg-black/40 backdrop-blur-md border border-[#D4AF37]/40 rounded-xl p-5 md:p-6 flex items-center gap-6 shadow-[0_0_20px_rgba(0,0,0,0.5)] transition-transform hover:scale-[1.01]">
+                    <div className="relative shrink-0 w-16 h-16 flex items-center justify-center">
+                        <i className="fa-solid fa-coins text-4xl text-premium-gold drop-shadow-[0_2px_5px_rgba(212,175,55,0.5)]"></i>
+                        <div className="absolute -bottom-1 -right-1 bg-black rounded-full border border-premium-gold w-6 h-6 flex items-center justify-center">
+                            <i className="fa-solid fa-xmark text-premium-gold text-sm font-bold"></i>
+                        </div>
+                    </div>
+                    <p className="text-left text-neutral-200 text-lg md:text-xl leading-snug font-medium">
+                        Tener tarjetas y expositores sin un método es <span className="text-white font-bold">tirar el dinero.</span>
+                    </p>
+                </div>
+
+                {/* Card 2: Varita Mágica */}
+                <div className="group relative bg-black/40 backdrop-blur-md border border-[#D4AF37]/40 rounded-xl p-5 md:p-6 flex items-center gap-6 shadow-[0_0_20px_rgba(0,0,0,0.5)] transition-transform hover:scale-[1.01]">
+                    <div className="shrink-0 w-16 h-16 flex items-center justify-center">
+                        <i className="fa-solid fa-wand-magic-sparkles text-4xl text-premium-gold drop-shadow-[0_2px_5px_rgba(212,175,55,0.5)]"></i>
+                    </div>
+                    <p className="text-left text-neutral-200 text-lg md:text-xl leading-snug font-medium">
+                        Sirven para agilizar el proceso, <span className="text-white font-bold">pero no hacen magia.</span>
+                    </p>
+                </div>
+
+                {/* Card 3: Trofeo */}
+                <div className="group relative bg-black/40 backdrop-blur-md border border-[#D4AF37]/40 rounded-xl p-5 md:p-6 flex items-center gap-6 shadow-[0_0_20px_rgba(0,0,0,0.5)] transition-transform hover:scale-[1.01]">
+                    <div className="shrink-0 w-16 h-16 flex items-center justify-center">
+                        <i className="fa-solid fa-trophy text-4xl text-premium-gold drop-shadow-[0_2px_5px_rgba(212,175,55,0.5)]"></i>
+                    </div>
+                    <p className="text-left text-neutral-200 text-lg md:text-xl leading-snug font-medium">
+                        Si tu equipo no prepara el terreno y el cliente no sale encantado, <span className="text-neutral-100">se quedarán de adorno.</span>
+                    </p>
+                </div>
+
+            </div>
+
+            {/* Caja Dorada Inferior */}
+            <div className="w-full bg-gradient-to-r from-[#F2D06B] via-[#D4AF37] to-[#B48F26] rounded-xl p-6 md:p-8 shadow-[0_0_30px_rgba(212,175,55,0.3)] relative overflow-hidden">
+                <p className="text-black font-extrabold text-xl md:text-2xl leading-tight relative z-10">
                     Los dispositivos no piden la reseña por ti. Tu equipo sí.
                 </p>
             </div>
@@ -168,7 +213,8 @@ export const ProblemSection: React.FC = () => {
             
             {/* BLOQUE SUPERIOR */}
             <div className="text-center max-w-4xl mx-auto mb-8 px-4">
-                <h2 className="text-4xl md:text-5xl font-serif text-[#E0E0E0] mb-3 leading-tight drop-shadow-lg tracking-wide">
+                {/* Título Modificado: Quitada font-serif y añadida font-extrabold */}
+                <h2 className="text-4xl md:text-5xl font-extrabold text-[#E0E0E0] mb-3 leading-tight drop-shadow-lg tracking-wide">
                     El método para convertir <br />
                     <span className="text-premium-gold font-bold">experiencias en 5★</span>
                 </h2>
@@ -220,7 +266,8 @@ export const ProblemSection: React.FC = () => {
              {/* BLOQUE INFERIOR (Cita) */}
              <div className="relative z-30 mt-8 mb-0 max-w-2xl mx-auto px-4">
                 <div className="backdrop-blur-sm border border-[#D4AF37]/50 px-8 py-6 rounded-lg shadow-lg text-center">
-                    <p className="text-xl md:text-2xl text-white font-serif italic leading-relaxed">
+                    {/* Cita Modificada: Quitada font-serif */}
+                    <p className="text-xl md:text-2xl text-white italic leading-relaxed">
                         "La diferencia entre pedir y conseguir no está en la herramienta, está en el método."
                     </p>
                 </div>
