@@ -1,7 +1,42 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 export const ProblemSection: React.FC = () => {
-  // Datos exactos de las 5 tarjetas según la referencia visual
+  // Estado para la animación de las tarjetas
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  // Efecto para rotar el highlight cada 2 segundos (más rápido)
+  useEffect(() => {
+    // Respetar preferencia de movimiento reducido
+    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    if (mediaQuery.matches) return;
+
+    const interval = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % 3);
+    }, 2000); // Cambiado a 2 segundos para mayor velocidad
+
+    return () => clearInterval(interval);
+  }, []);
+
+  // Datos para la primera sección (Problemas)
+  const problems = [
+    {
+      icon: "fa-arrow-trend-down",
+      title: "Perfil estancado",
+      desc: "Sin reseñas recientes, pareces un negocio abandonado."
+    },
+    {
+      icon: "fa-eye-slash",
+      title: "Invisible en Google",
+      desc: "Si no entran reseñas nuevas, Google deja de mostrarte."
+    },
+    {
+      icon: "fa-users-slash",
+      title: "Pérdida de clientes",
+      desc: "Antes de entrar a un local valoran irse con quien tiene más estrellas."
+    }
+  ];
+
+  // Datos exactos de las 5 tarjetas para la sección del Método
   const steps = [
     {
       title: "Identificar",
@@ -51,47 +86,46 @@ export const ProblemSection: React.FC = () => {
             </p>
           </div>
 
-          {/* Stack de 3 Tarjetas (Estáticas por simplicidad en esta vista, manteniendo el estilo anterior) */}
+          {/* Stack de 3 Tarjetas con Animación Automática */}
           <div className="flex flex-col gap-4">
-             {[
-                {
-                  icon: "fa-arrow-trend-down",
-                  title: "Perfil estancado",
-                  desc: "Sin reseñas recientes, pareces un negocio abandonado."
-                },
-                {
-                  icon: "fa-eye-slash",
-                  title: "Invisible en Google",
-                  desc: "Si no entran reseñas nuevas, Google deja de mostrarte."
-                },
-                {
-                  icon: "fa-users-slash",
-                  title: "Pérdida de clientes",
-                  desc: "Antes de entrar a un local valoran irse con quien tiene más estrellas."
-                }
-             ].map((item, index) => (
-                <div 
-                  key={index}
-                  className="relative p-5 md:p-6 rounded-2xl flex items-center gap-5 md:gap-6 border bg-white/[0.02] border-white/10 hover:bg-white/[0.04] transition-colors"
-                >
-                  <div className="w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center shrink-0 border bg-neutral-900 border-white/10 text-neutral-400">
-                    <i className={`fa-solid ${item.icon} text-xl md:text-2xl`}></i>
+             {problems.map((item, index) => {
+                const isActive = index === activeIndex;
+                return (
+                  <div 
+                    key={index}
+                    className={`relative p-5 md:p-6 rounded-2xl flex items-center gap-5 md:gap-6 border transition-all duration-500 ease-in-out cursor-default
+                      ${isActive 
+                        ? 'border-premium-gold bg-white/[0.06] shadow-[0_4px_20px_rgba(212,175,55,0.15)] z-10' 
+                        : 'border-white/10 bg-white/[0.02] hover:bg-white/[0.04] z-0'
+                      }
+                    `}
+                    // Permitir interacción manual si el usuario pasa el mouse
+                    onMouseEnter={() => setActiveIndex(index)}
+                  >
+                    <div className={`w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center shrink-0 border transition-colors duration-500
+                      ${isActive
+                        ? 'bg-premium-gold/10 border-premium-gold text-premium-gold'
+                        : 'bg-neutral-900 border-white/10 text-neutral-400'
+                      }
+                    `}>
+                      <i className={`fa-solid ${item.icon} text-xl md:text-2xl`}></i>
+                    </div>
+                    <div className="flex flex-col text-left">
+                      <h3 className={`text-lg md:text-xl font-bold mb-1 transition-colors duration-500 ${isActive ? 'text-white' : 'text-neutral-200'}`}>
+                        {item.title}
+                      </h3>
+                      <p className="text-base md:text-lg leading-snug text-neutral-400">
+                        {item.desc}
+                      </p>
+                    </div>
                   </div>
-                  <div className="flex flex-col text-left">
-                    <h3 className="text-lg md:text-xl font-bold mb-1 text-white">
-                      {item.title}
-                    </h3>
-                    <p className="text-base md:text-lg leading-snug text-neutral-400">
-                      {item.desc}
-                    </p>
-                  </div>
-                </div>
-             ))}
+                );
+             })}
           </div>
         </div>
       </section>
 
-      {/* --- SEPARADOR DORADO --- */}
+      {/* --- SEPARADOR DORADO 1 --- */}
       <div className="w-full h-1.5 bg-gradient-to-r from-premium-gold-dark via-premium-gold to-premium-gold-dark shadow-[0_0_25px_rgba(212,175,55,0.8)] relative z-20"></div>
 
       {/* --- PARTE 2: FONDO GRIS CARBÓN (MÉTODO VS SUERTE) --- */}
@@ -140,71 +174,49 @@ export const ProblemSection: React.FC = () => {
         </div>
       </section>
 
-      {/* --- PARTE 3: LA TECNOLOGÍA (Diseño Actualizado con Tarjetas Específicas) --- */}
-      <section className="relative py-24 px-5 md:px-6 overflow-hidden bg-black border-t border-white/5">
-        <div className="absolute inset-0 z-0 bg-cover bg-center opacity-100" style={{ backgroundImage: "url('https://res.cloudinary.com/ddpujsrsg/image/upload/v1768388082/WhatsApp_Image_2026-01-14_at_11.53.24_pnkqzj.jpg')" }}></div>
-        {/* Overlay más oscuro para que resalte el texto y las cajas */}
-        <div className="absolute inset-0 z-10 bg-black/75"></div>
+      {/* --- NUEVO ORDEN SECCIÓN 3: "NO SE TRATA DE PEDIR..." (MOVIDO DESDE EL FINAL) --- */}
+      <section className="bg-neutral-950 py-20 px-6 relative border-t border-white/5 overflow-hidden">
         
-        <div className="relative z-20 max-w-2xl mx-auto flex flex-col items-center text-center">
-            {/* Título Principal - Modificado: Quitada font-serif */}
-            <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-2 leading-tight drop-shadow-xl tracking-tight">
-                Los accesorios NFC y <br />
-                <span className="text-premium-gold">QR no generan reseñas</span> <br />
-                <span className="text-premium-gold">por sí solos</span>
-            </h2>
-            <p className="text-neutral-300 text-lg md:text-xl mb-12 font-medium drop-shadow-md tracking-wide">
-                Solo conectan el móvil con el perfil.
-            </p>
-            
-            {/* Stack de 3 Tarjetas con Iconos 3D-Like */}
-            <div className="w-full flex flex-col gap-5 mb-10">
-                
-                {/* Card 1: Monedas + X */}
-                <div className="group relative bg-black/40 backdrop-blur-md border border-[#D4AF37]/40 rounded-xl p-5 md:p-6 flex items-center gap-6 shadow-[0_0_20px_rgba(0,0,0,0.5)] transition-transform hover:scale-[1.01]">
-                    <div className="relative shrink-0 w-16 h-16 flex items-center justify-center">
-                        <i className="fa-solid fa-coins text-4xl text-premium-gold drop-shadow-[0_2px_5px_rgba(212,175,55,0.5)]"></i>
-                        <div className="absolute -bottom-1 -right-1 bg-black rounded-full border border-premium-gold w-6 h-6 flex items-center justify-center">
-                            <i className="fa-solid fa-xmark text-premium-gold text-sm font-bold"></i>
-                        </div>
-                    </div>
-                    <p className="text-left text-neutral-200 text-lg md:text-xl leading-snug font-medium">
-                        Tener tarjetas y expositores sin un método es <span className="text-white font-bold">tirar el dinero.</span>
-                    </p>
-                </div>
+        {/* Decorative subtle background */}
+        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,_rgba(212,175,55,0.03),_transparent_70%)] pointer-events-none"></div>
 
-                {/* Card 2: Varita Mágica */}
-                <div className="group relative bg-black/40 backdrop-blur-md border border-[#D4AF37]/40 rounded-xl p-5 md:p-6 flex items-center gap-6 shadow-[0_0_20px_rgba(0,0,0,0.5)] transition-transform hover:scale-[1.01]">
-                    <div className="shrink-0 w-16 h-16 flex items-center justify-center">
-                        <i className="fa-solid fa-wand-magic-sparkles text-4xl text-premium-gold drop-shadow-[0_2px_5px_rgba(212,175,55,0.5)]"></i>
-                    </div>
-                    <p className="text-left text-neutral-200 text-lg md:text-xl leading-snug font-medium">
-                        Sirven para agilizar el proceso, <span className="text-white font-bold">pero no hacen magia.</span>
-                    </p>
-                </div>
-
-                {/* Card 3: Trofeo */}
-                <div className="group relative bg-black/40 backdrop-blur-md border border-[#D4AF37]/40 rounded-xl p-5 md:p-6 flex items-center gap-6 shadow-[0_0_20px_rgba(0,0,0,0.5)] transition-transform hover:scale-[1.01]">
-                    <div className="shrink-0 w-16 h-16 flex items-center justify-center">
-                        <i className="fa-solid fa-trophy text-4xl text-premium-gold drop-shadow-[0_2px_5px_rgba(212,175,55,0.5)]"></i>
-                    </div>
-                    <p className="text-left text-neutral-200 text-lg md:text-xl leading-snug font-medium">
-                        Si tu equipo no prepara el terreno y el cliente no sale encantado, <span className="text-neutral-100">se quedarán de adorno.</span>
-                    </p>
-                </div>
-
+        <div className="max-w-3xl mx-auto relative z-10">
+            {/* Headlines */}
+            <div className="text-center mb-12">
+                <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-3 leading-tight">
+                    No se trata de <br />
+                    pedir reseñas.
+                </h2>
+                <h3 className="text-xl md:text-2xl font-bold text-[#D4AF37] uppercase tracking-widest text-[#B48F26]">
+                    SE TRATA DE SABER <br />
+                    CUÁNDO HACERLO.
+                </h3>
             </div>
 
-            {/* Caja Dorada Inferior */}
-            <div className="w-full bg-gradient-to-r from-[#F2D06B] via-[#D4AF37] to-[#B48F26] rounded-xl p-6 md:p-8 shadow-[0_0_30px_rgba(212,175,55,0.3)] relative overflow-hidden">
-                <p className="text-black font-extrabold text-xl md:text-2xl leading-tight relative z-10">
-                    Los dispositivos no piden la reseña por ti. Tu equipo sí.
+            {/* Body Paragraphs */}
+            <div className="space-y-6 text-lg text-neutral-300 leading-relaxed font-medium text-left md:text-justify max-w-2xl mx-auto">
+                <p>
+                    Muchos locales lo hacen mal. Ponen un QR en el ticket o envían un email horas después. El resultado suele ser el mismo: Acaba en la basura. Cuando el cliente cruza la puerta, ya ha desconectado.
+                </p>
+                <p>
+                    La clave es capturarlo en caliente, mientras siguen en la mesa. Sin fricción. De forma natural. Justo cuando la satisfacción es máxima.
                 </p>
             </div>
         </div>
+
+        {/* Quote Section (Updated) */}
+        <div className="max-w-3xl mx-auto relative px-4 md:px-0 z-10 text-center mt-16">
+             <div className="inline-block relative">
+                 {/* Removed quotes as requested and applied luminous white style */}
+                 <p className="text-2xl md:text-3xl text-white leading-relaxed font-bold italic drop-shadow-[0_0_10px_rgba(255,255,255,0.7)]">
+                    La reseña es la consecuencia de un servicio bien hecho... cuando se pide en el momento correcto.
+                 </p>
+             </div>
+             {/* Icon Removed Here */}
+        </div>
       </section>
 
-      {/* --- SECCIÓN 5: EL MÉTODO (Fondo actualizado PNG con Zoom/Cover y Móvil Centrado Abajo) --- */}
+      {/* --- NUEVO ORDEN SECCIÓN 4: "EL MÉTODO PARA CONVERTIR..." (MOVIDO DESDE POSICIÓN 5) --- */}
       <section 
         className="relative w-full pt-4 pb-24 px-4 overflow-hidden border-t border-white/5" 
         style={{
@@ -282,61 +294,76 @@ export const ProblemSection: React.FC = () => {
         </div>
       </section>
 
-      {/* --- SEPARADOR DORADO --- */}
-      <div className="w-full h-1.5 bg-gradient-to-r from-premium-gold-dark via-premium-gold to-premium-gold-dark shadow-[0_0_25px_rgba(212,175,55,0.8)] relative z-20"></div>
+      {/* --- SEPARADOR DORADO 2 (LUMINOSO) --- */}
+      <div className="max-w-4xl mx-auto my-12 relative z-20">
+             {/* Main Beam */}
+             <div className="h-[2px] w-full bg-gradient-to-r from-transparent via-[#FFD700] to-transparent shadow-[0_0_30px_rgba(255,215,0,0.8),0_0_60px_rgba(255,215,0,0.4)] relative">
+                 {/* Inner Hot White Core for Extra Luminosity */}
+                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-1/3 h-[1px] bg-white blur-[1px]"></div>
+             </div>
+      </div>
 
-      {/* --- ÚLTIMA SECCIÓN: ACTUALIZADA SEGÚN IMAGEN --- */}
-      <section className="bg-neutral-950 py-20 px-6 relative border-t border-white/5 overflow-hidden">
+      {/* --- NUEVO ORDEN SECCIÓN 5: "LOS ACCESORIOS NFC..." (MOVIDO DESDE POSICIÓN 3) --- */}
+      <section className="relative py-24 px-5 md:px-6 overflow-hidden bg-black border-t border-white/5">
+        <div className="absolute inset-0 z-0 bg-cover bg-center opacity-100" style={{ backgroundImage: "url('https://res.cloudinary.com/ddpujsrsg/image/upload/v1768388082/WhatsApp_Image_2026-01-14_at_11.53.24_pnkqzj.jpg')" }}></div>
+        {/* Overlay más oscuro para que resalte el texto y las cajas */}
+        <div className="absolute inset-0 z-10 bg-black/75"></div>
         
-        {/* Decorative subtle background */}
-        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,_rgba(212,175,55,0.03),_transparent_70%)] pointer-events-none"></div>
+        <div className="relative z-20 max-w-2xl mx-auto flex flex-col items-center text-center">
+            {/* Título Principal - Modificado: Quitada font-serif */}
+            <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-2 leading-tight drop-shadow-xl tracking-tight">
+                Los accesorios NFC y <br />
+                <span className="text-premium-gold">QR no generan reseñas</span> <br />
+                <span className="text-premium-gold">por sí solos</span>
+            </h2>
+            <p className="text-neutral-300 text-lg md:text-xl mb-12 font-medium drop-shadow-md tracking-wide">
+                Solo conectan el móvil con el perfil.
+            </p>
+            
+            {/* Stack de 3 Tarjetas con Iconos 3D-Like */}
+            <div className="w-full flex flex-col gap-5 mb-10">
+                
+                {/* Card 1: Monedas + X */}
+                <div className="group relative bg-black/40 backdrop-blur-md border border-[#D4AF37]/40 rounded-xl p-5 md:p-6 flex items-center gap-6 shadow-[0_0_20px_rgba(0,0,0,0.5)] transition-transform hover:scale-[1.01]">
+                    <div className="relative shrink-0 w-16 h-16 flex items-center justify-center">
+                        <i className="fa-solid fa-coins text-4xl text-premium-gold drop-shadow-[0_2px_5px_rgba(212,175,55,0.5)]"></i>
+                        <div className="absolute -bottom-1 -right-1 bg-black rounded-full border border-premium-gold w-6 h-6 flex items-center justify-center">
+                            <i className="fa-solid fa-xmark text-premium-gold text-sm font-bold"></i>
+                        </div>
+                    </div>
+                    <p className="text-left text-neutral-200 text-lg md:text-xl leading-snug font-medium">
+                        Tener tarjetas y expositores sin un método es <span className="text-white font-bold">tirar el dinero.</span>
+                    </p>
+                </div>
 
-        <div className="max-w-3xl mx-auto relative z-10">
-            {/* Headlines */}
-            <div className="text-center mb-12">
-                <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-3 leading-tight">
-                    No se trata de <br />
-                    pedir reseñas.
-                </h2>
-                <h3 className="text-xl md:text-2xl font-bold text-[#D4AF37] uppercase tracking-widest text-[#B48F26]">
-                    SE TRATA DE SABER <br />
-                    CUÁNDO HACERLO.
-                </h3>
+                {/* Card 2: Varita Mágica */}
+                <div className="group relative bg-black/40 backdrop-blur-md border border-[#D4AF37]/40 rounded-xl p-5 md:p-6 flex items-center gap-6 shadow-[0_0_20px_rgba(0,0,0,0.5)] transition-transform hover:scale-[1.01]">
+                    <div className="shrink-0 w-16 h-16 flex items-center justify-center">
+                        <i className="fa-solid fa-wand-magic-sparkles text-4xl text-premium-gold drop-shadow-[0_2px_5px_rgba(212,175,55,0.5)]"></i>
+                    </div>
+                    <p className="text-left text-neutral-200 text-lg md:text-xl leading-snug font-medium">
+                        Sirven para agilizar el proceso, <span className="text-white font-bold">pero no hacen magia.</span>
+                    </p>
+                </div>
+
+                {/* Card 3: Trofeo */}
+                <div className="group relative bg-black/40 backdrop-blur-md border border-[#D4AF37]/40 rounded-xl p-5 md:p-6 flex items-center gap-6 shadow-[0_0_20px_rgba(0,0,0,0.5)] transition-transform hover:scale-[1.01]">
+                    <div className="shrink-0 w-16 h-16 flex items-center justify-center">
+                        <i className="fa-solid fa-trophy text-4xl text-premium-gold drop-shadow-[0_2px_5px_rgba(212,175,55,0.5)]"></i>
+                    </div>
+                    <p className="text-left text-neutral-200 text-lg md:text-xl leading-snug font-medium">
+                        Si tu equipo no prepara el terreno y el cliente no sale encantado, <span className="text-neutral-100">se quedarán de adorno.</span>
+                    </p>
+                </div>
+
             </div>
 
-            {/* Body Paragraphs */}
-            <div className="space-y-6 text-lg text-neutral-300 leading-relaxed font-medium text-left md:text-justify max-w-2xl mx-auto">
-                <p>
-                    Muchos locales lo hacen mal. Ponen un QR en el ticket o envían un email horas después. El resultado suele ser el mismo: Acaba en la basura. Cuando el cliente cruza la puerta, ya ha desconectado.
-                </p>
-                <p>
-                    La clave es capturarlo en caliente, mientras siguen en la mesa. Sin fricción. De forma natural. Justo cuando la satisfacción es máxima.
+            {/* Caja Dorada Inferior */}
+            <div className="w-full bg-gradient-to-r from-[#F2D06B] via-[#D4AF37] to-[#B48F26] rounded-xl p-6 md:p-8 shadow-[0_0_30px_rgba(212,175,55,0.3)] relative overflow-hidden">
+                <p className="text-black font-extrabold text-xl md:text-2xl leading-tight relative z-10">
+                    Los dispositivos no piden la reseña por ti. Tu equipo sí.
                 </p>
             </div>
-        </div>
-
-        {/* Gold Separator Bar */}
-        <div className="max-w-4xl mx-auto mt-16 mb-12 relative z-10">
-             <div className="h-[2px] w-full bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent opacity-80 shadow-[0_0_15px_#D4AF37]"></div>
-        </div>
-
-        {/* Quote Section */}
-        <div className="max-w-3xl mx-auto relative px-4 md:px-0 z-10 text-center">
-             <div className="inline-block relative">
-                 <p className="text-4xl text-[#D4AF37] font-bold absolute -top-6 -left-8 leading-none opacity-80">
-                    “
-                 </p>
-                 <p className="text-xl md:text-2xl text-[#C0C0C0] leading-relaxed font-medium italic">
-                    La reseña es la consecuencia de un servicio bien hecho... cuando se pide en el momento correcto.
-                 </p>
-                 <p className="text-4xl text-[#D4AF37] font-bold absolute -bottom-8 -right-4 leading-none opacity-80">
-                    ”
-                 </p>
-             </div>
-             {/* Diamond Icon */}
-             <div className="flex justify-end mt-8 mr-[-20px]">
-                <i className="fa-solid fa-diamond text-neutral-500 text-sm"></i>
-             </div>
         </div>
       </section>
     </>
