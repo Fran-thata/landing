@@ -189,38 +189,73 @@ export const ProblemSection: React.FC = () => {
         </div>
       </section>
 
-      {/* --- PARTE 3: LA TECNOLOGÍA --- */}
-      <section className="bg-black py-16 md:py-24 px-5 md:px-6 relative overflow-hidden border-t border-white/5">
-        <div className="max-w-5xl mx-auto">
+      {/* --- PARTE 3: LA TECNOLOGÍA (REDISEÑO EXACTO) --- */}
+      <section className="relative py-20 px-5 md:px-6 overflow-hidden bg-black border-t border-white/5">
+        {/* Background Image & Overlay */}
+        <div 
+            className="absolute inset-0 z-0 bg-cover bg-center opacity-50 blur-[2px]"
+            style={{ backgroundImage: "url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=2070&auto=format&fit=crop')" }}
+        ></div>
+        <div className="absolute inset-0 z-10 bg-black/75"></div>
+
+        <div className="relative z-20 max-w-lg mx-auto flex flex-col items-center text-center">
             
-            {/* Headers estilizados igual que Sección 2 */}
-            <div className="text-center mb-12 md:mb-16">
-              <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-4 leading-tight">
-                  La tecnología no genera reseñas por sí sola
-              </h2>
-              <h3 className="text-xl md:text-3xl font-bold text-premium-gold">
-                  Solo facilita la acción en el momento justo
-              </h3>
-            </div>
+            {/* Title - Ahora con fuente Extrabold (Sans) para coincidir con otras secciones */}
+            <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-4 leading-tight">
+                Los accesorios NFC y QR <br />
+                <span className="text-premium-gold">no generan reseñas por sí solos</span>
+            </h2>
 
-            {/* Contenedor tipo Tarjeta (Estilo oscuro y limpio) */}
-            <div className="bg-[#080808] border border-white/10 p-6 md:p-14 rounded-3xl relative shadow-2xl max-w-4xl mx-auto hover:border-premium-gold/30 transition-colors duration-500">
+            {/* Subtitle */}
+            <p className="text-neutral-300 text-lg mb-10 font-light">
+                Solo conectan el móvil con el perfil.
+            </p>
+
+            {/* Cards */}
+            <div className="flex flex-col gap-4 w-full mb-12">
                 
-                <div className="flex flex-col gap-6 md:gap-8 text-center">
-                  <p className="text-base md:text-xl text-neutral-300 leading-relaxed font-light">
-                      Sin un método, el NFC y el QR se ignoran. Son herramientas para eliminar la fricción, no para crear satisfacción. 
-                      <br /><br />
-                      <span className="text-white font-bold drop-shadow-md">Solo funcionan cuando el equipo ya ha hecho el trabajo previo: cerrar la experiencia y activar el deseo de valorar.</span>
-                  </p>
-
-                  {/* Cierre Destacado */}
-                  <div className="mt-4 md:mt-6 pt-6 md:pt-8 border-t border-white/5">
-                      <p className="text-xl md:text-3xl font-serif italic text-white leading-normal">
-                          "Los dispositivos son la consecuencia del sistema, no el origen."
-                      </p>
-                  </div>
+                {/* Card 1 */}
+                <div className="bg-[#111]/90 backdrop-blur border border-[#D4AF37]/60 rounded-xl p-5 flex items-center gap-4 text-left shadow-lg">
+                    <div className="shrink-0 relative w-12 h-12 flex items-center justify-center">
+                         <i className="fa-solid fa-coins text-3xl text-[#D4AF37]"></i>
+                         <div className="absolute -bottom-1 -right-1 bg-black rounded-full border border-[#D4AF37] w-5 h-5 flex items-center justify-center">
+                            <i className="fa-solid fa-xmark text-[10px] text-[#D4AF37] font-bold"></i>
+                         </div>
+                    </div>
+                    <p className="text-white text-base leading-snug">
+                        Tener tarjetas y expositores sin un método es tirar el dinero.
+                    </p>
                 </div>
+
+                {/* Card 2 */}
+                <div className="bg-[#111]/90 backdrop-blur border border-[#D4AF37]/60 rounded-xl p-5 flex items-center gap-4 text-left shadow-lg">
+                     <div className="shrink-0 w-12 h-12 flex items-center justify-center">
+                         <i className="fa-solid fa-wand-magic-sparkles text-3xl text-[#D4AF37]"></i>
+                    </div>
+                    <p className="text-white text-base leading-snug">
+                        Sirven para agilizar el proceso, pero no hacen magia.
+                    </p>
+                </div>
+
+                {/* Card 3 */}
+                <div className="bg-[#111]/90 backdrop-blur border border-[#D4AF37]/60 rounded-xl p-5 flex items-center gap-4 text-left shadow-lg">
+                     <div className="shrink-0 w-12 h-12 flex items-center justify-center">
+                         <i className="fa-solid fa-trophy text-3xl text-[#D4AF37]"></i>
+                    </div>
+                    <p className="text-white text-base leading-snug">
+                        Si tu equipo no prepara el terreno y el cliente no sale encantado, se quedarán de adorno.
+                    </p>
+                </div>
+
             </div>
+
+            {/* Bottom CTA Box */}
+            <div className="w-full bg-gradient-to-r from-[#F2D06B] via-[#D4AF37] to-[#B48F26] rounded-xl p-6 md:p-8 shadow-[0_0_30px_rgba(212,175,55,0.3)]">
+                <p className="text-black font-extrabold text-xl md:text-2xl leading-tight">
+                    Los dispositivos no piden la reseña por ti. Tu equipo sí.
+                </p>
+            </div>
+
         </div>
       </section>
 
