@@ -3,7 +3,7 @@ import { Button } from './Button';
 
 export const Hero: React.FC = () => {
   return (
-    <section className="relative min-h-[90svh] w-full flex items-center justify-center px-5 md:px-12 lg:px-24 overflow-hidden">
+    <section className="relative min-h-[90svh] w-full flex items-center justify-start px-5 md:px-12 lg:px-24 overflow-hidden">
       {/* Background Image - Static, no animation */}
       <div 
         className="absolute inset-0 z-0 bg-cover bg-center"
@@ -12,14 +12,14 @@ export const Hero: React.FC = () => {
       
       {/* Dark Gradient Overlay */}
       <div className="absolute inset-0 z-10 bg-gradient-to-r from-premium-dark/95 via-premium-dark/80 to-premium-dark/40" />
-      {/* Radial overlay for center focus */}
-      <div className="absolute inset-0 z-10 bg-gradient-to-t from-premium-dark via-transparent to-transparent opacity-80" />
+      {/* Radial overlay for center focus - reduced opacity for left align */}
+      <div className="absolute inset-0 z-10 bg-gradient-to-t from-premium-dark via-transparent to-transparent opacity-60" />
 
-      {/* Content - CENTERED LAYOUT */}
-      <div className="relative z-20 max-w-5xl mx-auto text-center pt-16 md:pt-24 w-full flex flex-col items-center">
+      {/* Content - LEFT ALIGNED LAYOUT */}
+      <div className="relative z-20 w-full max-w-4xl flex flex-col items-start text-left pt-16 md:pt-24">
         
         {/* Badge */}
-        <div className="flex justify-center w-full mb-8">
+        <div className="mb-8">
           <div className="inline-flex items-center gap-2 text-premium-gold text-[10px] md:text-sm font-bold uppercase tracking-[0.15em] bg-premium-gold/10 px-4 py-2 rounded border border-premium-gold/30 backdrop-blur-sm whitespace-normal shadow-[0_0_15px_rgba(212,175,55,0.1)]">
             <i className="fa-solid fa-star shrink-0"></i>
             <span>Método probado para hostelería</span>
@@ -27,19 +27,19 @@ export const Hero: React.FC = () => {
         </div>
         
         {/* H1 Headline */}
-        <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-extrabold leading-tight md:leading-[1.1] text-white mb-8 hyphens-none break-normal mx-auto">
+        <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-extrabold leading-tight md:leading-[1.1] text-white mb-8 hyphens-none break-normal">
           Convierte clientes <br className="block md:hidden" />
           satisfechos en <br className="block md:hidden" />
           <span className="text-premium-gold drop-shadow-lg">Reseñas de 5★</span>
         </h1>
 
         {/* Subtext */}
-        <p className="text-base md:text-xl leading-relaxed text-premium-gray mb-12 max-w-2xl mx-auto font-light">
+        <p className="text-base md:text-xl leading-relaxed text-premium-gray mb-12 max-w-2xl font-light">
           Sistema completo para conseguir reseñas constantes y más visibilidad en Google Maps.
         </p>
 
-        {/* Features List - LEFT ALIGNED */}
-        <div className="flex flex-col items-start gap-4 md:gap-5 mb-10 w-full">
+        {/* Features List - LEFT ALIGNED & LARGE TEXT */}
+        <div className="flex flex-col items-start gap-5 mb-12 w-full text-left">
           {[
             { 
               icon: "fa-square-check", 
@@ -54,9 +54,9 @@ export const Hero: React.FC = () => {
               text: "Ficha fuerte en Google Maps." 
             },
           ].map((item, idx) => (
-            <div key={idx} className="flex items-center gap-3 md:gap-4">
-              <i className={`fa-solid ${item.icon} text-premium-gold text-lg md:text-xl shrink-0`}></i>
-              <span className="text-white text-base md:text-xl font-bold tracking-tight leading-tight text-left">
+            <div key={idx} className="flex items-center gap-4">
+              <i className={`fa-solid ${item.icon} text-premium-gold text-2xl md:text-3xl shrink-0 filter drop-shadow-[0_0_8px_rgba(212,175,55,0.5)]`}></i>
+              <span className="text-white text-lg md:text-2xl font-semibold tracking-tight leading-relaxed">
                 {item.text}
               </span>
             </div>
@@ -64,7 +64,7 @@ export const Hero: React.FC = () => {
         </div>
 
         {/* --- CINTA GOOGLE (MARQUEE) --- */}
-        <div className="w-full max-w-2xl mb-12 mx-auto">
+        <div className="w-full max-w-2xl mb-12">
             <div className="relative w-full overflow-hidden bg-white/5 border border-white/10 rounded-xl py-4 backdrop-blur-md shadow-2xl">
               <div className="flex animate-marquee-hero whitespace-nowrap items-center">
                 {/* Items duplicados para loop infinito */}
@@ -94,11 +94,11 @@ export const Hero: React.FC = () => {
         </div>
 
         {/* CTA */}
-        <div className="flex flex-col items-center gap-4 pb-12 w-full">
+        <div className="flex flex-col items-start gap-4 pb-12 w-full">
           <Button onClick={() => document.getElementById('demo')?.scrollIntoView({ behavior: 'smooth' })} className="w-full md:w-auto px-12 py-5 text-base md:text-lg shadow-[0_0_30px_rgba(212,175,55,0.4)]">
             QUIERO REVISAR MI CASO
           </Button>
-          <span className="text-white/50 text-xs md:text-sm font-medium tracking-widest uppercase">
+          <span className="text-white/50 text-xs md:text-sm font-medium tracking-widest uppercase pl-1">
             Conversación breve. Sin presión.
           </span>
         </div>
