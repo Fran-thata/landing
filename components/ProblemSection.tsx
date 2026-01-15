@@ -310,7 +310,7 @@ export const ProblemSection: React.FC = () => {
       </div>
 
       {/* --- NUEVO ORDEN SECCIÓN 5: "LOS ACCESORIOS NFC..." (MOVIDO DESDE POSICIÓN 3) --- */}
-      <section className="relative py-24 px-5 md:px-6 overflow-hidden bg-black border-t border-white/5">
+      <section className="relative py-20 px-5 md:px-6 overflow-hidden bg-black border-t border-white/5">
         <div className="absolute inset-0 z-0 bg-cover bg-center opacity-100" style={{ backgroundImage: "url('https://res.cloudinary.com/ddpujsrsg/image/upload/v1768388082/WhatsApp_Image_2026-01-14_at_11.53.24_pnkqzj.jpg')" }}></div>
         {/* Overlay más oscuro para que resalte el texto y las cajas */}
         <div className="absolute inset-0 z-10 bg-black/75"></div>
@@ -374,28 +374,28 @@ export const ProblemSection: React.FC = () => {
       </section>
 
       {/* --- SECCIÓN 6: CÓMO FUNCIONA EN EL DÍA A DÍA --- */}
-      <section className="bg-black py-20 px-6 relative overflow-hidden border-t border-white/10">
+      <section className="bg-black py-16 px-6 relative overflow-hidden border-t border-white/10">
           
           {/* Header - Update: Use Font-Extrabold (Manrope) instead of Playfair for consistency */}
-          <div className="text-center mb-16">
+          <div className="text-center mb-12">
               <h2 className="text-3xl md:text-5xl font-extrabold text-[#D4AF37] mb-6 leading-tight tracking-tight">
                   Cómo funciona <br />
                   en el día a día
               </h2>
               <div className="w-24 h-0.5 bg-[#D4AF37] mx-auto mb-6 opacity-60"></div>
-              {/* Text changed to gold light */}
-              <p className="text-[#F2D06B] text-lg md:text-xl font-medium tracking-wide">
+              {/* Text reverted to neutral */}
+              <p className="text-neutral-400 text-lg md:text-xl font-medium tracking-wide">
                   Se integra en tu rutina sin que lo notes.
               </p>
           </div>
 
           {/* Timeline Vertical */}
-          <div className="max-w-2xl mx-auto relative mb-20 pl-4 md:pl-0">
+          <div className="max-w-2xl mx-auto relative mb-16">
               {/* Línea vertical conectora */}
               <div className="absolute left-[27px] md:left-[27px] top-4 bottom-4 w-0.5 bg-[#D4AF37] opacity-40"></div>
 
               {/* Pasos */}
-              <div className="space-y-14">
+              <div className="space-y-12">
                   
                   {/* Paso 1 */}
                   <div className="relative flex items-start gap-8">
@@ -406,8 +406,8 @@ export const ProblemSection: React.FC = () => {
                       {/* Texto */}
                       <div className="pt-1">
                           <h3 className="text-[#D4AF37] font-bold text-lg mb-2">Paso 1: Petición natural</h3>
-                          {/* Text changed to gold light */}
-                          <p className="text-[#F2D06B] leading-relaxed text-base">
+                          {/* Text reverted to white/neutral */}
+                          <p className="text-neutral-300 leading-relaxed text-base">
                               Cliente satisfecho → El equipo pide la valoración al cerrar la cuenta.
                           </p>
                       </div>
@@ -420,8 +420,8 @@ export const ProblemSection: React.FC = () => {
                       </div>
                       <div className="pt-1">
                           <h3 className="text-[#D4AF37] font-bold text-lg mb-2">Paso 2: Guía del mensaje</h3>
-                          {/* Text changed to gold light */}
-                          <p className="text-[#F2D06B] leading-relaxed text-base">
+                          {/* Text reverted to white/neutral */}
+                          <p className="text-neutral-300 leading-relaxed text-base">
                               Sugerimos sutilmente qué escribir. Así el cliente no tiene que pensar y Google te premie.
                           </p>
                       </div>
@@ -434,8 +434,8 @@ export const ProblemSection: React.FC = () => {
                       </div>
                       <div className="pt-1">
                           <h3 className="text-[#D4AF37] font-bold text-lg mb-2">Paso 3: Publicación en segundos</h3>
-                          {/* Text changed to gold light */}
-                          <p className="text-[#F2D06B] leading-relaxed text-base">
+                          {/* Text reverted to white/neutral */}
+                          <p className="text-neutral-300 leading-relaxed text-base">
                               Acerca el móvil y la reseña se publica al instante.
                           </p>
                       </div>
@@ -443,27 +443,26 @@ export const ProblemSection: React.FC = () => {
               </div>
           </div>
 
-          {/* Caja Cliente Insatisfecho */}
-          <div className="max-w-2xl mx-auto mb-24 relative">
-              <div className="border border-[#D4AF37] rounded-xl p-6 md:p-8 bg-black/80 backdrop-blur-sm shadow-[0_0_25px_rgba(212,175,55,0.15)] flex flex-col md:flex-row items-center gap-6 text-center md:text-left">
+          {/* Caja Cliente Insatisfecho - ESCUDO A LA IZQUIERDA SIEMPRE */}
+          <div className="max-w-2xl mx-auto mb-16 relative">
+              <div className="border border-[#D4AF37] rounded-xl p-6 md:p-8 bg-black/80 backdrop-blur-sm shadow-[0_0_25px_rgba(212,175,55,0.15)] flex flex-row items-center gap-6 text-left">
                    <div className="shrink-0">
                         <i className="fa-solid fa-shield-halved text-4xl text-[#D4AF37]"></i>
                    </div>
                    <div>
-                       {/* Title changed to Gold */}
-                       <h3 className="text-[#D4AF37] font-bold text-xl mb-2 flex flex-col md:flex-row items-center md:items-baseline gap-2">
-                          <span>¿Cliente insatisfecho?</span>
+                       <h3 className="text-[#D4AF37] font-bold text-xl mb-2">
+                          ¿Cliente insatisfecho?
                        </h3>
-                       {/* Description changed to Gold Light */}
-                       <p className="text-[#F2D06B] text-base leading-relaxed">
+                       {/* Text reverted to white/neutral */}
+                       <p className="text-neutral-300 text-base leading-relaxed">
                           Se detecta y se corrige en la mesa. Así evitas que la queja llegue a Google Maps.
                        </p>
                    </div>
               </div>
           </div>
 
-          {/* Firma Cierre - Update: Use standard font (Bold Italic) instead of Script for consistency */}
-          <div className="text-center pb-12">
+          {/* Firma Cierre */}
+          <div className="text-center pb-8">
               <p className="text-4xl md:text-6xl text-[#D4AF37] font-bold italic tracking-tight drop-shadow-lg">
                   Pagan, valoran y se van
               </p>
