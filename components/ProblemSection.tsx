@@ -139,7 +139,7 @@ export const ProblemSection: React.FC = () => {
               Con un sistema, son constantes y predecibles
             </h3>
           </div>
-          {/* Contenido resumido para no ocupar demasiado espacio en esta respuesta, manteniendo la estructura visual existente */}
+          
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-16 items-start mb-16">
             {/* CAJA 1: EL CAOS */}
             <div className="bg-[#080808] border-2 border-[#7f1d1d] p-6 md:p-10 rounded-3xl relative min-h-[auto] md:min-h-[360px] flex flex-col justify-center shadow-2xl shadow-red-900/20">
@@ -177,8 +177,14 @@ export const ProblemSection: React.FC = () => {
       {/* --- NUEVO ORDEN SECCIÓN 3: "NO SE TRATA DE PEDIR..." (MOVIDO DESDE EL FINAL) --- */}
       <section className="bg-neutral-950 py-20 px-6 relative border-t border-white/5 overflow-hidden">
         
-        {/* Decorative subtle background */}
-        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,_rgba(212,175,55,0.03),_transparent_70%)] pointer-events-none"></div>
+        {/* Spotlight Effect - White, Top Center, Cone Shape */}
+        <div className="absolute inset-0 pointer-events-none z-0">
+            {/* White Spotlight: Ellipse positioned at top center, creating a cone effect downwards */}
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_65%_70%_at_50%_-10%,rgba(255,255,255,0.15),rgba(255,255,255,0)_100%)]"></div>
+            
+            {/* Vignette: Subtle darkening at the edges to center focus */}
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,transparent_40%,rgba(0,0,0,0.8)_100%)]"></div>
+        </div>
 
         <div className="max-w-3xl mx-auto relative z-10">
             {/* Headlines */}
@@ -207,8 +213,8 @@ export const ProblemSection: React.FC = () => {
         {/* Quote Section (Updated) */}
         <div className="max-w-3xl mx-auto relative px-4 md:px-0 z-10 text-center mt-16">
              <div className="inline-block relative">
-                 {/* Removed quotes as requested and applied luminous white style */}
-                 <p className="text-2xl md:text-3xl text-white leading-relaxed font-bold drop-shadow-[0_0_8px_rgba(255,255,255,0.3)]">
+                 {/* Updated: Gold text with Golden Glow */}
+                 <p className="text-2xl md:text-3xl text-[#D4AF37] leading-relaxed font-bold drop-shadow-[0_0_8px_rgba(212,175,55,0.5)]">
                     La reseña es la consecuencia de un servicio bien hecho... cuando se pide en el momento correcto.
                  </p>
              </div>
@@ -365,6 +371,103 @@ export const ProblemSection: React.FC = () => {
                 </p>
             </div>
         </div>
+      </section>
+
+      {/* --- SECCIÓN 6: CÓMO FUNCIONA EN EL DÍA A DÍA --- */}
+      <section className="bg-black py-20 px-6 relative overflow-hidden border-t border-white/10">
+          
+          {/* Header - Update: Use Font-Extrabold (Manrope) instead of Playfair for consistency */}
+          <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-5xl font-extrabold text-[#D4AF37] mb-6 leading-tight tracking-tight">
+                  Cómo funciona <br />
+                  en el día a día
+              </h2>
+              <div className="w-24 h-0.5 bg-[#D4AF37] mx-auto mb-6 opacity-60"></div>
+              {/* Text changed to gold light */}
+              <p className="text-[#F2D06B] text-lg md:text-xl font-medium tracking-wide">
+                  Se integra en tu rutina sin que lo notes.
+              </p>
+          </div>
+
+          {/* Timeline Vertical */}
+          <div className="max-w-2xl mx-auto relative mb-20 pl-4 md:pl-0">
+              {/* Línea vertical conectora */}
+              <div className="absolute left-[27px] md:left-[27px] top-4 bottom-4 w-0.5 bg-[#D4AF37] opacity-40"></div>
+
+              {/* Pasos */}
+              <div className="space-y-14">
+                  
+                  {/* Paso 1 */}
+                  <div className="relative flex items-start gap-8">
+                      {/* Icono Circular */}
+                      <div className="w-14 h-14 rounded-full border-2 border-[#D4AF37] bg-black flex items-center justify-center shrink-0 z-10 relative shadow-[0_0_20px_rgba(212,175,55,0.25)]">
+                          <i className="fa-solid fa-handshake text-[#D4AF37] text-xl"></i>
+                      </div>
+                      {/* Texto */}
+                      <div className="pt-1">
+                          <h3 className="text-[#D4AF37] font-bold text-lg mb-2">Paso 1: Petición natural</h3>
+                          {/* Text changed to gold light */}
+                          <p className="text-[#F2D06B] leading-relaxed text-base">
+                              Cliente satisfecho → El equipo pide la valoración al cerrar la cuenta.
+                          </p>
+                      </div>
+                  </div>
+
+                  {/* Paso 2 */}
+                  <div className="relative flex items-start gap-8">
+                      <div className="w-14 h-14 rounded-full border-2 border-[#D4AF37] bg-black flex items-center justify-center shrink-0 z-10 relative shadow-[0_0_20px_rgba(212,175,55,0.25)]">
+                          <i className="fa-solid fa-microphone-lines text-[#D4AF37] text-xl"></i>
+                      </div>
+                      <div className="pt-1">
+                          <h3 className="text-[#D4AF37] font-bold text-lg mb-2">Paso 2: Guía del mensaje</h3>
+                          {/* Text changed to gold light */}
+                          <p className="text-[#F2D06B] leading-relaxed text-base">
+                              Sugerimos sutilmente qué escribir. Así el cliente no tiene que pensar y Google te premie.
+                          </p>
+                      </div>
+                  </div>
+
+                  {/* Paso 3 */}
+                  <div className="relative flex items-start gap-8">
+                      <div className="w-14 h-14 rounded-full border-2 border-[#D4AF37] bg-black flex items-center justify-center shrink-0 z-10 relative shadow-[0_0_20px_rgba(212,175,55,0.25)]">
+                          <i className="fa-solid fa-mobile-screen-button text-[#D4AF37] text-xl"></i>
+                      </div>
+                      <div className="pt-1">
+                          <h3 className="text-[#D4AF37] font-bold text-lg mb-2">Paso 3: Publicación en segundos</h3>
+                          {/* Text changed to gold light */}
+                          <p className="text-[#F2D06B] leading-relaxed text-base">
+                              Acerca el móvil y la reseña se publica al instante.
+                          </p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+          {/* Caja Cliente Insatisfecho */}
+          <div className="max-w-2xl mx-auto mb-24 relative">
+              <div className="border border-[#D4AF37] rounded-xl p-6 md:p-8 bg-black/80 backdrop-blur-sm shadow-[0_0_25px_rgba(212,175,55,0.15)] flex flex-col md:flex-row items-center gap-6 text-center md:text-left">
+                   <div className="shrink-0">
+                        <i className="fa-solid fa-shield-halved text-4xl text-[#D4AF37]"></i>
+                   </div>
+                   <div>
+                       {/* Title changed to Gold */}
+                       <h3 className="text-[#D4AF37] font-bold text-xl mb-2 flex flex-col md:flex-row items-center md:items-baseline gap-2">
+                          <span>¿Cliente insatisfecho?</span>
+                       </h3>
+                       {/* Description changed to Gold Light */}
+                       <p className="text-[#F2D06B] text-base leading-relaxed">
+                          Se detecta y se corrige en la mesa. Así evitas que la queja llegue a Google Maps.
+                       </p>
+                   </div>
+              </div>
+          </div>
+
+          {/* Firma Cierre - Update: Use standard font (Bold Italic) instead of Script for consistency */}
+          <div className="text-center pb-12">
+              <p className="text-4xl md:text-6xl text-[#D4AF37] font-bold italic tracking-tight drop-shadow-lg">
+                  Pagan, valoran y se van
+              </p>
+          </div>
       </section>
     </>
   );
