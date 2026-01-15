@@ -25,11 +25,47 @@ export const PricingSection: React.FC = () => {
           48% { transform: scale(1); }
           100% { transform: scale(1); }
         }
+        /* New Button Animation with Glow */
+        @keyframes heartbeat-glow {
+          0%, 100% { 
+            transform: scale(1); 
+            box-shadow: 0 10px 40px -10px rgba(0,0,0,0.9); 
+            border-color: rgba(212,175,55,0.5); 
+            background-color: #060608;
+          }
+          15% { 
+            transform: scale(1.03); 
+            box-shadow: 0 0 25px rgba(212,175,55,0.6); 
+            border-color: #D4AF37; 
+            background-color: rgba(212,175,55,0.1);
+          }
+          30% { 
+            transform: scale(1); 
+            box-shadow: 0 10px 40px -10px rgba(0,0,0,0.9); 
+            border-color: rgba(212,175,55,0.5); 
+            background-color: #060608;
+          }
+          45% { 
+            transform: scale(1.03); 
+            box-shadow: 0 0 25px rgba(212,175,55,0.6); 
+            border-color: #D4AF37; 
+            background-color: rgba(212,175,55,0.1);
+          }
+          60% { 
+            transform: scale(1); 
+            box-shadow: 0 10px 40px -10px rgba(0,0,0,0.9); 
+            border-color: rgba(212,175,55,0.5); 
+            background-color: #060608;
+          }
+        }
         .animate-spin-slow {
           animation: spin-border 4s linear infinite;
         }
         .animate-heartbeat {
           animation: heartbeat-custom 3s ease-in-out infinite;
+        }
+        .animate-button-pulse {
+          animation: heartbeat-glow 3s ease-in-out infinite;
         }
       `}</style>
 
@@ -118,10 +154,10 @@ export const PricingSection: React.FC = () => {
                   relative h-[56px] w-full max-w-xs rounded-full 
                   bg-[#060608] border border-[#D4AF37]/50 
                   text-[#D4AF37] text-[15px] font-bold uppercase tracking-widest
-                  shadow-[0_10px_40px_-10px_rgba(0,0,0,0.9)]
                   hover:bg-[#D4AF37]/5 hover:border-[#D4AF37] hover:shadow-[0_0_25px_rgba(212,175,55,0.2)]
                   transition-all duration-300 ease-out
                   flex items-center justify-center gap-3
+                  animate-button-pulse
                 "
             >
                 <span className="relative z-10">

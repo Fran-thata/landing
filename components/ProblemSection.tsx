@@ -337,7 +337,7 @@ export const ProblemSection: React.FC = () => {
                             <i className="fa-solid fa-xmark text-premium-gold text-sm font-bold"></i>
                         </div>
                     </div>
-                    <p className="text-left text-white text-lg md:text-xl leading-snug font-medium">
+                    <p className="text-left text-white text-2xl md:text-3xl leading-tight font-medium">
                         Tener tarjetas y expositores sin un método es <span className="text-white font-bold">tirar el dinero.</span>
                     </p>
                 </div>
@@ -347,7 +347,7 @@ export const ProblemSection: React.FC = () => {
                     <div className="shrink-0 w-16 h-16 flex items-center justify-center">
                         <i className="fa-solid fa-wand-magic-sparkles text-4xl text-premium-gold drop-shadow-[0_2px_5px_rgba(212,175,55,0.5)]"></i>
                     </div>
-                    <p className="text-left text-white text-lg md:text-xl leading-snug font-medium">
+                    <p className="text-left text-white text-2xl md:text-3xl leading-tight font-medium">
                         Sirven para agilizar el proceso, <span className="text-white font-bold">pero no hacen magia.</span>
                     </p>
                 </div>
@@ -357,7 +357,7 @@ export const ProblemSection: React.FC = () => {
                     <div className="shrink-0 w-16 h-16 flex items-center justify-center">
                         <i className="fa-solid fa-trophy text-4xl text-premium-gold drop-shadow-[0_2px_5px_rgba(212,175,55,0.5)]"></i>
                     </div>
-                    <p className="text-left text-white text-lg md:text-xl leading-snug font-medium">
+                    <p className="text-left text-white text-2xl md:text-3xl leading-tight font-medium">
                         Si tu equipo no prepara el terreno y el cliente no sale encantado, <span className="text-white">se quedarán de adorno.</span>
                     </p>
                 </div>
