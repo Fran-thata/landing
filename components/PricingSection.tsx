@@ -125,7 +125,7 @@ export const PricingSection: React.FC = () => {
                 "
             >
                 <span className="relative z-10">
-                   Quiero aplicar el sistema completo
+                   Quiero más reseñas
                 </span>
             </button>
         </div>
