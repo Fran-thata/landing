@@ -8,7 +8,7 @@ const Footer: React.FC = () => (
       <div className="text-xl font-bold text-white">
         FUSIÓN<span className="text-premium-gold">.</span>
       </div>
-      <p className="text-neutral-500 text-sm">
+      <p className="text-white text-sm">
         © {new Date().getFullYear()} Premium Fusión Systems. Todos los derechos reservados.
       </p>
       <div className="flex gap-4">

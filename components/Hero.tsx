@@ -34,7 +34,7 @@ export const Hero: React.FC = () => {
         </h1>
 
         {/* Subtext */}
-        <p className="text-base md:text-xl leading-relaxed text-premium-gray mb-12 max-w-2xl font-light">
+        <p className="text-base md:text-xl leading-relaxed text-white mb-12 max-w-2xl font-light">
           Sistema completo para conseguir reseñas constantes y más visibilidad en Google Maps.
         </p>
 
@@ -98,7 +98,7 @@ export const Hero: React.FC = () => {
           <Button onClick={() => document.getElementById('demo')?.scrollIntoView({ behavior: 'smooth' })} className="w-full md:w-auto px-12 py-5 text-base md:text-lg shadow-[0_0_30px_rgba(212,175,55,0.4)]">
             QUIERO MÁS RESEÑAS
           </Button>
-          <span className="text-white/50 text-xs md:text-sm font-medium tracking-widest uppercase text-center md:text-left">
+          <span className="text-white text-xs md:text-sm font-medium tracking-widest uppercase text-center md:text-left">
             Conversación breve. Sin presión.
           </span>
         </div>

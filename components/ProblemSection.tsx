@@ -80,7 +80,7 @@ export const ProblemSection: React.FC = () => {
               Clientes satisfechos sin reseñas: <br className="hidden md:block" />
               <span className="text-premium-gold">Tu negocio no crece.</span>
             </h2>
-            <p className="text-lg md:text-xl text-neutral-400 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-lg md:text-xl text-white max-w-2xl mx-auto leading-relaxed">
               Si no pides la valoración en el momento justo, el cliente se olvida. <br className="hidden md:block" />
               Sin un sistema, tu perfil se estanca y la competencia te gana terreno.
             </p>
@@ -105,16 +105,16 @@ export const ProblemSection: React.FC = () => {
                     <div className={`w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center shrink-0 border transition-colors duration-500
                       ${isActive
                         ? 'bg-premium-gold/10 border-premium-gold text-premium-gold'
-                        : 'bg-neutral-900 border-white/10 text-neutral-400'
+                        : 'bg-neutral-900 border-white/10 text-white'
                       }
                     `}>
                       <i className={`fa-solid ${item.icon} text-xl md:text-2xl`}></i>
                     </div>
                     <div className="flex flex-col text-left">
-                      <h3 className={`text-lg md:text-xl font-bold mb-1 transition-colors duration-500 ${isActive ? 'text-white' : 'text-neutral-200'}`}>
+                      <h3 className={`text-lg md:text-xl font-bold mb-1 transition-colors duration-500 text-white`}>
                         {item.title}
                       </h3>
-                      <p className="text-base md:text-lg leading-snug text-neutral-400">
+                      <p className="text-base md:text-lg leading-snug text-white">
                         {item.desc}
                       </p>
                     </div>
@@ -147,9 +147,9 @@ export const ProblemSection: React.FC = () => {
                  <i className="fa-solid fa-xmark mr-2"></i> Sin Método
                </div>
                <ul className="space-y-6 md:space-y-8 mt-6 md:mt-0">
-                  <li className="flex items-start gap-4"><i className="fa-regular fa-calendar-xmark text-red-500 mt-1"></i><span className="text-neutral-200">Se pide "cuando se puede".</span></li>
-                  <li className="flex items-start gap-4"><i className="fa-solid fa-wave-square text-red-500 mt-1"></i><span className="text-neutral-200">Resultados a rachas.</span></li>
-                  <li className="flex items-start gap-4"><i className="fa-solid fa-circle-question text-red-500 mt-1"></i><span className="text-neutral-200">Incertidumbre total.</span></li>
+                  <li className="flex items-start gap-4"><i className="fa-regular fa-calendar-xmark text-red-500 mt-1"></i><span className="text-white">Se pide "cuando se puede".</span></li>
+                  <li className="flex items-start gap-4"><i className="fa-solid fa-wave-square text-red-500 mt-1"></i><span className="text-white">Resultados a rachas.</span></li>
+                  <li className="flex items-start gap-4"><i className="fa-solid fa-circle-question text-red-500 mt-1"></i><span className="text-white">Incertidumbre total.</span></li>
                </ul>
             </div>
             {/* CAJA 2: LA SOLUCIÓN */}
@@ -167,7 +167,7 @@ export const ProblemSection: React.FC = () => {
           
           {/* Texto de cierre añadido */}
           <div className="text-center">
-            <p className="text-xl md:text-2xl text-neutral-200 font-medium italic">
+            <p className="text-xl md:text-2xl text-white font-medium italic">
               Cuando el momento está definido, la reseña sale de forma natural.
             </p>
           </div>
@@ -200,7 +200,7 @@ export const ProblemSection: React.FC = () => {
             </div>
 
             {/* Body Paragraphs */}
-            <div className="space-y-6 text-lg text-neutral-300 leading-relaxed font-medium text-left md:text-justify max-w-2xl mx-auto">
+            <div className="space-y-6 text-lg text-white leading-relaxed font-medium text-left md:text-justify max-w-2xl mx-auto">
                 <p>
                     Muchos locales lo hacen mal. Ponen un QR en el ticket o envían un email horas después. El resultado suele ser el mismo: Acaba en la basura. Cuando el cliente cruza la puerta, ya ha desconectado.
                 </p>
@@ -280,7 +280,7 @@ export const ProblemSection: React.FC = () => {
                             <span className="text-[#D4AF37] font-bold text-base leading-tight mb-0.5">
                                 {item.title}
                             </span>
-                            <span className="text-neutral-300 text-xs font-medium leading-tight">
+                            <span className="text-white text-xs font-medium leading-tight">
                                 {item.desc}
                             </span>
                         </div>
@@ -322,7 +322,7 @@ export const ProblemSection: React.FC = () => {
                 <span className="text-premium-gold">QR no generan reseñas</span> <br />
                 <span className="text-premium-gold">por sí solos</span>
             </h2>
-            <p className="text-neutral-300 text-lg md:text-xl mb-12 font-medium drop-shadow-md tracking-wide">
+            <p className="text-white text-lg md:text-xl mb-12 font-medium drop-shadow-md tracking-wide">
                 Solo conectan el móvil con el perfil.
             </p>
             
@@ -337,7 +337,7 @@ export const ProblemSection: React.FC = () => {
                             <i className="fa-solid fa-xmark text-premium-gold text-sm font-bold"></i>
                         </div>
                     </div>
-                    <p className="text-left text-neutral-200 text-lg md:text-xl leading-snug font-medium">
+                    <p className="text-left text-white text-lg md:text-xl leading-snug font-medium">
                         Tener tarjetas y expositores sin un método es <span className="text-white font-bold">tirar el dinero.</span>
                     </p>
                 </div>
@@ -347,7 +347,7 @@ export const ProblemSection: React.FC = () => {
                     <div className="shrink-0 w-16 h-16 flex items-center justify-center">
                         <i className="fa-solid fa-wand-magic-sparkles text-4xl text-premium-gold drop-shadow-[0_2px_5px_rgba(212,175,55,0.5)]"></i>
                     </div>
-                    <p className="text-left text-neutral-200 text-lg md:text-xl leading-snug font-medium">
+                    <p className="text-left text-white text-lg md:text-xl leading-snug font-medium">
                         Sirven para agilizar el proceso, <span className="text-white font-bold">pero no hacen magia.</span>
                     </p>
                 </div>
@@ -357,8 +357,8 @@ export const ProblemSection: React.FC = () => {
                     <div className="shrink-0 w-16 h-16 flex items-center justify-center">
                         <i className="fa-solid fa-trophy text-4xl text-premium-gold drop-shadow-[0_2px_5px_rgba(212,175,55,0.5)]"></i>
                     </div>
-                    <p className="text-left text-neutral-200 text-lg md:text-xl leading-snug font-medium">
-                        Si tu equipo no prepara el terreno y el cliente no sale encantado, <span className="text-neutral-100">se quedarán de adorno.</span>
+                    <p className="text-left text-white text-lg md:text-xl leading-snug font-medium">
+                        Si tu equipo no prepara el terreno y el cliente no sale encantado, <span className="text-white">se quedarán de adorno.</span>
                     </p>
                 </div>
 
@@ -384,7 +384,7 @@ export const ProblemSection: React.FC = () => {
               </h2>
               <div className="w-24 h-0.5 bg-[#D4AF37] mx-auto mb-6 opacity-60"></div>
               {/* Text reverted to neutral */}
-              <p className="text-neutral-400 text-lg md:text-xl font-medium tracking-wide">
+              <p className="text-white text-lg md:text-xl font-medium tracking-wide">
                   Se integra en tu rutina sin que lo notes.
               </p>
           </div>
@@ -407,7 +407,7 @@ export const ProblemSection: React.FC = () => {
                       <div className="pt-1">
                           <h3 className="text-[#D4AF37] font-bold text-lg mb-2">Paso 1: Petición natural</h3>
                           {/* Text reverted to white/neutral */}
-                          <p className="text-neutral-300 leading-relaxed text-base">
+                          <p className="text-white leading-relaxed text-base">
                               Cliente satisfecho → El equipo pide la valoración al cerrar la cuenta.
                           </p>
                       </div>
@@ -421,7 +421,7 @@ export const ProblemSection: React.FC = () => {
                       <div className="pt-1">
                           <h3 className="text-[#D4AF37] font-bold text-lg mb-2">Paso 2: Guía del mensaje</h3>
                           {/* Text reverted to white/neutral */}
-                          <p className="text-neutral-300 leading-relaxed text-base">
+                          <p className="text-white leading-relaxed text-base">
                               Sugerimos sutilmente qué escribir. Así el cliente no tiene que pensar y Google te premie.
                           </p>
                       </div>
@@ -435,7 +435,7 @@ export const ProblemSection: React.FC = () => {
                       <div className="pt-1">
                           <h3 className="text-[#D4AF37] font-bold text-lg mb-2">Paso 3: Publicación en segundos</h3>
                           {/* Text reverted to white/neutral */}
-                          <p className="text-neutral-300 leading-relaxed text-base">
+                          <p className="text-white leading-relaxed text-base">
                               Acerca el móvil y la reseña se publica al instante.
                           </p>
                       </div>
@@ -444,7 +444,7 @@ export const ProblemSection: React.FC = () => {
           </div>
 
           {/* Caja Cliente Insatisfecho - ESCUDO A LA IZQUIERDA SIEMPRE */}
-          <div className="max-w-2xl mx-auto mb-16 relative">
+          <div className="max-w-2xl mx-auto mb-0 relative">
               <div className="border border-[#D4AF37] rounded-xl p-6 md:p-8 bg-black/80 backdrop-blur-sm shadow-[0_0_25px_rgba(212,175,55,0.15)] flex flex-row items-center gap-6 text-left">
                    <div className="shrink-0">
                         <i className="fa-solid fa-shield-halved text-4xl text-[#D4AF37]"></i>
@@ -454,18 +454,11 @@ export const ProblemSection: React.FC = () => {
                           ¿Cliente insatisfecho?
                        </h3>
                        {/* Text reverted to white/neutral */}
-                       <p className="text-neutral-300 text-base leading-relaxed">
+                       <p className="text-white text-base leading-relaxed">
                           Se detecta y se corrige en la mesa. Así evitas que la queja llegue a Google Maps.
                        </p>
                    </div>
               </div>
-          </div>
-
-          {/* Firma Cierre */}
-          <div className="text-center pb-8">
-              <p className="text-4xl md:text-6xl text-[#D4AF37] font-bold italic tracking-tight drop-shadow-lg">
-                  Pagan, valoran y se van
-              </p>
           </div>
       </section>
     </>

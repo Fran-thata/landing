@@ -31,9 +31,9 @@ export const ReviewAssistantDemo: React.FC = () => {
             </div>
             <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
               Responde en segundos,<br />
-              <span className="text-premium-gray">no en horas.</span>
+              <span className="text-white">no en horas.</span>
             </h2>
-            <p className="text-premium-gray text-lg mb-8 leading-relaxed">
+            <p className="text-white text-lg mb-8 leading-relaxed">
               Nuestro asistente "AI Maître" analiza el sentimiento de tus clientes y redacta la respuesta perfecta para Google Maps o TripAdvisor. Mantén tu reputación impecable sin perder tiempo.
             </p>
             
@@ -44,7 +44,7 @@ export const ReviewAssistantDemo: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="text-white font-bold text-lg">Rapidez Absoluta</h4>
-                  <p className="text-sm text-premium-gray mt-1">Genera respuestas contextuales al instante.</p>
+                  <p className="text-sm text-white mt-1">Genera respuestas contextuales al instante.</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
@@ -53,7 +53,7 @@ export const ReviewAssistantDemo: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="text-white font-bold text-lg">Tono Personalizable</h4>
-                  <p className="text-sm text-premium-gray mt-1">Profesional, agradecido o disculpándose según la situación.</p>
+                  <p className="text-sm text-white mt-1">Profesional, agradecido o disculpándose según la situación.</p>
                 </div>
               </div>
             </div>
@@ -67,13 +67,13 @@ export const ReviewAssistantDemo: React.FC = () => {
             <div className="space-y-6 relative z-10">
               {/* Input Area */}
               <div>
-                <label className="block text-xs font-bold text-premium-gray uppercase tracking-wider mb-2">
+                <label className="block text-xs font-bold text-white uppercase tracking-wider mb-2">
                   Reseña del Cliente (Simulación)
                 </label>
                 <textarea 
                   value={review}
                   onChange={(e) => setReview(e.target.value)}
-                  className="w-full bg-neutral-900 border border-neutral-800 rounded p-4 text-white focus:border-premium-gold focus:outline-none transition-colors h-32 resize-none text-sm leading-relaxed placeholder-neutral-600"
+                  className="w-full bg-neutral-900 border border-neutral-800 rounded p-4 text-white focus:border-premium-gold focus:outline-none transition-colors h-32 resize-none text-sm leading-relaxed placeholder-white/50"
                   placeholder="Pega aquí una reseña de ejemplo..."
                 />
               </div>
@@ -87,7 +87,7 @@ export const ReviewAssistantDemo: React.FC = () => {
                     className={`px-4 py-2 rounded text-xs font-bold uppercase tracking-wide border transition-all ${
                       tone === t 
                         ? 'bg-premium-gold text-premium-dark border-premium-gold' 
-                        : 'bg-transparent text-premium-gray border-neutral-700 hover:border-premium-gray'
+                        : 'bg-transparent text-white border-neutral-700 hover:border-white'
                     }`}
                   >
                     {t === 'professional' ? 'Profesional' : t === 'grateful' ? 'Agradecido' : 'Disculpa'}
@@ -117,12 +117,12 @@ export const ReviewAssistantDemo: React.FC = () => {
                     </label>
                     <button 
                       onClick={() => navigator.clipboard.writeText(response)}
-                      className="text-xs text-neutral-500 hover:text-white transition-colors"
+                      className="text-xs text-white hover:text-premium-gold transition-colors"
                     >
                       <i className="fa-regular fa-copy mr-1"></i> Copiar
                     </button>
                   </div>
-                  <div className="bg-neutral-900/50 p-4 rounded border-l-2 border-premium-gold text-premium-gray text-sm leading-relaxed italic">
+                  <div className="bg-neutral-900/50 p-4 rounded border-l-2 border-premium-gold text-white text-sm leading-relaxed italic">
                     "{response}"
                   </div>
                 </div>
