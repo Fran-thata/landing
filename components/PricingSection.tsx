@@ -81,7 +81,7 @@ export const PricingSection: React.FC = () => {
            <h2 className="text-4xl font-semibold text-[#F0F0F0] leading-[1.1] tracking-tight">
              Control total sobre tu reputación
            </h2>
-           <h3 className="text-[#E5D196] text-[11px] font-bold uppercase tracking-[4px] opacity-90">
+           <h3 className="text-[#E5D196] text-[13px] font-bold uppercase tracking-[4px] opacity-90">
              Un solo pago, resultados para siempre
            </h3>
            <p className="text-white/80 text-[16px] leading-[1.65] font-normal max-w-xs mx-auto">
