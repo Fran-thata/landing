@@ -15,11 +15,18 @@ export const IsThisForYouSection: React.FC = () => {
           0% { transform: rotate(0deg); }
           100% { transform: rotate(360deg); }
         }
+        @keyframes burgundy-shimmer {
+          0%, 100% { border-color: rgba(255,255,255,0.06); }
+          50% { border-color: rgba(122,30,43,0.4); }
+        }
         .animate-subtle-drift {
           animation: subtle-drift 8s ease-in-out infinite;
         }
         .animate-border-rotate {
           animation: border-rotate 6s linear infinite;
+        }
+        .animate-burgundy-pulse {
+          animation: burgundy-shimmer 8s ease-in-out infinite;
         }
       `}</style>
 
@@ -41,14 +48,14 @@ export const IsThisForYouSection: React.FC = () => {
       <div className="absolute top-[60%] right-[15%] w-1.5 h-1.5 bg-[#D4AF37] rounded-full blur-[2px] animate-subtle-drift z-0" style={{ animationDelay: '2s' }}></div>
       <div className="absolute bottom-[30%] left-[20%] w-0.5 h-0.5 bg-[#D4AF37] rounded-full blur-[0px] animate-subtle-drift z-0" style={{ animationDelay: '4s' }}></div>
 
-      {/* --- CONTENT CONTAINER --- */}
-      <div className="relative z-10 w-full max-w-md mx-auto flex flex-col gap-12">
+      {/* --- CONTENT CONTAINER (Wider for bigger text) --- */}
+      <div className="relative z-10 w-full max-w-xl mx-auto flex flex-col gap-12">
         
         {/* HEADER */}
         <div className="text-center">
-            <h2 className="text-3xl md:text-4xl font-semibold text-white leading-[1.2] tracking-tight mb-2">
+            <h2 className="text-4xl md:text-5xl font-semibold text-white leading-[1.2] tracking-tight mb-3">
                 Este sistema no es para todos <br/>
-                <span className="opacity-60 font-light text-2xl">(y es intencionado)</span>
+                <span className="opacity-60 font-light text-3xl">(y es intencionado)</span>
             </h2>
         </div>
 
@@ -69,26 +76,26 @@ export const IsThisForYouSection: React.FC = () => {
                 <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-50"></div>
                 <div className="absolute inset-0 bg-gradient-to-br from-white/[0.03] to-transparent pointer-events-none"></div>
 
-                <h3 className="text-[#E5D196] text-[10px] font-bold uppercase tracking-[4px] mb-8 text-center opacity-90">
+                <h3 className="text-[#E5D196] text-[12px] font-bold uppercase tracking-[4px] mb-8 text-center opacity-90">
                     Encaja contigo si:
                 </h3>
 
-                <ul className="flex flex-col gap-6">
+                <ul className="flex flex-col gap-7">
                     {[
                         { title: "Atención Directa", desc: "Tienes servicio en mesa o mostrador." },
                         { title: "Flujo Constante", desc: "Buscas reseñas diarias, no picos temporales." },
                         { title: "Ambición Digital", desc: "Quieres control total sobre tu visibilidad en Google." },
                         { title: "Compromiso", desc: "Estás dispuesto a aplicar un método real con tu equipo." }
                     ].map((item, i) => (
-                        <li key={i} className="flex items-start gap-5">
-                            <div className="mt-0.5 shrink-0 text-[#D4AF37] text-sm drop-shadow-[0_0_5px_rgba(212,175,55,0.4)]">
+                        <li key={i} className="flex items-start gap-6">
+                            <div className="mt-1 shrink-0 text-[#D4AF37] text-base drop-shadow-[0_0_5px_rgba(212,175,55,0.4)]">
                                 <i className="fa-solid fa-check"></i>
                             </div>
-                            <div className="flex flex-col gap-1">
-                                <span className="text-white text-[15px] font-bold tracking-wide">
+                            <div className="flex flex-col gap-1.5">
+                                <span className="text-white text-[18px] font-bold tracking-wide">
                                     {item.title}
                                 </span>
-                                <span className="text-white/60 text-[14px] font-light leading-relaxed">
+                                <span className="text-white/70 text-[16px] font-light leading-relaxed">
                                     {item.desc}
                                 </span>
                             </div>
@@ -98,50 +105,61 @@ export const IsThisForYouSection: React.FC = () => {
             </div>
         </div>
 
-        {/* --- CARD 2: NO ES PARA TI (Muted/Garnet) --- */}
-        <div className="relative w-full rounded-[28px]">
-            {/* Subtle Static Border (No rotation, muted luxury) */}
-            <div className="absolute -inset-[1px] rounded-[28px] border border-[#4a0404]/30 bg-transparent"></div>
+        {/* --- CARD 2: NO ES PARA TI (Color #1A1A1A) --- */}
+        <div className="relative w-full rounded-[28px] overflow-hidden animate-burgundy-pulse border border-white/[0.06] shadow-[0_24px_70px_rgba(0,0,0,0.65)]">
             
-            {/* Card Body */}
-            <div className="relative bg-[#0A0A0C]/90 backdrop-blur-md border border-white/5 rounded-[26px] p-8 h-full overflow-hidden shadow-none">
+            {/* Panel Background: #1A1A1A with slight transparency for glass feel */}
+            <div className="absolute inset-0 bg-[#1A1A1A]/95 backdrop-blur-[20px] z-0"></div>
+
+            {/* Subtle Diagonal Reflection (Nacreous) */}
+            <div className="absolute inset-0 bg-gradient-to-br from-white/[0.08] via-transparent to-transparent pointer-events-none z-0 opacity-10"></div>
+            
+            {/* Accent: Left Burgundy Strip */}
+            <div className="absolute left-0 top-0 bottom-0 w-[4px] bg-gradient-to-b from-[#7A1E2B] to-transparent z-10 opacity-80"></div>
+            
+            {/* Card Body Content */}
+            <div className="relative z-10 px-8 py-9 md:p-10">
                  
-                 <h3 className="text-[#E5D196] text-[10px] font-bold uppercase tracking-[4px] mb-8 text-center opacity-50">
+                 {/* Header */}
+                 <h3 className="text-[15px] font-bold uppercase tracking-[5px] text-[#C9A24A]/90 border-b border-white/[0.1] pb-5 mb-4">
                     No es para ti si:
                 </h3>
 
-                <ul className="flex flex-col gap-6">
+                <div className="flex flex-col">
                     {[
                         { title: "Sin Contacto", desc: "No tienes trato directo con el cliente final." },
                         { title: "Atajos", desc: "Buscas trucos mágicos o comprar reseñas falsas." },
                         { title: "Pasividad", desc: "No quieres implicar al equipo ni mejorar procesos." }
                     ].map((item, i) => (
-                        <li key={i} className="flex items-start gap-5 opacity-70">
-                            <div className="mt-0.5 shrink-0 text-[#883333] text-sm">
-                                <i className="fa-solid fa-xmark"></i>
+                        <div key={i} className="flex items-start gap-6 py-6 border-b border-white/[0.08] last:border-0 last:pb-0">
+                            {/* Icon Chip */}
+                            <div className="shrink-0 w-[32px] h-[32px] rounded-full bg-[#7A1E2B]/15 border border-[#7A1E2B]/35 flex items-center justify-center mt-0.5">
+                                <i className="fa-solid fa-xmark text-[13px] text-[#D24A5C]/90"></i>
                             </div>
-                            <div className="flex flex-col gap-1">
-                                <span className="text-white/90 text-[15px] font-bold tracking-wide">
+                            
+                            {/* Text Columns */}
+                            <div className="flex flex-col gap-1.5">
+                                <span className="text-[#F5F5F7]/95 text-[22px] font-semibold tracking-tight">
                                     {item.title}
                                 </span>
-                                <span className="text-white/40 text-[14px] font-light leading-relaxed">
+                                <span className="text-[#F5F5F7]/75 text-[17px] font-normal leading-[1.65]">
                                     {item.desc}
                                 </span>
                             </div>
-                        </li>
+                        </div>
                     ))}
-                </ul>
+                </div>
             </div>
         </div>
 
         {/* --- CTA BUTTON --- */}
-        <div className="w-full flex justify-center mt-4">
+        <div className="w-full flex justify-center mt-10">
             <button 
                 onClick={() => document.getElementById('demo')?.scrollIntoView({ behavior: 'smooth' })}
                 className="
-                  relative h-[56px] w-full max-w-xs rounded-full 
+                  relative h-[64px] w-full max-w-sm rounded-full 
                   bg-[#060608] border border-[#D4AF37]/40 
-                  text-[#D4AF37] text-[15px] font-bold uppercase tracking-widest
+                  text-[#D4AF37] text-[16px] font-bold uppercase tracking-widest
                   shadow-[0_10px_30px_-10px_rgba(0,0,0,1)]
                   hover:bg-[#D4AF37]/5 hover:border-[#D4AF37] hover:shadow-[0_0_20px_rgba(212,175,55,0.15)]
                   transition-all duration-500 ease-out
