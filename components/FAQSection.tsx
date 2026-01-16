@@ -77,20 +77,9 @@ export const FAQSection: React.FC = () => {
                    <div className="absolute top-0 left-0 w-[60px] h-full bg-[#D4AF37]/10 blur-xl rounded-l-2xl pointer-events-none"></div>
                 )}
 
-                <div className="relative z-10 p-5 md:p-6 flex items-start gap-5 md:gap-6">
+                <div className="relative z-10 p-5 md:p-6 flex items-start gap-0">
                   
-                  {/* --- THE NUMBER (THE ANCHOR) --- */}
-                  <div className="shrink-0 flex flex-col items-center gap-1 pt-1">
-                      <span className={`
-                        text-2xl md:text-3xl font-extrabold tracking-tighter transition-all duration-500
-                        ${isOpen 
-                          ? 'text-transparent bg-clip-text bg-gradient-to-b from-[#D4AF37] to-[#B48F26] drop-shadow-[0_2px_10px_rgba(212,175,55,0.3)]' 
-                          : 'text-white/20 group-hover:text-white/40'
-                        }
-                      `}>
-                        {item.id}
-                      </span>
-                  </div>
+                  {/* --- NUMBER REMOVED AS REQUESTED --- */}
 
                   {/* --- CONTENT --- */}
                   <div className="flex-1">

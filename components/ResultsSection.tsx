@@ -221,4 +221,3 @@ export const ResultsSection: React.FC = () => {
       </div>
     </section>
   );
-};

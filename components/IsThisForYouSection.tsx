@@ -2,7 +2,7 @@ import React from 'react';
 
 export const IsThisForYouSection: React.FC = () => {
   return (
-    <section className="relative w-full pt-[120px] pb-10 px-6 bg-[#1A1A1A] overflow-hidden flex flex-col items-center">
+    <section className="relative w-full pt-[120px] pb-10 px-6 bg-[#050505] overflow-hidden flex flex-col items-center">
       
       {/* --- CUSTOM STYLES & ANIMATIONS --- */}
       <style>{`
@@ -35,11 +35,11 @@ export const IsThisForYouSection: React.FC = () => {
 
       {/* --- BACKGROUND LAYERS --- */}
       
-      {/* 1. Base Gradient (Adjusted for #1A1A1A base) */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#1A1A1A] via-[#141414] to-[#0A0A0A] z-0"></div>
+      {/* 1. Base Gradient (Darker - Nearly Black) */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[#080808] via-black to-[#050505] z-0"></div>
       
       {/* 2. Cinematic Spotlight (Diffuse) */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[120%] h-[800px] bg-[radial-gradient(ellipse_at_top,rgba(212,175,55,0.04)_0%,transparent_70%)] pointer-events-none z-0"></div>
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[120%] h-[800px] bg-[radial-gradient(ellipse_at_top,rgba(212,175,55,0.03)_0%,transparent_70%)] pointer-events-none z-0"></div>
       
       {/* 3. Film Grain (2-3% opacity) */}
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none z-0 mix-blend-overlay" 
@@ -99,9 +99,9 @@ export const IsThisForYouSection: React.FC = () => {
                             { title: "Compromiso", desc: "Estás dispuesto a aplicar un método real con tu equipo." }
                         ].map((item, i) => (
                             <div key={i} className="flex items-start gap-6 py-6 border-b border-white/[0.08] last:border-0 last:pb-0">
-                                {/* Icon Chip - GOLD STYLE */}
-                                <div className="shrink-0 w-[32px] h-[32px] rounded-full bg-[#D4AF37]/15 border border-[#D4AF37]/35 flex items-center justify-center mt-0.5">
-                                    <i className="fa-solid fa-check text-[13px] text-[#D4AF37]"></i>
+                                {/* Icon Chip - GOLD STYLE - UPSIZED */}
+                                <div className="shrink-0 w-[42px] h-[42px] rounded-full bg-[#D4AF37]/15 border border-[#D4AF37]/35 flex items-center justify-center mt-0.5">
+                                    <i className="fa-solid fa-check text-[20px] text-[#D4AF37]"></i>
                                 </div>
                                 
                                 {/* Text Columns */}
@@ -155,9 +155,9 @@ export const IsThisForYouSection: React.FC = () => {
                             { title: "Pasividad", desc: "No quieres implicar al equipo ni mejorar procesos." }
                         ].map((item, i) => (
                             <div key={i} className="flex items-start gap-6 py-6 border-b border-white/[0.08] last:border-0 last:pb-0">
-                                {/* Icon Chip - BURGUNDY STYLE */}
-                                <div className="shrink-0 w-[32px] h-[32px] rounded-full bg-[#7A1E2B]/15 border border-[#7A1E2B]/35 flex items-center justify-center mt-0.5">
-                                    <i className="fa-solid fa-xmark text-[13px] text-[#D24A5C]/90 animate-heartbeat-red"></i>
+                                {/* Icon Chip - BURGUNDY STYLE - UPSIZED */}
+                                <div className="shrink-0 w-[42px] h-[42px] rounded-full bg-[#7A1E2B]/15 border border-[#7A1E2B]/35 flex items-center justify-center mt-0.5">
+                                    <i className="fa-solid fa-xmark text-[20px] text-[#D24A5C]/90 animate-heartbeat-red"></i>
                                 </div>
                                 
                                 {/* Text Columns */}

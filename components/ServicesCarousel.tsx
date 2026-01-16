@@ -37,14 +37,14 @@ export const ServicesCarousel: React.FC = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
 
-  // Auto-scroll Loop: Every 2 seconds
+  // Auto-scroll Loop: Every 3 seconds
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveIndex((current) => {
         // If at the end, go back to 0 (move left), else go next (move right)
         return current === services.length - 1 ? 0 : current + 1;
       });
-    }, 2000);
+    }, 3000); // Changed to 3000ms (3 seconds)
 
     return () => clearInterval(interval);
   }, []);

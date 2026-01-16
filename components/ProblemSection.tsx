@@ -285,9 +285,9 @@ export const ProblemSection: React.FC = () => {
             </div>
 
              {/* BLOQUE INFERIOR (Cita) */}
-             <div className="relative z-30 mt-8 mb-0 max-w-2xl mx-auto px-4">
-                <div className="backdrop-blur-sm border border-[#D4AF37]/50 px-8 py-6 rounded-lg shadow-lg text-center">
-                    {/* Cita Modificada: Quitada font-serif */}
+             <div className="relative z-30 mt-16 mb-0 max-w-2xl mx-auto px-4">
+                <div className="text-center">
+                    {/* Cita Modificada: Quitada font-serif, sin bordes y bajada un poco */}
                     <p className="text-xl md:text-2xl text-white italic leading-relaxed">
                         "La diferencia entre pedir y conseguir no está en la herramienta, está en el método."
                     </p>
