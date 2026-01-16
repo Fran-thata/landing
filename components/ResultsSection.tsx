@@ -2,8 +2,8 @@ import React, { useState, useRef, useEffect } from 'react';
 
 const testimonials = [
   "https://res.cloudinary.com/ddpujsrsg/image/upload/v1768571922/Captura_de_pantalla_2026-01-16_145831_m8nr0f.png",
-  "https://res.cloudinary.com/ddpujsrsg/image/upload/v1768571870/1768340133191_bk4lbl.png",
   "https://res.cloudinary.com/ddpujsrsg/image/upload/v1768571865/1768340133219_x0jtqj.png",
+  "https://res.cloudinary.com/ddpujsrsg/image/upload/v1768571870/1768340133191_bk4lbl.png",
   "https://res.cloudinary.com/ddpujsrsg/image/upload/v1768571864/1768340133177_gppxak.png"
 ];
 

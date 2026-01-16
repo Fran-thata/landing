@@ -9,12 +9,12 @@ const services = [
   {
     title: "El Método",
     desc: "Cuándo pedir la reseña y cómo frenar la negativa.",
-    image: "https://res.cloudinary.com/ddpujsrsg/image/upload/v1768574403/WhatsApp_Image_2026-01-16_at_15.28.41_vvexuw.jpg"
+    image: "https://res.cloudinary.com/ddpujsrsg/image/upload/v1768579053/WhatsApp_Image_2026-01-16_at_16.23.51_1_gbg30e.jpg"
   },
   {
     title: "Formación Pro",
     desc: "Capacitación rápida para el dueño y el equipo.",
-    image: "https://res.cloudinary.com/ddpujsrsg/image/upload/v1768574403/WhatsApp_Image_2026-01-16_at_15.28.59_actozp.jpg"
+    image: "https://res.cloudinary.com/ddpujsrsg/image/upload/v1768579052/WhatsApp_Image_2026-01-16_at_16.23.51_u1s84z.jpg"
   },
   {
     title: "Implementación",
@@ -24,12 +24,12 @@ const services = [
   {
     title: "Kit Tecnológico",
     desc: "Soportes físicos con tecnología NFC y QR.",
-    image: "https://res.cloudinary.com/ddpujsrsg/image/upload/v1768574403/WhatsApp_Image_2026-01-16_at_15.29.38_r1c4pq.jpg"
+    image: "https://res.cloudinary.com/ddpujsrsg/image/upload/v1768579052/WhatsApp_Image_2026-01-16_at_16.23.50_2_ym841k.jpg"
   },
   {
     title: "Soporte Directo",
     desc: "Acompañamiento total en la puesta en marcha.",
-    image: "https://res.cloudinary.com/ddpujsrsg/image/upload/v1768574402/WhatsApp_Image_2026-01-16_at_15.30.22_pvz9ao.jpg"
+    image: "https://res.cloudinary.com/ddpujsrsg/image/upload/v1768579052/WhatsApp_Image_2026-01-16_at_16.23.50_1_qqtxlc.jpg"
   }
 ];
 
@@ -57,9 +57,6 @@ export const ServicesCarousel: React.FC = () => {
   // Handle manual scroll to update dots (optional, keeping for robustness if user swipes)
   const handleScroll = () => {
     if (scrollRef.current) {
-      // Logic to detect index if user manually drags. 
-      // Note: Auto-scroll might fight with manual scroll, 
-      // but for this requirement, we prioritize the auto-loop visual.
       const scrollLeft = scrollRef.current.scrollLeft;
       const width = scrollRef.current.offsetWidth;
       const center = scrollLeft + (width / 2);
@@ -144,19 +141,15 @@ export const ServicesCarousel: React.FC = () => {
               style={{ backgroundImage: `url('${service.image}')` }}
             ></div>
 
-            {/* Dark Overlay (Gradient) */}
-            <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/50 to-black/95"></div>
-
-            {/* Content Content */}
+            {/* Dark Overlay has been REMOVED as requested to keep images "normal" */}
+            
+            {/* Content Content - Added text shadow to ensure readability on light images */}
             <div className="absolute inset-0 p-6 flex flex-col justify-end items-start text-left">
-              {/* Removed Icon as requested */}
-
-              {/* Text Bottom */}
               <div className="transform translate-y-0 transition-transform duration-300">
-                <h3 className="text-xl font-bold text-white mb-2 tracking-tight">
+                <h3 className="text-xl font-bold text-white mb-2 tracking-tight drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
                   {service.title}
                 </h3>
-                <p className="text-white text-sm font-medium leading-relaxed opacity-90">
+                <p className="text-white text-sm font-medium leading-relaxed opacity-100 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
                   {service.desc}
                 </p>
               </div>
