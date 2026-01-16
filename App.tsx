@@ -4,6 +4,7 @@ import { ProblemSection } from './components/ProblemSection';
 import { ServicesCarousel } from './components/ServicesCarousel';
 import { PricingSection } from './components/PricingSection';
 import { IsThisForYouSection } from './components/IsThisForYouSection';
+import { ResultsSection } from './components/ResultsSection';
 
 const Footer: React.FC = () => (
   <footer className="bg-black py-12 px-6 border-t border-white/10">
@@ -31,6 +32,7 @@ const App: React.FC = () => {
       <ServicesCarousel />
       <PricingSection />
       <IsThisForYouSection />
+      <ResultsSection />
       <Footer />
     </div>
   );

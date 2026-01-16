@@ -2,7 +2,7 @@ import React from 'react';
 
 export const IsThisForYouSection: React.FC = () => {
   return (
-    <section className="relative w-full py-[120px] px-6 bg-[#060608] overflow-hidden flex flex-col items-center">
+    <section className="relative w-full py-[120px] px-6 bg-[#1A1A1A] overflow-hidden flex flex-col items-center">
       
       {/* --- CUSTOM STYLES & ANIMATIONS --- */}
       <style>{`
@@ -19,27 +19,37 @@ export const IsThisForYouSection: React.FC = () => {
           0%, 100% { border-color: rgba(255,255,255,0.06); }
           50% { border-color: rgba(122,30,43,0.4); }
         }
+        @keyframes heartbeat-red-glow {
+          0% { transform: scale(1); filter: drop-shadow(0 0 0px rgba(210, 74, 92, 0)); }
+          15% { transform: scale(1.3); filter: drop-shadow(0 0 10px rgba(210, 74, 92, 0.9)); }
+          30% { transform: scale(1); filter: drop-shadow(0 0 0px rgba(210, 74, 92, 0)); }
+          45% { transform: scale(1.3); filter: drop-shadow(0 0 10px rgba(210, 74, 92, 0.9)); }
+          100% { transform: scale(1); filter: drop-shadow(0 0 0px rgba(210, 74, 92, 0)); }
+        }
         .animate-subtle-drift {
           animation: subtle-drift 8s ease-in-out infinite;
         }
         .animate-border-rotate {
-          animation: border-rotate 6s linear infinite;
+          animation: border-rotate 4s linear infinite;
         }
         .animate-burgundy-pulse {
           animation: burgundy-shimmer 8s ease-in-out infinite;
+        }
+        .animate-heartbeat-red {
+          animation: heartbeat-red-glow 2s ease-in-out infinite;
         }
       `}</style>
 
       {/* --- BACKGROUND LAYERS --- */}
       
-      {/* 1. Base Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#060608] via-[#08080A] to-[#0E0E12] z-0"></div>
+      {/* 1. Base Gradient (Adjusted for #1A1A1A base) */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[#1A1A1A] via-[#141414] to-[#0A0A0A] z-0"></div>
       
       {/* 2. Cinematic Spotlight (Diffuse) */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[120%] h-[800px] bg-[radial-gradient(ellipse_at_top,rgba(212,175,55,0.06)_0%,transparent_70%)] pointer-events-none z-0"></div>
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[120%] h-[800px] bg-[radial-gradient(ellipse_at_top,rgba(212,175,55,0.04)_0%,transparent_70%)] pointer-events-none z-0"></div>
       
       {/* 3. Film Grain (2-3% opacity) */}
-      <div className="absolute inset-0 opacity-[0.025] pointer-events-none z-0 mix-blend-overlay" 
+      <div className="absolute inset-0 opacity-[0.03] pointer-events-none z-0 mix-blend-overlay" 
            style={{ backgroundImage: "url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.9%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E')" }}>
       </div>
 
@@ -55,14 +65,15 @@ export const IsThisForYouSection: React.FC = () => {
         <div className="text-center">
             <h2 className="text-4xl md:text-5xl font-semibold text-white leading-[1.2] tracking-tight mb-3">
                 Este sistema no es para todos <br/>
-                <span className="opacity-60 font-light text-3xl">(y es intencionado)</span>
+                {/* Updated color to match the card header gold */}
+                <span className="text-[#E5D196] font-light text-3xl">(y es intencionado)</span>
             </h2>
         </div>
 
-        {/* --- CARD 1: ENCAJA CONTIGO (Gold/Champagne) --- */}
+        {/* --- CARD 1: ENCAJA CONTIGO (WITH LED EFFECT, NO INNER STRIP) --- */}
         <div className="relative group w-full rounded-[28px]">
             {/* LED Edge Effect (Animated Border) */}
-            <div className="absolute -inset-[1px] rounded-[28px] overflow-hidden opacity-80">
+            <div className="absolute -inset-[1.5px] rounded-[28px] overflow-hidden opacity-100">
                 <div className="absolute top-[-50%] left-[-50%] w-[200%] h-[200%] animate-border-rotate"
                      style={{
                          background: 'conic-gradient(transparent 180deg, #D4AF37 210deg, transparent 240deg)'
@@ -70,46 +81,59 @@ export const IsThisForYouSection: React.FC = () => {
                 </div>
             </div>
             
-            {/* Card Body */}
-            <div className="relative bg-[#0E0E12]/90 backdrop-blur-xl border border-[#D4AF37]/20 rounded-[26px] p-8 h-full overflow-hidden shadow-[0_20px_50px_-20px_rgba(0,0,0,0.8)]">
-                {/* Iridescent Top Reflection */}
-                <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-50"></div>
-                <div className="absolute inset-0 bg-gradient-to-br from-white/[0.03] to-transparent pointer-events-none"></div>
+            {/* Card Body - Slight margin to show LED border */}
+            <div className="relative bg-[#08080A] rounded-[26px] h-full overflow-hidden shadow-[0_20px_50px_-20px_rgba(0,0,0,0.8)]" style={{ margin: '1.5px' }}>
+                
+                {/* Smoked Glass Overlay inside */}
+                <div className="absolute inset-0 bg-black/40 backdrop-blur-xl z-0"></div>
 
-                <h3 className="text-[#E5D196] text-[12px] font-bold uppercase tracking-[4px] mb-8 text-center opacity-90">
-                    Encaja contigo si:
-                </h3>
+                {/* Subtle Diagonal Reflection */}
+                <div className="absolute inset-0 bg-gradient-to-br from-white/[0.08] via-transparent to-transparent pointer-events-none z-0 opacity-10"></div>
+                
+                {/* Accent: Left GOLD Strip REMOVED here */}
+                
+                {/* Card Body Content */}
+                <div className="relative z-10 px-8 py-9 md:p-10">
+                    
+                    {/* Header */}
+                    <h3 className="text-[15px] font-bold uppercase tracking-[5px] text-[#E5D196]/90 border-b border-white/[0.1] pb-5 mb-4">
+                        Encaja contigo si:
+                    </h3>
 
-                <ul className="flex flex-col gap-7">
-                    {[
-                        { title: "Atención Directa", desc: "Tienes servicio en mesa o mostrador." },
-                        { title: "Flujo Constante", desc: "Buscas reseñas diarias, no picos temporales." },
-                        { title: "Ambición Digital", desc: "Quieres control total sobre tu visibilidad en Google." },
-                        { title: "Compromiso", desc: "Estás dispuesto a aplicar un método real con tu equipo." }
-                    ].map((item, i) => (
-                        <li key={i} className="flex items-start gap-6">
-                            <div className="mt-1 shrink-0 text-[#D4AF37] text-base drop-shadow-[0_0_5px_rgba(212,175,55,0.4)]">
-                                <i className="fa-solid fa-check"></i>
+                    <div className="flex flex-col">
+                        {[
+                            { title: "Atención Directa", desc: "Tienes servicio en mesa o mostrador." },
+                            { title: "Flujo Constante", desc: "Buscas reseñas diarias, no picos temporales." },
+                            { title: "Ambición Digital", desc: "Quieres control total sobre tu visibilidad en Google." },
+                            { title: "Compromiso", desc: "Estás dispuesto a aplicar un método real con tu equipo." }
+                        ].map((item, i) => (
+                            <div key={i} className="flex items-start gap-6 py-6 border-b border-white/[0.08] last:border-0 last:pb-0">
+                                {/* Icon Chip - GOLD STYLE */}
+                                <div className="shrink-0 w-[32px] h-[32px] rounded-full bg-[#D4AF37]/15 border border-[#D4AF37]/35 flex items-center justify-center mt-0.5">
+                                    <i className="fa-solid fa-check text-[13px] text-[#D4AF37]"></i>
+                                </div>
+                                
+                                {/* Text Columns */}
+                                <div className="flex flex-col gap-1.5">
+                                    <span className="text-[#F5F5F7]/95 text-[22px] font-semibold tracking-tight">
+                                        {item.title}
+                                    </span>
+                                    <span className="text-[#F5F5F7]/75 text-[17px] font-normal leading-[1.65]">
+                                        {item.desc}
+                                    </span>
+                                </div>
                             </div>
-                            <div className="flex flex-col gap-1.5">
-                                <span className="text-white text-[18px] font-bold tracking-wide">
-                                    {item.title}
-                                </span>
-                                <span className="text-white/70 text-[16px] font-light leading-relaxed">
-                                    {item.desc}
-                                </span>
-                            </div>
-                        </li>
-                    ))}
-                </ul>
+                        ))}
+                    </div>
+                </div>
             </div>
         </div>
 
-        {/* --- CARD 2: NO ES PARA TI (Color #1A1A1A) --- */}
+        {/* --- CARD 2: NO ES PARA TI (Smoked Glass on Gray + Heartbeat X) --- */}
         <div className="relative w-full rounded-[28px] overflow-hidden animate-burgundy-pulse border border-white/[0.06] shadow-[0_24px_70px_rgba(0,0,0,0.65)]">
             
-            {/* Panel Background: #1A1A1A with slight transparency for glass feel */}
-            <div className="absolute inset-0 bg-[#1A1A1A]/95 backdrop-blur-[20px] z-0"></div>
+            {/* Panel Background: Black with transparency (Smoked Glass) */}
+            <div className="absolute inset-0 bg-black/60 backdrop-blur-[20px] z-0"></div>
 
             {/* Subtle Diagonal Reflection (Nacreous) */}
             <div className="absolute inset-0 bg-gradient-to-br from-white/[0.08] via-transparent to-transparent pointer-events-none z-0 opacity-10"></div>
@@ -132,9 +156,9 @@ export const IsThisForYouSection: React.FC = () => {
                         { title: "Pasividad", desc: "No quieres implicar al equipo ni mejorar procesos." }
                     ].map((item, i) => (
                         <div key={i} className="flex items-start gap-6 py-6 border-b border-white/[0.08] last:border-0 last:pb-0">
-                            {/* Icon Chip */}
+                            {/* Icon Chip - BURGUNDY STYLE */}
                             <div className="shrink-0 w-[32px] h-[32px] rounded-full bg-[#7A1E2B]/15 border border-[#7A1E2B]/35 flex items-center justify-center mt-0.5">
-                                <i className="fa-solid fa-xmark text-[13px] text-[#D24A5C]/90"></i>
+                                <i className="fa-solid fa-xmark text-[13px] text-[#D24A5C]/90 animate-heartbeat-red"></i>
                             </div>
                             
                             {/* Text Columns */}
