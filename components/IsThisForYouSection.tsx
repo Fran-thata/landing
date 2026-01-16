@@ -2,7 +2,7 @@ import React from 'react';
 
 export const IsThisForYouSection: React.FC = () => {
   return (
-    <section className="relative w-full py-[120px] px-6 bg-[#1A1A1A] overflow-hidden flex flex-col items-center">
+    <section className="relative w-full pt-[120px] pb-10 px-6 bg-[#1A1A1A] overflow-hidden flex flex-col items-center">
       
       {/* --- CUSTOM STYLES & ANIMATIONS --- */}
       <style>{`

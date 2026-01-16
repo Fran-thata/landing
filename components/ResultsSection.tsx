@@ -56,7 +56,7 @@ export const ResultsSection: React.FC = () => {
   };
 
   return (
-    <section className="relative w-full py-[120px] px-6 bg-[#060608] overflow-hidden flex flex-col items-center">
+    <section className="relative w-full pt-2 pb-24 px-6 bg-[#060608] overflow-hidden flex flex-col items-center">
       
       {/* --- ESTILOS & ANIMACIONES --- */}
       <style>{`
@@ -66,7 +66,14 @@ export const ResultsSection: React.FC = () => {
           0%, 100% { transform: translateY(0px); opacity: 0.2; }
           50% { transform: translateY(-15px); opacity: 0.5; }
         }
+        @keyframes sweep {
+          0% { left: -100%; opacity: 0; }
+          20% { opacity: 1; }
+          80% { opacity: 1; }
+          100% { left: 200%; opacity: 0; }
+        }
         .animate-float-gold { animation: float-gold 6s ease-in-out infinite; }
+        .animate-sweep { animation: sweep 1s cubic-bezier(0.4, 0.0, 0.2, 1) forwards; }
       `}</style>
 
       {/* --- CAPAS DE FONDO --- */}
@@ -99,30 +106,45 @@ export const ResultsSection: React.FC = () => {
           </p>
         </div>
 
-        {/* BENEFIT TILES (STACK) */}
-        <div className="flex flex-col gap-[14px] mb-20">
+        {/* BENEFIT TILES (NUEVO DISEÑO) */}
+        <div className="flex flex-col gap-[16px] mb-20">
           {benefits.map((item, idx) => (
+            // 1. Double Gradient Stroke Wrapper (Blanco 6% + Oro Suave)
             <div 
               key={idx}
-              className="relative group overflow-hidden rounded-[24px] bg-[rgba(14,15,20,0.65)] backdrop-blur-md border border-white/[0.06] p-[20px] flex items-start gap-5 transition-all duration-500 hover:bg-[rgba(14,15,20,0.8)]"
+              className="group relative rounded-[24px] p-[1px] overflow-hidden transition-all duration-500 hover:scale-[1.01]"
+              style={{
+                background: 'linear-gradient(135deg, rgba(255,255,255,0.06) 0%, rgba(212,175,55,0.25) 50%, rgba(255,255,255,0.06) 100%)'
+              }}
             >
-              {/* Gold Accent Border Left */}
-              <div className="absolute left-0 top-0 bottom-0 w-[2px] bg-gradient-to-b from-[#D4AF37]/40 to-transparent"></div>
-              
-              {/* Icon */}
-              <div className="shrink-0 w-10 h-10 rounded-full bg-[#D4AF37]/10 flex items-center justify-center border border-[#D4AF37]/20 mt-0.5">
-                <i className={`fa-solid ${item.icon} text-[#E5D196] text-sm`}></i>
-              </div>
+               {/* 2. Inner Card Content */}
+               <div className="relative h-full w-full rounded-[23px] bg-[#0E0F12] p-[20px] flex items-center gap-5 overflow-hidden">
+                 
+                 {/* Iridescent Sweep (Background Sheen) */}
+                 <div className="absolute inset-0 bg-gradient-to-br from-white/[0.02] via-transparent to-[#D4AF37]/[0.05] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
 
-              {/* Text */}
-              <div className="flex flex-col gap-1">
-                <h3 className="text-[#F5F5F7] text-[17px] font-semibold tracking-wide">
-                  {item.title}
-                </h3>
-                <p className="text-[#F5F5F7]/60 text-[15px] leading-snug font-light">
-                  {item.desc}
-                </p>
-              </div>
+                 {/* Shine Swipe Animation */}
+                 <div className="absolute top-0 -left-[100%] w-[80%] h-full bg-gradient-to-r from-transparent via-white/[0.08] to-transparent -skew-x-12 group-hover:animate-sweep pointer-events-none"></div>
+
+                 {/* 3. Holographic Chip Icon */}
+                 <div className="relative shrink-0 w-12 h-12 rounded-full flex items-center justify-center bg-black/50 border border-white/10 shadow-[0_0_15px_-5px_rgba(212,175,55,0.4)] transition-all duration-500 group-hover:shadow-[0_0_20px_-2px_rgba(212,175,55,0.6)]">
+                    {/* Double Ring Effect (Outer border is on parent, Inner Ring here) */}
+                    <div className="absolute inset-[3px] rounded-full border border-white/5"></div>
+                    
+                    {/* Icon with Micro Glow */}
+                    <i className={`fa-solid ${item.icon} text-[#E5D196] text-lg drop-shadow-[0_0_8px_rgba(212,175,55,0.8)] relative z-10`}></i>
+                 </div>
+
+                 {/* Text */}
+                 <div className="flex flex-col gap-1 relative z-10">
+                   <h3 className="text-[#F5F5F7] text-[17px] font-semibold tracking-wide group-hover:text-[#D4AF37] transition-colors duration-300">
+                     {item.title}
+                   </h3>
+                   <p className="text-[#F5F5F7]/60 text-[15px] leading-snug font-light group-hover:text-[#F5F5F7]/80 transition-colors duration-300">
+                     {item.desc}
+                   </p>
+                 </div>
+               </div>
             </div>
           ))}
         </div>
@@ -144,21 +166,16 @@ export const ResultsSection: React.FC = () => {
                 key={idx}
                 className="shrink-0 snap-center w-[85%] md:w-[380px] flex flex-col items-center transition-all duration-500"
               >
-                {/* Glass Card - Updated: Removed scale-95 opacity-60 logic. All cards are full size. */}
-                <div className={`relative w-full rounded-[26px] overflow-hidden bg-[#1A1A1E]/40 backdrop-blur-xl border border-[#D4AF37]/20 shadow-[0_20px_50px_-10px_rgba(0,0,0,0.7)] group transition-all duration-500 scale-100 opacity-100`}>
+                {/* Image Card (Full Bleed) */}
+                <div className={`relative w-full rounded-[26px] overflow-hidden border border-[#D4AF37]/20 shadow-[0_20px_50px_-10px_rgba(0,0,0,0.7)] group transition-all duration-500 scale-100 opacity-100`}>
                     
-                    {/* Inner Content (Image) */}
-                    <div className="p-3">
-                        <div className="w-full aspect-[4/5] rounded-[20px] overflow-hidden bg-black/50 relative">
-                             <img 
-                               src={imgUrl} 
-                               alt="Testimonio real" 
-                               className="w-full h-full object-contain object-center"
-                             />
-                        </div>
-                    </div>
+                    <img 
+                      src={imgUrl} 
+                      alt="Testimonio real" 
+                      className="w-full h-auto object-cover block"
+                    />
 
-                    {/* Shine Effect */}
+                    {/* Shine Effect Overlay */}
                     <div className="absolute inset-0 bg-gradient-to-tr from-white/[0.05] via-transparent to-transparent pointer-events-none"></div>
                 </div>
               </div>
