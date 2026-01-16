@@ -4,32 +4,32 @@ const services = [
   {
     title: "Auditoría 360°",
     desc: "Análisis de tu reputación, competencia y potencial.",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop"
+    image: "https://res.cloudinary.com/ddpujsrsg/image/upload/v1768574403/WhatsApp_Image_2026-01-16_at_15.27.38_flwdxx.jpg"
   },
   {
     title: "El Método",
     desc: "Cuándo pedir la reseña y cómo frenar la negativa.",
-    image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=2070&auto=format&fit=crop"
+    image: "https://res.cloudinary.com/ddpujsrsg/image/upload/v1768574403/WhatsApp_Image_2026-01-16_at_15.28.41_vvexuw.jpg"
   },
   {
     title: "Formación Pro",
     desc: "Capacitación rápida para el dueño y el equipo.",
-    image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1932&auto=format&fit=crop"
+    image: "https://res.cloudinary.com/ddpujsrsg/image/upload/v1768574403/WhatsApp_Image_2026-01-16_at_15.28.59_actozp.jpg"
   },
   {
     title: "Implementación",
     desc: "Adaptación total a tu operativa de barra o mesa.",
-    image: "https://images.unsplash.com/photo-1592861956120-e524fc739696?q=80&w=2070&auto=format&fit=crop"
+    image: "https://res.cloudinary.com/ddpujsrsg/image/upload/v1768574403/WhatsApp_Image_2026-01-16_at_15.29.57_ygpfxv.jpg"
   },
   {
     title: "Kit Tecnológico",
     desc: "Soportes físicos con tecnología NFC y QR.",
-    image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=2070&auto=format&fit=crop"
+    image: "https://res.cloudinary.com/ddpujsrsg/image/upload/v1768574403/WhatsApp_Image_2026-01-16_at_15.29.38_r1c4pq.jpg"
   },
   {
     title: "Soporte Directo",
     desc: "Acompañamiento total en la puesta en marcha.",
-    image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2070&auto=format&fit=crop"
+    image: "https://res.cloudinary.com/ddpujsrsg/image/upload/v1768574402/WhatsApp_Image_2026-01-16_at_15.30.22_pvz9ao.jpg"
   }
 ];
 

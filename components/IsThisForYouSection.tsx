@@ -12,12 +12,8 @@ export const IsThisForYouSection: React.FC = () => {
           100% { transform: translateY(0px); opacity: 0.3; }
         }
         @keyframes border-rotate {
-          0% { transform: rotate(0deg); }
-          100% { transform: rotate(360deg); }
-        }
-        @keyframes burgundy-shimmer {
-          0%, 100% { border-color: rgba(255,255,255,0.06); }
-          50% { border-color: rgba(122,30,43,0.4); }
+          from { transform: rotate(0deg); }
+          to { transform: rotate(360deg); }
         }
         @keyframes heartbeat-red-glow {
           0% { transform: scale(1); filter: drop-shadow(0 0 0px rgba(210, 74, 92, 0)); }
@@ -31,9 +27,6 @@ export const IsThisForYouSection: React.FC = () => {
         }
         .animate-border-rotate {
           animation: border-rotate 4s linear infinite;
-        }
-        .animate-burgundy-pulse {
-          animation: burgundy-shimmer 8s ease-in-out infinite;
         }
         .animate-heartbeat-red {
           animation: heartbeat-red-glow 2s ease-in-out infinite;
@@ -70,27 +63,25 @@ export const IsThisForYouSection: React.FC = () => {
             </h2>
         </div>
 
-        {/* --- CARD 1: ENCAJA CONTIGO (WITH LED EFFECT, NO INNER STRIP) --- */}
+        {/* --- CARD 1: ENCAJA CONTIGO (GOLD LED) --- */}
         <div className="relative group w-full rounded-[28px]">
             {/* LED Edge Effect (Animated Border) */}
-            <div className="absolute -inset-[1.5px] rounded-[28px] overflow-hidden opacity-100">
+            <div className="absolute -inset-[2px] rounded-[28px] overflow-hidden opacity-100">
                 <div className="absolute top-[-50%] left-[-50%] w-[200%] h-[200%] animate-border-rotate"
                      style={{
-                         background: 'conic-gradient(transparent 180deg, #D4AF37 210deg, transparent 240deg)'
+                         background: 'conic-gradient(transparent 120deg, #D4AF37 180deg, transparent 240deg)'
                      }}>
                 </div>
             </div>
             
-            {/* Card Body - Slight margin to show LED border */}
-            <div className="relative bg-[#08080A] rounded-[26px] h-full overflow-hidden shadow-[0_20px_50px_-20px_rgba(0,0,0,0.8)]" style={{ margin: '1.5px' }}>
+            {/* Card Body - Increased margin to 2px to show LED border better */}
+            <div className="relative bg-[#08080A] rounded-[26px] h-full overflow-hidden shadow-[0_20px_50px_-20px_rgba(0,0,0,0.8)]" style={{ margin: '2px' }}>
                 
                 {/* Smoked Glass Overlay inside */}
                 <div className="absolute inset-0 bg-black/40 backdrop-blur-xl z-0"></div>
 
                 {/* Subtle Diagonal Reflection */}
                 <div className="absolute inset-0 bg-gradient-to-br from-white/[0.08] via-transparent to-transparent pointer-events-none z-0 opacity-10"></div>
-                
-                {/* Accent: Left GOLD Strip REMOVED here */}
                 
                 {/* Card Body Content */}
                 <div className="relative z-10 px-8 py-9 md:p-10">
@@ -129,49 +120,58 @@ export const IsThisForYouSection: React.FC = () => {
             </div>
         </div>
 
-        {/* --- CARD 2: NO ES PARA TI (Smoked Glass on Gray + Heartbeat X) --- */}
-        <div className="relative w-full rounded-[28px] overflow-hidden animate-burgundy-pulse border border-white/[0.06] shadow-[0_24px_70px_rgba(0,0,0,0.65)]">
-            
-            {/* Panel Background: Black with transparency (Smoked Glass) */}
-            <div className="absolute inset-0 bg-black/60 backdrop-blur-[20px] z-0"></div>
+        {/* --- CARD 2: NO ES PARA TI (RED LED) --- */}
+        <div className="relative group w-full rounded-[28px]">
+            {/* LED Edge Effect (Animated Border) - RED */}
+            <div className="absolute -inset-[2px] rounded-[28px] overflow-hidden opacity-100">
+                <div className="absolute top-[-50%] left-[-50%] w-[200%] h-[200%] animate-border-rotate"
+                     style={{
+                         background: 'conic-gradient(transparent 120deg, #D24A5C 180deg, transparent 240deg)'
+                     }}>
+                </div>
+            </div>
 
-            {/* Subtle Diagonal Reflection (Nacreous) */}
-            <div className="absolute inset-0 bg-gradient-to-br from-white/[0.08] via-transparent to-transparent pointer-events-none z-0 opacity-10"></div>
-            
-            {/* Accent: Left Burgundy Strip */}
-            <div className="absolute left-0 top-0 bottom-0 w-[4px] bg-gradient-to-b from-[#7A1E2B] to-transparent z-10 opacity-80"></div>
-            
-            {/* Card Body Content */}
-            <div className="relative z-10 px-8 py-9 md:p-10">
-                 
-                 {/* Header */}
-                 <h3 className="text-[15px] font-bold uppercase tracking-[5px] text-[#C9A24A]/90 border-b border-white/[0.1] pb-5 mb-4">
-                    No es para ti si:
-                </h3>
+            {/* Card Body */}
+            <div className="relative bg-[#08080A] rounded-[26px] h-full overflow-hidden shadow-[0_24px_70px_rgba(0,0,0,0.65)]" style={{ margin: '2px' }}>
+                
+                {/* Panel Background: Black with transparency (Smoked Glass) */}
+                <div className="absolute inset-0 bg-black/60 backdrop-blur-[20px] z-0"></div>
 
-                <div className="flex flex-col">
-                    {[
-                        { title: "Sin Contacto", desc: "No tienes trato directo con el cliente final." },
-                        { title: "Atajos", desc: "Buscas trucos mágicos o comprar reseñas falsas." },
-                        { title: "Pasividad", desc: "No quieres implicar al equipo ni mejorar procesos." }
-                    ].map((item, i) => (
-                        <div key={i} className="flex items-start gap-6 py-6 border-b border-white/[0.08] last:border-0 last:pb-0">
-                            {/* Icon Chip - BURGUNDY STYLE */}
-                            <div className="shrink-0 w-[32px] h-[32px] rounded-full bg-[#7A1E2B]/15 border border-[#7A1E2B]/35 flex items-center justify-center mt-0.5">
-                                <i className="fa-solid fa-xmark text-[13px] text-[#D24A5C]/90 animate-heartbeat-red"></i>
+                {/* Subtle Diagonal Reflection (Nacreous) */}
+                <div className="absolute inset-0 bg-gradient-to-br from-white/[0.08] via-transparent to-transparent pointer-events-none z-0 opacity-10"></div>
+                
+                {/* Card Body Content */}
+                <div className="relative z-10 px-8 py-9 md:p-10">
+                     
+                     {/* Header */}
+                     <h3 className="text-[15px] font-bold uppercase tracking-[5px] text-[#C9A24A]/90 border-b border-white/[0.1] pb-5 mb-4">
+                        No es para ti si:
+                    </h3>
+
+                    <div className="flex flex-col">
+                        {[
+                            { title: "Sin Contacto", desc: "No tienes trato directo con el cliente final." },
+                            { title: "Atajos", desc: "Buscas trucos mágicos o comprar reseñas falsas." },
+                            { title: "Pasividad", desc: "No quieres implicar al equipo ni mejorar procesos." }
+                        ].map((item, i) => (
+                            <div key={i} className="flex items-start gap-6 py-6 border-b border-white/[0.08] last:border-0 last:pb-0">
+                                {/* Icon Chip - BURGUNDY STYLE */}
+                                <div className="shrink-0 w-[32px] h-[32px] rounded-full bg-[#7A1E2B]/15 border border-[#7A1E2B]/35 flex items-center justify-center mt-0.5">
+                                    <i className="fa-solid fa-xmark text-[13px] text-[#D24A5C]/90 animate-heartbeat-red"></i>
+                                </div>
+                                
+                                {/* Text Columns */}
+                                <div className="flex flex-col gap-1.5">
+                                    <span className="text-[#F5F5F7]/95 text-[22px] font-semibold tracking-tight">
+                                        {item.title}
+                                    </span>
+                                    <span className="text-[#F5F5F7]/75 text-[17px] font-normal leading-[1.65]">
+                                        {item.desc}
+                                    </span>
+                                </div>
                             </div>
-                            
-                            {/* Text Columns */}
-                            <div className="flex flex-col gap-1.5">
-                                <span className="text-[#F5F5F7]/95 text-[22px] font-semibold tracking-tight">
-                                    {item.title}
-                                </span>
-                                <span className="text-[#F5F5F7]/75 text-[17px] font-normal leading-[1.65]">
-                                    {item.desc}
-                                </span>
-                            </div>
-                        </div>
-                    ))}
+                        ))}
+                    </div>
                 </div>
             </div>
         </div>
