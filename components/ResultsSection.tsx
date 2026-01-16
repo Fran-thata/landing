@@ -18,15 +18,18 @@ const benefits = [
 export const ResultsSection: React.FC = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false); // Estado para controlar la pausa
 
-  // Auto-change every 3 seconds
+  // Auto-change every 5 seconds, unless paused
   useEffect(() => {
+    if (isPaused) return; // Si está pausado, no hacemos nada
+
     const interval = setInterval(() => {
       setActiveIndex((prev) => (prev + 1) % testimonials.length);
-    }, 3000);
+    }, 5000); // Cambiado a 5 segundos
 
     return () => clearInterval(interval);
-  }, []);
+  }, [isPaused]); // Dependencia agregada: isPaused
 
   // Sync scroll with activeIndex
   useEffect(() => {
@@ -156,7 +159,12 @@ export const ResultsSection: React.FC = () => {
           <div 
             ref={scrollRef}
             className="flex gap-6 overflow-x-auto snap-x snap-mandatory hide-scrollbar px-6 pb-12 pointer-events-none md:pointer-events-auto"
-            style={{ margin: '0 -24px' }} 
+            style={{ margin: '0 -24px' }}
+            // Eventos para pausar el carrusel
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
+            onTouchStart={() => setIsPaused(true)}
+            onTouchEnd={() => setIsPaused(false)}
           >
             {/* Start Spacer */}
             <div className="shrink-0 w-[12px]"></div>
