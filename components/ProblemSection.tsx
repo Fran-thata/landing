@@ -128,8 +128,8 @@ export const ProblemSection: React.FC = () => {
       {/* --- SEPARADOR DORADO 1 --- */}
       <div className="w-full h-1.5 bg-gradient-to-r from-premium-gold-dark via-premium-gold to-premium-gold-dark shadow-[0_0_25px_rgba(212,175,55,0.8)] relative z-20"></div>
 
-      {/* --- PARTE 2: FONDO GRIS CARBÓN (MÉTODO VS SUERTE) --- */}
-      <section className="bg-[#1A1A1A] py-16 md:py-24 px-5 md:px-6 relative">
+      {/* --- PARTE 2: FONDO NEGRO Y TARJETAS #1A1A1A (MÉTODO VS SUERTE) --- */}
+      <section className="bg-black py-16 md:py-24 px-5 md:px-6 relative">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12 md:mb-20">
             <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-3 md:mb-4 leading-tight">
@@ -141,8 +141,8 @@ export const ProblemSection: React.FC = () => {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-16 items-start mb-16">
-            {/* CAJA 1: EL CAOS */}
-            <div className="bg-[#080808] border-2 border-[#7f1d1d] p-6 md:p-10 rounded-3xl relative min-h-[auto] md:min-h-[360px] flex flex-col justify-center shadow-2xl shadow-red-900/20">
+            {/* CAJA 1: EL CAOS (Fondo actualizado a #1A1A1A) */}
+            <div className="bg-[#1A1A1A] border-2 border-[#7f1d1d] p-6 md:p-10 rounded-3xl relative min-h-[auto] md:min-h-[360px] flex flex-col justify-center shadow-2xl shadow-red-900/20">
                <div className="absolute -top-4 md:-top-5 left-1/2 -translate-x-1/2 bg-[#1a0505] text-red-600 font-bold px-4 md:px-6 py-2 rounded-full text-xs md:text-sm border border-[#7f1d1d] uppercase tracking-wide">
                  <i className="fa-solid fa-xmark mr-2"></i> Sin Método
                </div>
@@ -152,8 +152,8 @@ export const ProblemSection: React.FC = () => {
                   <li className="flex items-start gap-4"><i className="fa-solid fa-circle-question text-red-500 mt-1"></i><span className="text-white">Incertidumbre total.</span></li>
                </ul>
             </div>
-            {/* CAJA 2: LA SOLUCIÓN */}
-            <div className="bg-black border-2 border-premium-gold p-6 md:p-10 rounded-3xl relative shadow-2xl shadow-premium-gold/20 min-h-[auto] md:min-h-[360px] flex flex-col justify-center">
+            {/* CAJA 2: LA SOLUCIÓN (Fondo actualizado a #1A1A1A) */}
+            <div className="bg-[#1A1A1A] border-2 border-premium-gold p-6 md:p-10 rounded-3xl relative shadow-2xl shadow-premium-gold/20 min-h-[auto] md:min-h-[360px] flex flex-col justify-center">
                <div className="absolute -top-4 md:-top-5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-premium-gold to-premium-gold-dark text-neutral-950 font-extrabold px-4 md:px-6 py-2 rounded-full text-xs md:text-sm uppercase tracking-wide">
                  <i className="fa-solid fa-check mr-2"></i> Con Método
                </div>
@@ -459,4 +459,3 @@ export const ProblemSection: React.FC = () => {
       </section>
     </>
   );
-};
