@@ -121,7 +121,8 @@ export const ResultsSection: React.FC = () => {
               }}
             >
                {/* 2. Inner Card Content - Background adjusted for black theme */}
-               <div className="relative h-full w-full rounded-[23px] bg-[#0A0A0C] p-[20px] flex items-center gap-5 overflow-hidden">
+               {/* BACKGROUND CHANGED TO #1A1A1A */}
+               <div className="relative h-full w-full rounded-[23px] bg-[#1A1A1A] p-[20px] flex items-center gap-5 overflow-hidden">
                  
                  {/* Iridescent Sweep (Background Sheen) */}
                  <div className="absolute inset-0 bg-gradient-to-br from-white/[0.02] via-transparent to-[#D4AF37]/[0.05] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
@@ -221,3 +222,4 @@ export const ResultsSection: React.FC = () => {
       </div>
     </section>
   );
+};

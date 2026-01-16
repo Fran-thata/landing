@@ -75,7 +75,8 @@ export const IsThisForYouSection: React.FC = () => {
             </div>
             
             {/* Card Body - Increased margin to 2px to show LED border better */}
-            <div className="relative bg-[#08080A] rounded-[26px] h-full overflow-hidden shadow-[0_20px_50px_-20px_rgba(0,0,0,0.8)]" style={{ margin: '2px' }}>
+            {/* BACKGROUND CHANGED TO #1A1A1A */}
+            <div className="relative bg-[#1A1A1A] rounded-[26px] h-full overflow-hidden shadow-[0_20px_50px_-20px_rgba(0,0,0,0.8)]" style={{ margin: '2px' }}>
                 
                 {/* Smoked Glass Overlay inside */}
                 <div className="absolute inset-0 bg-black/40 backdrop-blur-xl z-0"></div>
@@ -132,7 +133,8 @@ export const IsThisForYouSection: React.FC = () => {
             </div>
 
             {/* Card Body */}
-            <div className="relative bg-[#08080A] rounded-[26px] h-full overflow-hidden shadow-[0_24px_70px_rgba(0,0,0,0.65)]" style={{ margin: '2px' }}>
+            {/* BACKGROUND CHANGED TO #1A1A1A */}
+            <div className="relative bg-[#1A1A1A] rounded-[26px] h-full overflow-hidden shadow-[0_24px_70px_rgba(0,0,0,0.65)]" style={{ margin: '2px' }}>
                 
                 {/* Panel Background: Black with transparency (Smoked Glass) */}
                 <div className="absolute inset-0 bg-black/60 backdrop-blur-[20px] z-0"></div>
