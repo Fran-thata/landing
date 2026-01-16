@@ -20,13 +20,13 @@ export const ResultsSection: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false); // Estado para controlar la pausa
 
-  // Auto-change every 5 seconds, unless paused
+  // Auto-change every 3 seconds, unless paused
   useEffect(() => {
     if (isPaused) return; // Si está pausado, no hacemos nada
 
     const interval = setInterval(() => {
       setActiveIndex((prev) => (prev + 1) % testimonials.length);
-    }, 5000); // Cambiado a 5 segundos
+    }, 3000); // Revertido a 3 segundos
 
     return () => clearInterval(interval);
   }, [isPaused]); // Dependencia agregada: isPaused
@@ -59,7 +59,7 @@ export const ResultsSection: React.FC = () => {
   };
 
   return (
-    <section className="relative w-full pt-2 pb-24 px-6 bg-[#060608] overflow-hidden flex flex-col items-center">
+    <section className="relative w-full pt-2 pb-24 px-6 bg-black overflow-hidden flex flex-col items-center">
       
       {/* --- ESTILOS & ANIMACIONES --- */}
       <style>{`
@@ -80,11 +80,11 @@ export const ResultsSection: React.FC = () => {
       `}</style>
 
       {/* --- CAPAS DE FONDO --- */}
-      {/* 1. Base Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#060608] to-[#0E0E12] z-0"></div>
+      {/* 1. Base - Solid Black */}
+      <div className="absolute inset-0 bg-black z-0"></div>
       
-      {/* 2. Spotlight (Diffuse) */}
-      <div className="absolute top-[20%] left-1/2 -translate-x-1/2 w-[140%] h-[600px] bg-[radial-gradient(ellipse_at_center,rgba(212,175,55,0.06)_0%,transparent_70%)] pointer-events-none z-0 blur-3xl"></div>
+      {/* 2. Spotlight (Diffuse) - Slightly reduced opacity for deeper black feel */}
+      <div className="absolute top-[20%] left-1/2 -translate-x-1/2 w-[140%] h-[600px] bg-[radial-gradient(ellipse_at_center,rgba(212,175,55,0.04)_0%,transparent_70%)] pointer-events-none z-0 blur-3xl"></div>
       
       {/* 3. Film Grain */}
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none z-0 mix-blend-overlay" 
@@ -120,8 +120,8 @@ export const ResultsSection: React.FC = () => {
                 background: 'linear-gradient(135deg, rgba(255,255,255,0.06) 0%, rgba(212,175,55,0.25) 50%, rgba(255,255,255,0.06) 100%)'
               }}
             >
-               {/* 2. Inner Card Content */}
-               <div className="relative h-full w-full rounded-[23px] bg-[#0E0F12] p-[20px] flex items-center gap-5 overflow-hidden">
+               {/* 2. Inner Card Content - Background adjusted for black theme */}
+               <div className="relative h-full w-full rounded-[23px] bg-[#0A0A0C] p-[20px] flex items-center gap-5 overflow-hidden">
                  
                  {/* Iridescent Sweep (Background Sheen) */}
                  <div className="absolute inset-0 bg-gradient-to-br from-white/[0.02] via-transparent to-[#D4AF37]/[0.05] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>

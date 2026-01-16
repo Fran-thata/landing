@@ -187,8 +187,8 @@ export const ProblemSection: React.FC = () => {
         </div>
 
         <div className="max-w-3xl mx-auto relative z-10">
-            {/* Headlines */}
-            <div className="text-center mb-12">
+            {/* Headlines - Aligned Left */}
+            <div className="text-left mb-12">
                 <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-3 leading-tight">
                     No se trata de <br />
                     pedir reseñas.
@@ -199,8 +199,8 @@ export const ProblemSection: React.FC = () => {
                 </h3>
             </div>
 
-            {/* Body Paragraphs */}
-            <div className="space-y-6 text-lg text-white leading-relaxed font-medium text-left md:text-justify max-w-2xl mx-auto">
+            {/* Body Paragraphs - Aligned Left */}
+            <div className="space-y-6 text-lg text-white leading-relaxed font-medium text-left max-w-2xl">
                 <p>
                     Muchos locales lo hacen mal. Ponen un QR en el ticket o envían un email horas después. El resultado suele ser el mismo: Acaba en la basura. Cuando el cliente cruza la puerta, ya ha desconectado.
                 </p>
@@ -208,17 +208,13 @@ export const ProblemSection: React.FC = () => {
                     La clave es capturarlo en caliente, mientras siguen en la mesa. Sin fricción. De forma natural. Justo cuando la satisfacción es máxima.
                 </p>
             </div>
-        </div>
-
-        {/* Quote Section (Updated) */}
-        <div className="max-w-3xl mx-auto relative px-4 md:px-0 z-10 text-center mt-16">
-             <div className="inline-block relative">
-                 {/* Updated: Gold text with Golden Glow */}
-                 <p className="text-2xl md:text-3xl text-[#D4AF37] leading-relaxed font-bold drop-shadow-[0_0_8px_rgba(212,175,55,0.5)]">
+            
+             {/* Quote Section - Aligned Left & White */}
+             <div className="mt-16 text-left">
+                 <p className="text-2xl md:text-3xl text-white leading-relaxed font-bold">
                     La reseña es la consecuencia de un servicio bien hecho... cuando se pide en el momento correcto.
                  </p>
-             </div>
-             {/* Icon Removed Here */}
+            </div>
         </div>
       </section>
 
