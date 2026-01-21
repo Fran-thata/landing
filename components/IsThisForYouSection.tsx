@@ -181,7 +181,7 @@ export const IsThisForYouSection: React.FC = () => {
         {/* --- CTA BUTTON --- */}
         <div className="w-full flex justify-center mt-10">
             <button 
-                onClick={() => document.getElementById('demo')?.scrollIntoView({ behavior: 'smooth' })}
+                onClick={() => window.open('https://wa.me/34641066377?text=Hola%2C%20estoy%20interesado%20en%20el%20sistema%20para%20conseguir%20rese%C3%B1as%20constantes%20en%20Google%20Maps.%20%C2%BFPodr%C3%ADas%20contarme%20c%C3%B3mo%20funciona%20y%20qu%C3%A9%20incluye%3F', '_blank')}
                 className="
                   relative h-[64px] w-full max-w-sm rounded-full 
                   bg-[#060608] border border-[#D4AF37]/40 

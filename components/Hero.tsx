@@ -95,7 +95,10 @@ export const Hero: React.FC = () => {
 
         {/* CTA */}
         <div className="flex flex-col items-center md:items-start gap-4 pb-12 w-full">
-          <Button onClick={() => document.getElementById('demo')?.scrollIntoView({ behavior: 'smooth' })} className="w-full md:w-auto px-12 py-5 text-base md:text-lg shadow-[0_0_30px_rgba(212,175,55,0.4)]">
+          <Button 
+            onClick={() => window.open('https://wa.me/34641066377?text=Hola%2C%20estoy%20interesado%20en%20el%20sistema%20para%20conseguir%20rese%C3%B1as%20constantes%20en%20Google%20Maps.%20%C2%BFPodr%C3%ADas%20contarme%20c%C3%B3mo%20funciona%20y%20qu%C3%A9%20incluye%3F', '_blank')} 
+            className="w-full md:w-auto px-12 py-5 text-base md:text-lg shadow-[0_0_30px_rgba(212,175,55,0.4)]"
+          >
             QUIERO MÁS RESEÑAS
           </Button>
           <span className="text-white text-xs md:text-sm font-medium tracking-widest uppercase text-center md:text-left">
