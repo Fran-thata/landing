@@ -16,8 +16,8 @@ export const Button: React.FC<ButtonProps & React.AnchorHTMLAttributes<HTMLAncho
   href,
   ...props 
 }) => {
-  // Se añade cursor-pointer y no-underline por seguridad al usar <a>
-  const baseStyles = "inline-flex items-center justify-center font-extrabold uppercase tracking-widest text-sm transition-all duration-300 ease-out border rounded-full px-10 py-4 cursor-pointer no-underline";
+  // Se añade relative, z-50 y touch-manipulation para asegurar la interacción en móviles por encima de capas decorativas
+  const baseStyles = "relative z-50 inline-flex items-center justify-center font-extrabold uppercase tracking-widest text-sm transition-all duration-300 ease-out border rounded-full px-10 py-4 cursor-pointer no-underline touch-manipulation select-none active:scale-95";
   
   const variants = {
     primary: "bg-gradient-to-br from-premium-gold to-premium-gold-dark text-premium-dark border-transparent shadow-[0_0_25px_rgba(212,175,55,0.3)] hover:-translate-y-1 hover:shadow-[0_10px_40px_rgba(212,175,55,0.6)] hover:brightness-110",
