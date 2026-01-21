@@ -124,8 +124,10 @@ export const FAQSection: React.FC = () => {
 
         {/* CTA BUTTON - Compact */}
         <div className="w-full flex justify-center mt-4">
-            <button 
-                onClick={() => window.open('https://wa.me/34641066377?text=Hola%2C%20estoy%20interesado%20en%20el%20sistema%20para%20conseguir%20rese%C3%B1as%20constantes%20en%20Google%20Maps.%20%C2%BFPodr%C3%ADas%20contarme%20c%C3%B3mo%20funciona%20y%20qu%C3%A9%20incluye%3F', '_blank')}
+            <a 
+                href="https://wa.me/34641066377?text=Hola%2C%20estoy%20interesado%20en%20el%20sistema%20para%20conseguir%20rese%C3%B1as%20constantes%20en%20Google%20Maps.%20%C2%BFPodr%C3%ADas%20contarme%20c%C3%B3mo%20funciona%20y%20qu%C3%A9%20incluye%3F"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="
                   h-[50px] px-8 rounded-full 
                   bg-gradient-to-r from-[#D4AF37] to-[#B48F26]
@@ -133,10 +135,12 @@ export const FAQSection: React.FC = () => {
                   hover:scale-105 hover:shadow-[0_0_20px_rgba(212,175,55,0.4)]
                   transition-all duration-300 ease-out
                   shadow-lg
+                  flex items-center justify-center
+                  cursor-pointer no-underline
                 "
             >
                Quiero mejorar mis reseñas
-            </button>
+            </a>
         </div>
 
       </div>

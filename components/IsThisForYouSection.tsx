@@ -180,8 +180,10 @@ export const IsThisForYouSection: React.FC = () => {
 
         {/* --- CTA BUTTON --- */}
         <div className="w-full flex justify-center mt-10">
-            <button 
-                onClick={() => window.open('https://wa.me/34641066377?text=Hola%2C%20estoy%20interesado%20en%20el%20sistema%20para%20conseguir%20rese%C3%B1as%20constantes%20en%20Google%20Maps.%20%C2%BFPodr%C3%ADas%20contarme%20c%C3%B3mo%20funciona%20y%20qu%C3%A9%20incluye%3F', '_blank')}
+            <a 
+                href="https://wa.me/34641066377?text=Hola%2C%20estoy%20interesado%20en%20el%20sistema%20para%20conseguir%20rese%C3%B1as%20constantes%20en%20Google%20Maps.%20%C2%BFPodr%C3%ADas%20contarme%20c%C3%B3mo%20funciona%20y%20qu%C3%A9%20incluye%3F"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="
                   relative h-[64px] w-full max-w-sm rounded-full 
                   bg-[#060608] border border-[#D4AF37]/40 
@@ -191,6 +193,7 @@ export const IsThisForYouSection: React.FC = () => {
                   transition-all duration-500 ease-out
                   flex items-center justify-center gap-3
                   group
+                  cursor-pointer no-underline
                 "
             >
                 <span className="relative z-10 group-hover:tracking-[0.15em] transition-all duration-500">
@@ -198,7 +201,7 @@ export const IsThisForYouSection: React.FC = () => {
                 </span>
                 {/* Subtle Metallic Shine Overlay */}
                 <div className="absolute inset-0 rounded-full bg-gradient-to-r from-transparent via-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-            </button>
+            </a>
         </div>
 
       </div>

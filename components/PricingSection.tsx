@@ -112,8 +112,10 @@ export const PricingSection: React.FC = () => {
 
         {/* --- CTA BUTTON --- */}
         <div className="w-full flex justify-center pt-2">
-            <button 
-                onClick={() => window.open('https://wa.me/34641066377?text=Hola%2C%20estoy%20interesado%20en%20el%20sistema%20para%20conseguir%20rese%C3%B1as%20constantes%20en%20Google%20Maps.%20%C2%BFPodr%C3%ADas%20contarme%20c%C3%B3mo%20funciona%20y%20qu%C3%A9%20incluye%3F', '_blank')}
+            <a 
+                href="https://wa.me/34641066377?text=Hola%2C%20estoy%20interesado%20en%20el%20sistema%20para%20conseguir%20rese%C3%B1as%20constantes%20en%20Google%20Maps.%20%C2%BFPodr%C3%ADas%20contarme%20c%C3%B3mo%20funciona%20y%20qu%C3%A9%20incluye%3F"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="
                   relative h-[56px] w-full max-w-xs rounded-full 
                   bg-[#060608] border border-[#D4AF37]/50 
@@ -121,12 +123,13 @@ export const PricingSection: React.FC = () => {
                   hover:bg-[#D4AF37]/5 hover:border-[#D4AF37] hover:shadow-[0_0_25px_rgba(212,175,55,0.2)]
                   transition-all duration-300 ease-out
                   flex items-center justify-center gap-3
+                  cursor-pointer no-underline
                 "
             >
                 <span className="relative z-10">
                    Quiero más reseñas
                 </span>
-            </button>
+            </a>
         </div>
 
       </div>
